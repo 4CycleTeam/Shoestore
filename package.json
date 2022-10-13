@@ -1,0 +1,29 @@
+{
+  "name": "shoestore",
+  "version": "1.0.0",
+  "description": "Tienda virtual calzado",
+  "main": "server.js",
+  "scripts": {
+    "start": "node back/server.js",
+    "dev":"SET NODE_ENV=DESARROLLO& nodemon back/server",
+    "prod":"SET NODE_ENV=PRODUCCION& nodemon back/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4CycleTeam/Shoestore.git"
+  },
+  "author": "4CycleTeam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4CycleTeam/Shoestore/issues"
+  },
+  "homepage": "https://github.com/4CycleTeam/Shoestore#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
