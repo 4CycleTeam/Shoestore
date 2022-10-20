@@ -38,9 +38,9 @@ export const Home = () => {
                                     <div className='rating-outer'>
                                         <div className='rating-inner'></div>
                                     </div>
-                                    <span id="No_de_opiniones"> 3 reviews</span>
+                                    <span id="No_de_opiniones"> 4 reviews</span>
                                 </div>
-                                <p className='card-text'>$272.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
+                                <p className='card-text'>$268.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>
                             </div>
@@ -57,9 +57,9 @@ export const Home = () => {
                                     <div className='rating-outer'>
                                         <div className='rating-inner'></div>
                                     </div>
-                                    <span id="No_de_opiniones"> 3 reviews</span>
+                                    <span id="No_de_opiniones"> 5 reviews</span>
                                 </div>
-                                <p className='card-text'>$272.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
+                                <p className='card-text'>$255.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>
                             </div>
@@ -76,9 +76,66 @@ export const Home = () => {
                                     <div className='rating-outer'>
                                         <div className='rating-inner'></div>
                                     </div>
-                                    <span id="No_de_opiniones"> 3 reviews</span>
+                                    <span id="No_de_opiniones"> 4 reviews</span>
                                 </div>
-                                <p className='card-text'>$272.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
+                                <p className='card-text'>$270.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
+                                    Ver detalle
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*Producto 5*/}
+                    <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
+                        <div className='card p-3 rounded'>
+                            <img className='card-img-top mx-auto' src='./images/7TenisdecueroJacquard.jpg' alt="Jacquard"></img>
+                            <div className='card-body d-flex flex-column'>
+                                <h5 id="titulo_producto"><a href='http://localhost:3000'>Tenis de cuero Jacquard</a></h5>
+                                <div className='rating mt-auto'>
+                                    <div className='rating-outer'>
+                                        <div className='rating-inner'></div>
+                                    </div>
+                                    <span id="No_de_opiniones"> 4 reviews</span>
+                                </div>
+                                <p className='card-text'>$280.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
+                                    Ver detalle
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*Producto 6*/}
+                    <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
+                        <div className='card p-3 rounded'>
+                            <img className='card-img-top mx-auto' src='./images/3TenisDeCueroTropicalC.jpg' alt="TropicalC"></img>
+                            <div className='card-body d-flex flex-column'>
+                                <h5 id="titulo_producto"><a href='http://localhost:3000'>Tenis de cuero Tropical café</a></h5>
+                                <div className='rating mt-auto'>
+                                    <div className='rating-outer'>
+                                        <div className='rating-inner'></div>
+                                    </div>
+                                    <span id="No_de_opiniones"> 4 reviews</span>
+                                </div>
+                                <p className='card-text'>$269.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
+                                    Ver detalle
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*Producto 7*/}
+                    <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
+                        <div className='card p-3 rounded'>
+                            <img className='card-img-top mx-auto' src='./images/2tenisdecueroProvenza.jpg' alt="Provenza"></img>
+                            <div className='card-body d-flex flex-column'>
+                                <h5 id="titulo_producto"><a href='http://localhost:3000'>Tenis de cuero Provenza</a></h5>
+                                <div className='rating mt-auto'>
+                                    <div className='rating-outer'>
+                                        <div className='rating-inner'></div>
+                                    </div>
+                                    <span id="No_de_opiniones"> 4 reviews</span>
+                                </div>
+                                <p className='card-text'>$255.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>
                             </div>
