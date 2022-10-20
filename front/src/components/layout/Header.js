@@ -6,6 +6,7 @@ const Header = () => {
     return (
         <Fragment>
             <nav className='navbar row bg-dark' >
+               
                 <div className='col-12 col-md-3'>
                     <div className='navbar-brand' >
                         <img src="./images/ShoestoreLogo.png" alt="Shoes Store Logo"></img>
@@ -32,7 +33,7 @@ const Header = () => {
                     <i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
                     <span className="ml-1" id="cart_count">2</span>
                 </div>
-
+               
             </nav>
 
         </Fragment>
