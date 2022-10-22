@@ -1,17 +1,28 @@
 import './App.css';
 import React from 'react';
 import Header from './components/layout/Header';
+import Ventas from './components/Ventas';
 import { Footer } from './components/layout/Footer';
-import Home from './components/Home';
+import ListaProductos from './components/ListaProductos';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Carrito from './components/Carrito';
 
 function App() {
   return (
-    <div className="App"  id="myHeader">
+    <Router>
+    <div className="App">
       <Header/>
-      <Home />
-
+      <div className="container container-fluid ">
+        <Routes>
+         <Route path='/listaproductos' element={<ListaProductos/>}></Route>
+         <Route path='/ventas' element={<Ventas/>}></Route>
+         <Route path='/carrito' element={<Carrito/>}></Route>
+        </Routes>
+        </div>
+      
       <Footer />
     </div>
+    </Router>
   );
 }
 
