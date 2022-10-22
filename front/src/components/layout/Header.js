@@ -1,12 +1,12 @@
 import React, {Fragment} from 'react'
 import "../../App.css"
-
+const navColor = '#e7e7e9';
 const Header = () => {
 
     return (
         <Fragment>
-            <nav className='navbar row bg-dark' >
-               
+           <div className='mt-10 fixed-top'>
+           <nav className='navbar row bg-dark' >
                 <div className='col-12 col-md-3'>
                     <div className='navbar-brand' >
                         <img src="./images/ShoestoreLogo.png" alt="Shoes Store Logo"></img>
@@ -32,9 +32,27 @@ const Header = () => {
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     <i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
                     <span className="ml-1" id="cart_count">2</span>
-                </div>
-               
+                </div>           
+            
+
             </nav>
+           </div>
+           <div className='font-weight-bold'>
+           <ul className="nav navbar-light text-dark"style={{backgroundColor:navColor }}>
+                <li className="nav-item">
+                    <a className="nav-link text-dark" href="#">Active</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link text-dark" href="#">Link</a>
+                </li>
+                <li className="nav-item">
+                <a className="nav-link text-dark" href="#">Link</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link text-dark " href="#">Disabled</a>
+                </li>
+            </ul>
+           </div> 
 
         </Fragment>
     )

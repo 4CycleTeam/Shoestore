@@ -1,6 +1,6 @@
 import React, { Fragment} from 'react'
 
-export const Home = () => {
+export const ListaProductos = () => {
 
 
     return (
@@ -151,4 +151,4 @@ export const Home = () => {
         </Fragment>
     )
 }
-export default Home
+export default ListaProductos
