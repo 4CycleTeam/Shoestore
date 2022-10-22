@@ -1,40 +1,40 @@
-import React, { Fragment} from 'react'
+import React, {Fragment} from 'react'
 
-export const Home = () => {
+export const Ventas = () => {
 
 
     return (
         <Fragment>
             <h1 id="encabezado_Ventas">Ventas</h1>
 
-            <section id="productos" className='container mt-5'>
+            <section id="ventas" className='container mt-5'>
             <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Id Venta</th>
+      <th scope="col">Valor </th>
+      <th scope="col">Vendedor</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <tr>      
+      <td>2021-01-01</td>
+      <td>3625</td>
+      <td>30000</td>
+      <td>juan</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+    <tr>      
+      <td>2021-01-01</td>
+      <td>9857</td>
+      <td>30000</td>
+      <td>juan</td>
     </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+    <tr>      
+      <td>2021-01-01</td>
+      <td>9874</td>
+      <td>30000</td>
+      <td>juan</td>
     </tr>
   </tbody>
 </table> 
@@ -43,4 +43,4 @@ export const Home = () => {
         </Fragment>
     )
 }
-export default Home
+export default Ventas
