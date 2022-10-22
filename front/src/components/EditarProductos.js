@@ -1,49 +1,57 @@
-import React, { Fragment } from 'react'
-
+import React, { Fragment } from "react";
+import {   MDBRow,  MDBCol,  MDBInput,  MDBFile,  MDBBtn, MDBTextArea } from 'mdb-react-ui-kit';
 const EditarProductos = () => {
   return (
     <Fragment>
-        <h1> Encabezado de editar Productos</h1>
-        <section id="productos" className='container mt-5'>
-
-
-        <div className='row'>
-        <div className='card p-3 rounded'>
-            <img className='card-img-top mx-auto col-3' src='./images/3TenisDeCueroTropicalC.jpg' alt="TropicalC"></img>
-            <div className='card-body d-flex flex-column'>
-                    <h5 id="titulo_producto"><a href='http://localhost:3000'>Tenis de cuero Tropical café</a></h5>
-                    <div className='rating mt-auto'>
-                        <div className='rating-outer'>
-                            <div className='rating-inner'></div>
+      <section id="productos" className="container mt-5">
+        <br />
+        <h1 class="fa fa-outdent fa-2x"> Editar Productos</h1>
+        <MDBRow>
+          <MDBCol md="5">
+          <div className='card p-3 rounded'>
+                            <img className='card-img-top mx-auto' src='./images/2tenisdecueroProvenza.jpg' alt="Provenza"></img>
+                            <div className='card-body d-flex flex-column'>
+                                <h5 id="titulo_producto"><a href='http://localhost:3000'>Tenis de cuero Provenza</a></h5>
+                                <div className='rating mt-auto'>
+                                    <div className='rating-outer'>
+                                        <div className='rating-inner'></div>
+                                    </div>
+                                    <span id="No_de_opiniones"> 4 reviews</span>
+                                </div>
+                                <p className='card-text'>$255.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
+                                    Ver detalle
+                                </a>
                             </div>
-                        <span id="No_de_opiniones"> 4 reviews</span>
-                    </div>
-                <p className='card-text'>$269.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>Ver detalle</a>
-            </div>
-        </div>
-        <div className='form col-3 ml-3r'>
-            
-        <form action="/action_page.php" className='form-inline justify-center' >
-            <div class="form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" id="email"></input>
-            </div>
-            <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd"></input>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-
-
-        </div>
-        </div>            
-
-        </section>
-
-    </Fragment>
+                        </div>
+          </MDBCol>
+          <MDBCol md="5">
+          <form className=" mt-5">
     
-  )
-}
+       <MDBRow className='mb-4 me-2'>
+        <MDBCol>
+          <MDBInput id='form6Example1' label='Producto # 65985' disabled/>
+        </MDBCol>
+        <MDBCol>
+          <MDBInput id='form6Example2' label='4' number disabled />
+        </MDBCol>
+      </MDBRow>
 
-export default EditarProductos
+      <MDBInput wrapperClass='mb-4' id='nombre_producto' label='Nombre' />
+      <MDBInput wrapperClass='mb-4' id='precio_producto' label='Precio' number />     
+      <MDBFile label='Imagen' id='imagen_producto' />
+
+       <MDBTextArea label='Message' id='textAreaExample' rows={4} className='mt-3 mb-3'/>
+      
+
+      <MDBBtn className='mb-4' type='submit' block>
+        Editar
+      </MDBBtn>
+    </form>
+          </MDBCol>
+        </MDBRow>
+      </section>
+    </Fragment>
+  );
+};
+
+export default EditarProductos;

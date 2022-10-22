@@ -6,6 +6,7 @@ import { Footer } from './components/layout/Footer';
 import ListaProductos from './components/ListaProductos';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Carrito from './components/Carrito';
+import EditarProductos from './components/EditarProductos';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
          <Route path='/listaproductos' element={<ListaProductos/>}></Route>
          <Route path='/ventas' element={<Ventas/>}></Route>
          <Route path='/carrito' element={<Carrito/>}></Route>
+         <Route path='/editarproducto' element={<EditarProductos/>}></Route>
+
         </Routes>
         </div>
       
