@@ -40,16 +40,16 @@ const Header = () => {
            <div className='font-weight-bold'>
            <ul className="nav navbar-light text-dark"style={{backgroundColor:navColor }}>
                 <li className="nav-item">
-                    <a className="nav-link text-dark" href="#">Active</a>
+                    <a className="nav-link text-dark" href="http://localhost:3000">Active</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link text-dark" href="#">Link</a>
+                    <a className="nav-link text-dark" href="http://localhost:3000">Link</a>
                 </li>
                 <li className="nav-item">
-                <a className="nav-link text-dark" href="#">Link</a>
+                <a className="nav-link text-dark" href="http://localhost:3000">Link</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link text-dark " href="#">Disabled</a>
+                    <a className="nav-link text-dark" href="http://localhost:3000">Disabled</a>
                 </li>
             </ul>
            </div> 

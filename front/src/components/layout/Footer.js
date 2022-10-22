@@ -2,8 +2,6 @@ import React, { Fragment } from 'react'
 import {
   MDBFooter,
   MDBContainer,
-  MDBCol,
-  MDBRow,
   MDBIcon,
   MDBBtn as MDBtn
 } from 'mdb-react-ui-kit';
