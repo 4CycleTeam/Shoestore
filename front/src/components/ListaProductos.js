@@ -1,11 +1,12 @@
-import React, { Fragment } from 'react'
+import React, { Fragment} from 'react'
 
-export const Home = () => {
+export const ListaProductos = () => {
 
 
     return (
         <Fragment>
             <h1 id="encabezado_productos">Ultimos Productos</h1>
+
             <section id="productos" className='container mt-5'>
                 <div className='row'>
                     {/*Producto 1*/}
@@ -150,4 +151,4 @@ export const Home = () => {
         </Fragment>
     )
 }
-export default Home
+export default ListaProductos
