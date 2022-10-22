@@ -5,7 +5,7 @@ const Header = () => {
 
     return (
         <Fragment>
-           <div className='mt-10'>
+           <div className='mt-10 fixed-top'>
            <nav className='navbar row bg-dark' >
                 <div className='col-12 col-md-3'>
                     <div className='navbar-brand' >
