@@ -8,38 +8,44 @@ export const Home = () => {
             <h1 id="encabezado_Ventas">Ventas</h1>
 
             <section id="productos" className='container mt-5'>
-            <table class="table table-striped">
+          
+            <h1  width="16"  class="bi bi-cash-coin"> Ventas</h1>
+          
+     <br/>
+
+<table class="table table-add_review">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Fecha de la Venta</th>
+      <th scope="col">Id de la Compra</th>
+      <th scope="col">Valor de la Compra</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>18-10-2022</td>
+      <td>01</td>
+      <td>1500.000</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <td>20-10-2022</td>
+      <td>02</td>
+      <td>456.000</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <td>21-10-2022</td>
+      <td>03</td>
+      <td>280.000</td>
     </tr>
   </tbody>
 </table> 
-            </section>
 
+
+            </section>
         </Fragment>
     )
 }

@@ -8,7 +8,7 @@ export const Carrito = () => {
            
             <section id="productos" className='container mt-5'>
                 <br/>
-            <h1  class="fa fa-shopping-cart fa-2x">Carrito de Compras</h1>
+            <h1  class="fa fa-shopping-cart fa-2x"> Carrito de Compras</h1>
           
                 <table class="table table-add_review">
 

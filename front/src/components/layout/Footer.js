@@ -77,6 +77,7 @@ export const Footer = () => {
         <a className='text-white' href='https://mdbootstrap.com/'>
           MDBootstrap.com
         </a>
+        
       </div>
     </MDBFooter>
     </Fragment>

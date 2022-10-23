@@ -28,10 +28,10 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-                    <span><button className='btn text-white' id="login_btn">Inicie Sesión</button></span>
+                    <a className="btn text-white" id="login_btn"  href='http://localhost:3000/login'>Inicie Sesión</a>
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     <i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
-                    <span className="ml-1" id="cart_count">2</span>
+                    <span className="ml-1" id="cart_count">4</span>
                 </div>           
             
 
