@@ -24,6 +24,9 @@ export const ListaProductos = () => {
                                 <p className='card-text'>$272.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>
+                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
+                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -42,6 +45,9 @@ export const ListaProductos = () => {
                                 </div>
                                 <p className='card-text'>$268.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
+                                </a>                                
+                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
+                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
                                 </a>
                             </div>
                         </div>
@@ -62,6 +68,9 @@ export const ListaProductos = () => {
                                 <p className='card-text'>$255.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>
+                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
+                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -80,6 +89,9 @@ export const ListaProductos = () => {
                                 </div>
                                 <p className='card-text'>$270.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
+                                </a>
+                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
+                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
                                 </a>
                             </div>
                         </div>
@@ -100,6 +112,9 @@ export const ListaProductos = () => {
                                 <p className='card-text'>$280.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>
+                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
+                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -119,6 +134,9 @@ export const ListaProductos = () => {
                                 <p className='card-text'>$269.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>
+                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
+                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -137,6 +155,9 @@ export const ListaProductos = () => {
                                 </div>
                                 <p className='card-text'>$255.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
+                                </a>
+                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
+                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
                                 </a>
                             </div>
                         </div>
