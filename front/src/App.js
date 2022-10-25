@@ -6,6 +6,9 @@ import { Footer } from './components/layout/Footer';
 import ListaProductos from './components/ListaProductos';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Carrito from './components/Carrito';
+import EditarProductos from './components/EditarProductos';
+import CrearProducto from './components/CrearProducto';
+import { Login } from './components/Login';
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
          <Route path='/listaproductos' element={<ListaProductos/>}></Route>
          <Route path='/ventas' element={<Ventas/>}></Route>
          <Route path='/carrito' element={<Carrito/>}></Route>
+         <Route path='/editarproducto' element={<EditarProductos/>}></Route>
+         <Route path='/crearproducto' element={<CrearProducto/>}></Route>
+         <Route path='/login' element={<Login/>}></Route>
         </Routes>
         </div>
       

@@ -2,8 +2,6 @@ import React, { Fragment } from 'react'
 import {
   MDBFooter,
   MDBContainer,
-  MDBCol,
-  MDBRow,
   MDBIcon,
   MDBBtn as MDBtn
 } from 'mdb-react-ui-kit';
@@ -79,6 +77,7 @@ export const Footer = () => {
         <a className='text-white' href='https://mdbootstrap.com/'>
           MDBootstrap.com
         </a>
+        
       </div>
     </MDBFooter>
     </Fragment>

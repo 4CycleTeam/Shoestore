@@ -5,9 +5,11 @@ export const Carrito = () => {
 
     return (
         <Fragment>
-            <h1 id="encabezado_productos">Carrito</h1>
+           
             <section id="productos" className='container mt-5'>
-
+                <br/>
+            <h1  class="fa fa-shopping-cart fa-2x"> Carrito de Compras</h1>
+          
                 <table class="table table-add_review">
 
                     <tbody>
