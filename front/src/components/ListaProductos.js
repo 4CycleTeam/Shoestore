@@ -164,8 +164,6 @@ export const ListaProductos = () => {
                     </div>
 
                     
-
-
                 </div>
             </section>
 
