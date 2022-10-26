@@ -1,20 +1,11 @@
-import './App.css';
-import React from 'react';
-import Header from './components/layout/Header';
+const express=require("express");
+const app = express();
 
-//Router traido desde react-router-dom (no confundir con el de express)
-//import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+app.use(express.json());
 
+//Importar rutas
+const productos=require("./rutas/rutasProductos")
 
-function App() {
-  return (
-    <Router>
-  <div className="App">
-        <Header />
-        <Footer />
-    </div>
-    </Router>
-  );
-}
+app.use('/api',productos) // (ruta del navegador)
 
-export default App;
+module.exports=app
