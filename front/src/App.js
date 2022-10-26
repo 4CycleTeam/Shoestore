@@ -19,6 +19,7 @@ function App() {
       <Header/>
       <div className="container container-fluid ">
         <Routes>
+        <Route path='/' element={<ListaProductos/>}></Route>
          <Route path='/listaproductos' element={<ListaProductos/>}></Route>
          <Route path='/ventas' element={<Ventas/>}></Route>
          <Route path='/carrito' element={<Carrito/>}></Route>
