@@ -11,7 +11,9 @@ export const Home = () => {
 
             <section id="productos" className='container mt-5'>
 
-        <h1  width="16"  class=""> Finalizar Compra</h1>
+        <br/>
+        <h1  width="16" class="fa fa-check-circle-o fa-2x"> Finalizar Compra</h1>
+        <br/>
 
         <MDBTable align='middle' small >
         <MDBTableHead>

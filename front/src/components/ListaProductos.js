@@ -4,10 +4,10 @@ export const ListaProductos = () => {
 
 
     return (
-        <Fragment>
-            <h1 id="encabezado_productos">Ultimos Productos</h1>
-
+        <Fragment>      
+            <br/>
             <section id="productos" className='container mt-5'>
+            <h1  width="16" class="fa fa-list-ul fa-2x"> Lista de Productos</h1>
                 <div className='row'>
                     {/*Producto 1*/}
                     <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
@@ -23,10 +23,8 @@ export const ListaProductos = () => {
                                 </div>
                                 <p className='card-text'>$272.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
-                                </a>
-                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
-                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
-                                </a>
+                                    </a>                                
+                              
                             </div>
                         </div>
                     </div>
@@ -46,9 +44,7 @@ export const ListaProductos = () => {
                                 <p className='card-text'>$268.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>                                
-                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
-                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
-                                </a>
+                              
                             </div>
                         </div>
                     </div>
@@ -68,9 +64,7 @@ export const ListaProductos = () => {
                                 <p className='card-text'>$255.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>
-                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
-                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
-                                </a>
+                               
                             </div>
                         </div>
                     </div>
@@ -90,9 +84,7 @@ export const ListaProductos = () => {
                                 <p className='card-text'>$270.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>
-                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
-                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
-                                </a>
+                              
                             </div>
                         </div>
                     </div>
@@ -112,9 +104,7 @@ export const ListaProductos = () => {
                                 <p className='card-text'>$280.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>
-                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
-                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
-                                </a>
+                               
                             </div>
                         </div>
                     </div>
@@ -134,9 +124,7 @@ export const ListaProductos = () => {
                                 <p className='card-text'>$269.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>
-                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
-                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
-                                </a>
+                               
                             </div>
                         </div>
                     </div>
@@ -156,9 +144,7 @@ export const ListaProductos = () => {
                                 <p className='card-text'>$255.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                     Ver detalle
                                 </a>
-                                <a href='http://localhost:3000/carrito' id="view_btn" className='btn btn-block'>
-                                <i class="fa fa-shopping-cart fa-2x text-black" aria-hidden="false"></i>
-                                </a>
+                               
                             </div>
                         </div>
                     </div>

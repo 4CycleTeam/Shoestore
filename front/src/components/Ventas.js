@@ -5,11 +5,11 @@ export const Home = () => {
 
     return (
         <Fragment>
-            <h1 id="encabezado_Ventas">Ventas</h1>
+          
 
             <section id="productos" className='container mt-5'>
-          
-            <h1  width="16"  class="bi bi-cash-coin"> Ventas</h1>
+              <br/>
+            <h1  width="16" class="fa fa-money fa-2x"> Ventas</h1>
           
      <br/>
 
