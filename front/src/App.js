@@ -10,7 +10,9 @@ import EditarProductos from './components/EditarProductos';
 import CrearProducto from './components/CrearProducto';
 import FinalizarCompra from './components/FinalizarCompra';
 import { Login } from './components/Login';
-import DetallesProducto from './components/DetallesProducto';
+import { ProductDetails } from './components/ProductDetails';
+
+
 
 function App() {
   return (
@@ -26,8 +28,10 @@ function App() {
          <Route path='/editarproducto' element={<EditarProductos/>}></Route>
          <Route path='/crearproducto' element={<CrearProducto/>}></Route>
          <Route path='/finalizarcompra' element={<FinalizarCompra/>}></Route>
+         <Route path='/productodetalles' element={<ProductDetails/>}/>
+
          <Route path='/login' element={<Login/>}></Route>
-         <Route path='/detallesproducto' element={<DetallesProducto/>}></Route>
+       
         </Routes>
         </div>
       
