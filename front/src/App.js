@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { MDBContainer, MDBRow } from 'mdb-react-ui-kit';
+import { MDBContainer} from 'mdb-react-ui-kit';
 import Header from './components/layout/Header';
 import Ventas from './components/Ventas';
 import { Footer } from './components/layout/Footer';
@@ -11,8 +11,6 @@ import EditarProductos from './components/EditarProductos';
 import CrearProducto from './components/CrearProducto';
 import FinalizarCompra from './components/FinalizarCompra';
 import { Login } from './components/Login';
-import { ProductDetails } from './components/ProductDetails';
-
 
 
 function App() {
@@ -32,7 +30,7 @@ function App() {
             <Route path='/crearproducto' element={<CrearProducto />}></Route>
             <Route path='/finalizarcompra' element={<FinalizarCompra />}></Route>
             <Route path='/login' element={<Login />}></Route>
-            <Route path='/detallesproducto' element={<DetallesProducto />}></Route>
+            
           </Routes>
 
 
