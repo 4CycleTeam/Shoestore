@@ -11,7 +11,9 @@ import EditarProductos from './components/EditarProductos';
 import CrearProducto from './components/CrearProducto';
 import FinalizarCompra from './components/FinalizarCompra';
 import { Login } from './components/Login';
-import DetallesProducto from './components/DetallesProducto';
+import { ProductDetails } from './components/ProductDetails';
+
+
 
 function App() {
   return (

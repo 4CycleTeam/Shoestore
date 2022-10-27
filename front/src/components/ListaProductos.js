@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import { MDBContainer, MDBRow } from 'mdb-react-ui-kit';
 
+
+
 export const ListaProductos = () => {
 
 
@@ -49,6 +51,10 @@ export const ListaProductos = () => {
 
                                     </div>
                                 </div>
+                                <p className='card-text'>$255.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
+                                    Ver detalle
+                                </a>
+
                             </div>
 
                             {/*Producto 3*/}
