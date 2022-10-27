@@ -8,9 +8,9 @@ import {
 export const Footer = () => {
   return (
     <Fragment>
-      <MDBFooter className='bg-light text-center text-white'>
+      <MDBFooter className='bg-dark text-center text-white'>
         <MDBContainer className='p-2 pb-0'>
-          <section className='mb-2'>
+          <section className='mb-2 '>
             <MDBtn floating className='m-1' style={{ backgroundColor: '#3b5998' }}href='#!' role='button' >
               <MDBIcon fab icon='facebook-f' />
             </MDBtn>
@@ -66,9 +66,9 @@ export const Footer = () => {
           </section>
         </MDBContainer>
 
-        <div className='text-center p-2' style={{ backgroundColor: '#212529' }}>
+        <div className='text-center p-0' style={{ backgroundColor: '#212529' }}>
           © 2020 Copyright:
-          <a className='text-white' href='https://mdbootstrap.com/'>
+          <a className='text-white p-0' href='https://mdbootstrap.com/'>
             4Cycle Shoestore
           </a>
 
