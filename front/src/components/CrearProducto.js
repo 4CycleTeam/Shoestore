@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
-import { MDBRow, MDBCol, MDBInput, MDBFile, MDBBtn, MDBTextArea } from 'mdb-react-ui-kit';
+import { MDBContainer,MDBRow, MDBCol, MDBInput, MDBFile, MDBBtn, MDBTextArea } from 'mdb-react-ui-kit';
 const CrearProducto = () => {
   return (
     <Fragment>
+      <MDBContainer fluid>
+                <MDBRow className='my-5 justify-content-center align-items-center h-100'>
       <section id="productos" className="container mt-5 ">
         <br />
         <h1 class="fa fa-outdent fa-2x"> Crear Productos</h1>
@@ -43,6 +45,8 @@ const CrearProducto = () => {
         </table>
 
       </section>
+      </MDBRow>
+    </MDBContainer>  
     </Fragment>
   );
 };
