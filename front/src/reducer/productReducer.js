@@ -1,4 +1,6 @@
-import { ALL_PRODUCTS_REQUEST, 
+import { 
+        
+    ALL_PRODUCTS_REQUEST, 
     ALL_PRODUCTS_SUCCESS, 
     ALL_PRODUCTS_FAIL,
     PRODUCT_DETAILS_REQUEST,
@@ -27,12 +29,13 @@ switch(action.type){
             error: action.payload
         }
 
-        case CLEAR_ERRORS:
-            return{
-                ...state,
-                error:null
-            }
-        
+    case CLEAR_ERRORS:
+        return{
+            ...state,
+            error:null
+        }
+  
+    
 
     default:
         return state;

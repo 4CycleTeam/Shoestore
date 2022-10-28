@@ -13,12 +13,12 @@ const DetallesProducto = () => {
                 </div>
 
                 <div className='col-12 col-lg-5 mt-5'>
-                <h1 class="fa fa-tasks fa-2x">  Destalles del producto</h1>
+                <h1 class="fa fa-tasks fa-2x"> Destalles del producto</h1>
                 <br/>
                 <br/>
                     <h3>Tenis de Cuero Provenza</h3>
                     <br/>
-                    <p id="product_id">Product #3253251</p>
+                    <p id="product_id">Producto #3253251</p>
                     <hr />
                     <div className='rating mt-auto'>
                         <div className='rating-outer'>
