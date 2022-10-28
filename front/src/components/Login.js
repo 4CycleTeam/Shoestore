@@ -5,10 +5,13 @@ import { MDBRow, MDBCol, MDBInput, MDBCard, MDBBtn, MDBCardBody, MDBContainer } 
 export const Login = () => {
     return (
         <Fragment>
+           
 
             <MDBContainer fluid>
                 <MDBRow className='my-5 justify-content-center align-items-center h-100'>
+                  
                     <MDBCard className='bg-white my-5 mx-auto' style={{ borderRadius: '1rem', maxWidth: '500px' }}>
+                    <div className="login">  
                         <MDBCardBody className='p-5 w-100 d-flex flex-column'>
                             <MDBCol className='mb-5'>
                                 <div className='text-center mb-5'>
@@ -28,13 +31,14 @@ export const Login = () => {
                                     <p className="mb-0">Aun no tienes cuenta?</p>
                                     <MDBBtn outline className='mx-2' color='danger'>Crear cuenta</MDBBtn>
                                 </div>
-
                             </MDBCol>
                         </MDBCardBody>
+                        </div>
                     </MDBCard>
+                   
                 </MDBRow>
             </MDBContainer>
-
+           
         </Fragment>
     )
 }

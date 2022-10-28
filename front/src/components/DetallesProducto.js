@@ -13,7 +13,11 @@ const DetallesProducto = () => {
                 </div>
 
                 <div className='col-12 col-lg-5 mt-5'>
-                    <h3>Tenis de cuero provenza</h3>
+                <h1 class="fa fa-tasks fa-2x">  Destalles del producto</h1>
+                <br/>
+                <br/>
+                    <h3>Tenis de Cuero Provenza</h3>
+                    <br/>
                     <p id="product_id">Product #3253251</p>
                     <hr />
                     <div className='rating mt-auto'>
@@ -24,8 +28,10 @@ const DetallesProducto = () => {
                         <span id="No_de_opiniones">{5} Reviews</span>
                         <hr />
                         <p id="precio_producto">$75.000</p>
+                        
                         <div className="stockCounter d-inline">
                             <span className="btn btn-danger minus" >-</span>
+                            &nbsp; &nbsp; &nbsp;
                             <span className="btn btn-primary plus" >+</span>
                         </div>
                         <hr />

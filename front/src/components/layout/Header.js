@@ -49,12 +49,16 @@ const Header = () => {
           <img src="./images/ShoestoreLogo.png" alt="Shoes Store Logo" height='50'
               loading='lazy'></img>
           </MDBNavbarBrand>
+
+     
           <div className="text-center">
           <form className='d-flex input-group w-auto'>
             <input type='search' className='form-control' placeholder='Type query' aria-label='Search' />
             <MDBBtn color='primary'>Search</MDBBtn>
           </form>
           </div>
+         
+
           <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
                         <a className="btn text-white" id="login_btn"  href='http://localhost:3000/login'>Inicie Sesión</a>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

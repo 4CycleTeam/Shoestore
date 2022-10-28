@@ -67,11 +67,7 @@ export const Footer = () => {
         </MDBContainer>
 
         <div className='text-center p-0' style={{ backgroundColor: '#212529' }}>
-          © 2020 Copyright:
-          <a className='text-white p-0' href='https://mdbootstrap.com/'>
-            4Cycle Shoestore
-          </a>
-
+          © 2020 Copyright: 4Cycle Shoestore
         </div>
       </MDBFooter>
     </Fragment>
