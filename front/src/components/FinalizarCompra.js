@@ -142,7 +142,14 @@ export const Home = () => {
                                     <td>$ 817.732</td>
                                 </tr>
                             </tfoot>
+                            
                         </MDBTable>
+                      
+                                        <MDBBtn className="btn btn-dark btn-rounded btn-lg">
+                                            Pagar
+                                        </MDBBtn>
+                                 
+
 
                     </section>
 
