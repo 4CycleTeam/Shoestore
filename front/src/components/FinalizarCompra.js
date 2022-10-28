@@ -8,7 +8,7 @@ export const Home = () => {
     return (
         <Fragment>
             <MDBContainer fluid>
-                <MDBRow className='my-5 justify-content-center align-items-center h-100'>
+                <MDBRow className='my-5 justify-content-center align-items-center h-100 '>
 
                     <section id="productos" className='container mt-5'>
 
@@ -30,13 +30,13 @@ export const Home = () => {
                                     
                                 </tr>
                                 <tr>
-                                    <th scope='col'>Ítem</th>
-                                    <th scope='col'>Cantidad</th>
-                                    <th scope='col'>Producto</th>
-                                    <th scope='col'>Detalle del producto</th>
-                                    <th scope='col'>Valor </th>
-                                    <th scope='col'>Total</th>
-                                    <th scope='col'>Actions</th>
+                                    <th scope='col'><b>Ítem</b></th>
+                                    <th scope='col'><b>Cantidad</b> </th>
+                                    <th scope='col'><b>Producto</b></th>
+                                    <th scope='col'><b>Detalle del producto</b></th>
+                                    <th scope='col'><b>Valor</b></th>
+                                    <th scope='col'><b>Total</b></th>
+                                    <th scope='col'><b>Actions</b></th>
                                 </tr>
                             </MDBTableHead>
                             <MDBTableBody>
@@ -129,13 +129,17 @@ export const Home = () => {
                             </MDBTableBody>
                             <tfoot>
                                 <tr>
-                                    <td colSpan={5} class=".float-.float-left">Subtotal</td>
+                                    <td colSpan={5} class="list-unstyled text-end">Subtotal</td>
 
-                                    <td>Footer</td>
+                                    <td>$ 687.170</td>
                                 </tr>
                                 <tr>
-                                    <td colSpan={5} class=".float-.float-left">Total</td>
-                                    <td>Footer</td>
+                                    <td colSpan={5} class="list-unstyled text-end">Iva 19%</td>
+                                    <td>$ 130.562</td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={5} class="list-unstyled text-end">Total</td>
+                                    <td>$ 817.732</td>
                                 </tr>
                             </tfoot>
                         </MDBTable>
