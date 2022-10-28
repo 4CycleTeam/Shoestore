@@ -1,10 +1,15 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { MDBContainer, MDBRow } from 'mdb-react-ui-kit';
+import { useDispatch } from 'react-redux';  
+import { getProducts } from '../actions/productActions';
+
 
 
 
 export const ListaProductos = () => {
+    const dispatch = useDispatch();
 
+    useEffect( () => { dispatch(getProducts()); }, [dispatch])
 
     return (
         <Fragment>
@@ -51,9 +56,7 @@ export const ListaProductos = () => {
 
                                     </div>
                                 </div>
-                                <p className='card-text'>$255.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
-                                    Ver detalle
-                                </a>
+                                
                             </div>
 
                             {/*Producto 3*/}
