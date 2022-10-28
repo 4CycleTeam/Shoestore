@@ -11,6 +11,7 @@ import EditarProductos from './components/EditarProductos';
 import CrearProducto from './components/CrearProducto';
 import FinalizarCompra from './components/FinalizarCompra';
 import { Login } from './components/Login';
+import DetallesProducto from './components/DetallesProducto';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path='/editarproducto' element={<EditarProductos />}></Route>
             <Route path='/crearproducto' element={<CrearProducto />}></Route>
             <Route path='/finalizarcompra' element={<FinalizarCompra />}></Route>
+            <Route path='/detallesproducto' element={<DetallesProducto />}></Route>
             <Route path='/login' element={<Login />}></Route>
             
           </Routes>
