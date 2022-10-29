@@ -128,7 +128,7 @@ Subtotal: $1.089.000
                                             <div className='col-sm-12 col-md-6 col-lg-3 my-3'>        <p className='card-text'></p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
                                                 Vaciar Carrito
                                             </a>
-                                                <p className='card-text'></p><a href='http://localhost:3000' id="view_btn" className='btn btn-block'>
+                                                <p className='card-text'></p><a href='http://localhost:3000/finalizarcompra' id="view_btn" className='btn btn-block'>
                                                     Finalizar Compra
                                                 </a>
                                             </div>

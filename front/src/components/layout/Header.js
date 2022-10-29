@@ -62,7 +62,7 @@ const Header = () => {
           <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
                         <a className="btn text-white" id="login_btn"  href='http://localhost:3000/login'>Inicie Sesión</a>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
+                        <a class="fa fa-shopping-cart fa-2x text-white aria-hidden=false" href='http://localhost:3000/carrito' >.</a>
                         <span className="ml-1" id="cart_count">4</span>
                     </div>   
         </MDBContainer>
