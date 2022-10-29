@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { MDBContainer} from 'mdb-react-ui-kit';
+import { MDBContainer, MDBRow} from 'mdb-react-ui-kit';
 import Header from './components/layout/Header';
 import Ventas from './components/Ventas';
 import { Footer } from './components/layout/Footer';
@@ -36,9 +36,9 @@ function App() {
           </Routes>
 
 
-          
+          <MDBRow className='my-5 justify-content-center align-items-center h-100'>
             <Footer />
-         
+            </MDBRow>
         </MDBContainer>
       </div>
 

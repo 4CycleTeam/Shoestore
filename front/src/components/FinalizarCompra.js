@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { MDBRow,MDBContainer,MDBBtn, MDBTable, MDBTableHead, MDBTableBody, MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
+import { MDBRow, MDBContainer, MDBBtn, MDBTable, MDBTableHead, MDBTableBody, MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
 
 
 export const Home = () => {
@@ -7,7 +7,7 @@ export const Home = () => {
 
     return (
         <Fragment>
-            <MDBContainer fluid>
+            <MDBContainer>
                 <MDBRow className='my-5 justify-content-center align-items-center h-100 '>
 
                     <section id="productos" className='container mt-5'>
@@ -20,14 +20,14 @@ export const Home = () => {
                             <MDBTableHead >
                                 <tr>
                                     <td colSpan={7} class=".float-.float-left">
-                                    <p className="text-start"><b>Dirección de envio <br/></b>
-                                    Cra 21 # 18-21 Apto 401- Bloque 1<br/>
-                                    Ximena Campo<br/>
-                                    Bogotá D,C - Cundinamarca<br/>
-                                    </p>
-                                                                        
+                                        <p className="text-start"><b>Dirección de envio <br /></b>
+                                            Cra 21 # 18-21 Apto 401- Bloque 1<br />
+                                            Ximena Campo<br />
+                                            Bogotá D,C - Cundinamarca<br />
+                                        </p>
+
                                     </td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <th scope='col'><b>Ítem</b></th>
@@ -54,7 +54,7 @@ export const Home = () => {
                                             </MDBDropdownMenu>
                                         </MDBDropdown></td>
                                     <td>
-                                        <div className='d-flex text-center'>
+                                        <div className='text-center'>
                                             <img
                                                 src='./images/9TenisdecueroAlmendro.jpg'
                                                 alt=''
@@ -69,7 +69,7 @@ export const Home = () => {
                                         <p className='text-muted mb-0'>Color Almendro</p>
                                         <p className='text-muted mb-0'>Talla 34</p>
                                         <p></p>
-                                        
+
                                     </td>
                                     <td>
                                         <p className='text-muted mb-0'> $ 343.585</p>
@@ -98,7 +98,7 @@ export const Home = () => {
                                             </MDBDropdownMenu>
                                         </MDBDropdown></td>
                                     <td>
-                                        <div className='d-flex align-items-center'>
+                                        <div className='align-items-center'>
                                             <img
                                                 src='./images/4TenisdeportivosdecueroTropicalN.jpg'
                                                 alt=''
@@ -113,7 +113,7 @@ export const Home = () => {
                                         <p className='text-muted mb-0'>Color Almendro</p>
                                         <p className='text-muted mb-0'>Talla 34</p>
                                         <p></p>
-                                        
+
                                     </td>
                                     <td>
                                         <p className='text-muted mb-0'> $ 343.585</p>
@@ -142,14 +142,14 @@ export const Home = () => {
                                     <td>$ 817.732</td>
                                 </tr>
                             </tfoot>
-                            
-                        </MDBTable>
-                      
-                                        <MDBBtn className="btn btn-dark btn-rounded btn-lg">
-                                            Pagar
-                                        </MDBBtn>
-                                 
 
+                        </MDBTable>
+                        <div >
+                            <MDBBtn className="btn btn-dark btn-rounded btn-lg">
+                                Pagar
+                            </MDBBtn>
+
+                        </div>
 
                     </section>
 
