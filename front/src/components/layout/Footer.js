@@ -14,7 +14,7 @@ export const Footer = () => {
       <MDBFooter className='bg-dark text-center text-white container-fluid '>
       
         <MDBContainer className='p-1 pb-0'>
-          <section className='mb-2 '>
+          <section className='mb-0 '>
             <MDBtn floating className='m-1' style={{ backgroundColor: '#3b5998' }}href='#!' role='button' >
               <MDBIcon fab icon='facebook-f' />
             </MDBtn>
