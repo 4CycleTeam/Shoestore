@@ -34,9 +34,9 @@ function App() {
             <Route path='/finalizarcompra' element={<FinalizarCompra />}></Route>
             <Route path='/login' element={<Login />}></Route>
      
+
             
           </Routes>
-
 
           <MDBRow className='my-5 justify-content-center align-items-center h-100'>
             <Footer />
