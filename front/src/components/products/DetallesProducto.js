@@ -49,13 +49,13 @@ return (
      <MetaData title={product.nombre}></MetaData>
      <div className='row d-flex justify-content-around'>
          <div className='col-12 col-lg-5 img-fluid' id="imagen_producto">
-             <Carousel pause='hover'>
+            
                {product.imagen && product.imagen.map(img =>(
-                 <Carousel.Item key={img.public_id}>
+               
                    <img className="d-block w-100" src={"../"+img.url} alt={product.nombre}></img>
-                 </Carousel.Item>
+               
                ))}
-             </Carousel>
+            
          </div>
 
          <div className='col-12 col-lg-5 mt-5'>
