@@ -5,14 +5,16 @@ import {
   MDBIcon,
   MDBBtn as MDBtn
 } from 'mdb-react-ui-kit';
+
+
 export const Footer = () => {
   return (
     <Fragment>
-        <div className='mt-10 fixed-bottom'>
-      <MDBFooter className='bg-dark text-center text-white container-fluid'>
+        <div className='mt-10 fixed-bottom' >
+      <MDBFooter className='bg-dark text-center text-white container-fluid '>
       
-        <MDBContainer className='p-2 pb-0'>
-          <section className='mb-0 '>
+        <MDBContainer className='p-1 pb-0'>
+          <section className='mb-2 '>
             <MDBtn floating className='m-1' style={{ backgroundColor: '#3b5998' }}href='#!' role='button' >
               <MDBIcon fab icon='facebook-f' />
             </MDBtn>
@@ -68,8 +70,8 @@ export const Footer = () => {
           </section>
         </MDBContainer>
 
-        <div className='text-center p-0' style={{ backgroundColor: '#212529' }}>
-          © 2020 Copyright: 4Cycle Shoestore
+        <div className='text-center' style={{ backgroundColor: '#212529' }}>
+       © 2020 Copyright: 4Cycle Shoestore
         </div>
       
       </MDBFooter>

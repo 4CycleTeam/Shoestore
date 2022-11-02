@@ -43,7 +43,7 @@ switch(action.type){
 }
 
 //REDUCER PARA TENER TODOS LOS DETALLES
-export const productDetailsReducer = (state = { product: {} }, action) => {
+export const productDetailsReducer = (state = { producto: {} }, action) => {
 switch (action.type) {
 
     case PRODUCT_DETAILS_REQUEST:
@@ -55,7 +55,7 @@ switch (action.type) {
     case PRODUCT_DETAILS_SUCCESS:
         return {
             loading: false,
-            product: action.payload
+            producto: action.payload
         }
 
     case PRODUCT_DETAILS_FAIL:
