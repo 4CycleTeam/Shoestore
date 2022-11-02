@@ -28,9 +28,9 @@ export const ListaProductos = () => {
                     <MDBContainer fluid>
                     <MDBRow className='my-5 justify-content-center align-items-center h-100'>
                     <section id="productos" className='container mt-5'>
-                        <h1 width="16" class="fa fa-list-ul fa-2x"> Lista de Productos</h1>
+                    <h1 width="16" class="fa fa-list-ul fa-2x"> Lista de Productos</h1>
                         <div className='row'>
-                        {productos && productos.map (producto => (
+                    {productos && productos.map (producto => (
                         <div key={producto._id} className='col-sm-12 col-md-6 col-lg-3 my-3'>
                         <div className='card p-3 rounded'>
                                 <img className='card-img-top mx-auto' src={producto.imagen[0].url} alt={producto.imagen[0].public_id}></img>
@@ -46,11 +46,11 @@ export const ListaProductos = () => {
                                     Ver detalle
                                 </Link>
 
-                                    </div>
+                           
                                 </div>
                             </div>
-
-                                 ))}
+                        </div>                  
+    ))}
                         </div>
                         
                         </section>

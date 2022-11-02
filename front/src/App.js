@@ -33,6 +33,8 @@ function App() {
             <Route path='/crearproducto' element={<CrearProducto />}></Route>
             <Route path='/finalizarcompra' element={<FinalizarCompra />}></Route>
             <Route path='/login' element={<Login />}></Route>
+     
+            
           </Routes>
 
 
