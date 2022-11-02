@@ -23,8 +23,7 @@ const Header = () => {
                             <input
                                 type="text"
                                 id="search_field"
-                                class="form-control"
-                                placeholder='Que producto busca?'></input>
+                                class="form-control" placeholder='Que producto busca?'></input>
                             <div class="input-group-append">
                                 <button id="search-btn" class="btn">
                                     <i class="fa fa-search-plus fa-2x text-white" aria-hidden="true"></i>
