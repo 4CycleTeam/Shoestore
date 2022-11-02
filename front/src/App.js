@@ -11,7 +11,7 @@ import EditarProductos from './components/EditarProductos';
 import CrearProducto from './components/CrearProducto';
 import FinalizarCompra from './components/FinalizarCompra';
 import { Login } from './components/Login';
-import { DetallesProducto } from './components/products/DetallesProducto';
+import { DetallesProducto } from './components/products/DetallesProducto'
 
 
 
@@ -26,7 +26,7 @@ function App() {
           <Routes>
             <Route path='/' element={<ListaProductos />}></Route>
             <Route path='/listaproductos' element={<ListaProductos />}></Route>
-            <Route path="/producto/:id" element={<DetallesProducto />}/>
+            <Route path='/producto/:id' element={<DetallesProducto />}/>
             <Route path='/ventas' element={<Ventas />}></Route>
             <Route path='/carrito' element={<Carrito />}></Route>
             <Route path='/editarproducto' element={<EditarProductos />}></Route>
