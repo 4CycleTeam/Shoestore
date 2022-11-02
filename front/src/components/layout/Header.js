@@ -44,7 +44,7 @@ const Header = () => {
          <div className='mt-10 fixed-top'>
          <MDBNavbar light bgColor='dark' fixed-top>
         <MDBContainer fluid>
-          <MDBNavbarBrand href='#'>
+          <MDBNavbarBrand href='http://localhost:3000/listaproductos'>
           <img src="./images/ShoestoreLogo.png" alt="Shoes Store Logo" height='50'
               loading='lazy'></img>
           </MDBNavbarBrand>
