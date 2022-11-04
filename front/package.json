@@ -11,6 +11,7 @@
     "bootstrap-icons": "^1.9.1",
     "dispatch": "^1.0.2",
     "mdb-react-ui-kit": "^4.2.0",
+    "mdbreact": "^5.2.0",
     "node-loading": "^1.1.1",
     "react": "^18.2.0",
     "react-alert": "^7.0.3",

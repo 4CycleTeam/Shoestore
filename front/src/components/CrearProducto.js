@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { MDBContainer,MDBRow, MDBCol, MDBInput, MDBFile, MDBBtn, MDBTextArea } from 'mdb-react-ui-kit';
+//import Sidebar from './Sidebar'
 const CrearProducto = () => {
   return (
     <Fragment>

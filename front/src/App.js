@@ -11,7 +11,9 @@ import EditarProductos from './components/EditarProductos';
 import CrearProducto from './components/CrearProducto';
 import FinalizarCompra from './components/FinalizarCompra';
 import { Login } from './components/Login';
-import { DetallesProducto } from './components/products/DetallesProducto'
+import { DetallesProducto } from './components/products/DetallesProducto';
+import Dashboard from './components/admin/Dashboard';
+import ProductsList from './components/admin/ProductsList';
 
 
 
@@ -22,6 +24,7 @@ function App() {
         <MDBContainer fluid>
 
           <Header />
+          
 
           <Routes>
             <Route path='/' element={<ListaProductos />}></Route>
@@ -33,10 +36,14 @@ function App() {
             <Route path='/crearproducto' element={<CrearProducto />}></Route>
             <Route path='/finalizarcompra' element={<FinalizarCompra />}></Route>
             <Route path='/login' element={<Login />}></Route>
-     
-
+            <Route path="/dashboard" element={<Dashboard />}/>
+            <Route path="/productList" element={<ProductsList />}/>
+          
             
+     
+           
           </Routes>
+     
 
           <MDBRow className='my-5 justify-content-center align-items-center h-100'>
             <Footer />

@@ -447,11 +447,10 @@ body {
 
 .sidebar-wrapper {
   display: flex;
-  width: 100%;
+  width: auto;
   align-items: stretch;
   min-height: 100vh;
   font-weight: normal;
-
   margin-top: 0;
   height: 100%;
   left: 0;
@@ -459,23 +458,31 @@ body {
   z-index: 10;
 }
 #sidebar {
-  min-width: 100%;
-  max-width: 100%;
-  background: #232f3e;
-  color: #fff;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  z-index: 996;
   transition: all 0.3s;
+  padding: 20px;
+  scrollbar-width: thin;
+  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+  background: #252525;
+  color: #fff;
 }
+
 #sidebar.active {
   margin-left: -250px;
 }
 
 #sidebar .sidebar-header {
-  padding: 20px;
-  background: #232f3e;
+  padding: 10px;
+  background: #1B4F72;
 }
 #sidebar ul.components {
   padding: 5px 0px;
-  border-bottom: 1px solid #232f3e;
+  border-bottom: 1px solid #4a6483;
 }
 
 #sidebar ul li a {
@@ -486,7 +493,7 @@ body {
   text-decoration: none;
 }
 #sidebar ul li a:hover {
-  color: #232f3e;
+  color:#584f2e;
   background: #fff;
 }
 
@@ -513,7 +520,7 @@ a[data-toggle='collapse'] {
 ul ul a {
   font-size: 1rem !important;
   padding-left: 30px !important;
-  background: #232f3e;
+  background: #3e3f3f;
 }
 
 ul.CTAs {
@@ -606,7 +613,7 @@ ul.CTAs a {
 .footer{
   margin-top: 1rem;
   padding: 0%;
-  background-color: rgb(235, 195, 64);
+  background-color: #ebc340;
   position: fixed;
   bottom: 0;
   left: 0;

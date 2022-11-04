@@ -1,7 +1,7 @@
 const express=require("express")
 const router=express.Router();
 
-const {getProducts, newProduct, getProductById, updateProduct, deleteProduct} = require("../controladores/controladorProductos") //Respuesta json desde el controlador
+const {getProducts, newProduct, getProductById, updateProduct, deleteProduct} = require("../controllers/controladorProductos") //Respuesta json desde el controlador
 
 router.route('/productos').get(getProducts)  //Ruta ver productos
 router.route('/producto/nuevo').post(newProduct); //Ruta crear producto

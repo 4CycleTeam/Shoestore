@@ -107,7 +107,7 @@ input[type="submit"].button:hover {
 }
 .mobileclass {
   background: #f2f2f2;
-  background: rgba(0, 0, 0, 0.05);
+  background: #0000000d;
 }
 .headerclass {
   background: #fff;
