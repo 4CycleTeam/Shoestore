@@ -2,6 +2,8 @@ const User = require("../models/auth")
 const ErrorHandler= require("../utils/errorHandler")
 const catchAsyncErrors= require("../middleware/catchAsyncErrors");
 const tokenEnviado = require("../utils/jwtToken");
+const sendEmail = require("../utils/sendEmail")
+const crypto = require("crypto")
 
 //Registrar un nuevo usuario /api/usuario/registro
 exports.registroUsuario= catchAsyncErrors(async (req, res, next) =>{
