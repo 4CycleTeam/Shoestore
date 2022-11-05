@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-const { options } = require("../app");
+
 
 const sendEmail = async options =>{
     const transport = nodemailer.createTransport({
@@ -8,12 +8,11 @@ const sendEmail = async options =>{
         auth: {
           user: "darioben98@hotmail.com",
           pass: "henrqatmgequmcmh"
-          //user: "isauraeckar@hotmail.com",
-          //pass: "yruriqqtjgkhqnci"
+      
         }
       });
       const mensaje = {
-        from: "Shop Project <darioben98@hotmail.com>",
+        from: "ShoeStore Project <darioben98@hotmail.com>",
         to:options.email,
         subject:options.subject,
         text: options.mensaje

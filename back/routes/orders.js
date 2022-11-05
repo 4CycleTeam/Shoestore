@@ -11,7 +11,7 @@ const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
 router.route("/order/new").post(isAuthenticatedUser, newOrder)
 router.route("/order/:id").get(isAuthenticatedUser, getOneOrder)
-router.route("/orders/me").get(isAuthenticatedUser, myOrders)
+router.route("/orders/user").get(isAuthenticatedUser, myOrders)
 
 
 //rutas de admin
@@ -21,3 +21,5 @@ router.route("/admin/order/:id").delete(isAuthenticatedUser, authorizeRoles("adm
 
 
 module.exports=router;
+
+

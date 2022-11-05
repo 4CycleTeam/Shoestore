@@ -105,12 +105,12 @@ exports.forgotPassword = catchAsyncErrors ( async( req, res, next) =>{
 
     const mensaje=`Hola!\n\nTu link para ajustar una nueva contraseña es el 
     siguiente: \n\n${resetUrl}\n\n
-    Si no solicitaste este link, por favor comunicate con soporte.\n\n Att:\nVetyShop Store`
+    Si no solicitaste este link, por favor comunicate con soporte.\n\n Att:\nShoeStore`
 
     try{
         await sendEmail({
             email:user.email,
-            subject: "VetyShop Recuperación de la contraseña",
+            subject: "ShoeStore Recuperación de la contraseña",
             mensaje
         })
         res.status(200).json({
@@ -249,5 +249,23 @@ exports.updateUser= catchAsyncErrors (async(req, res, next)=>{
     res.status(200).json({
         success:true,
         user
+    })
+})
+
+
+//Eliminar usuario (admin)
+exports.deleteUser= catchAsyncErrors (async (req, res, next)=>{
+    const user = await User.findById(req.params.id);
+
+    if(!user){
+        return next(new ErrorHandler(`Usuario con id: ${req.params.id} 
+        no se encuentra en nuestra base de datos`))
+    }
+
+    await user.remove();
+
+    res.status(200).json({
+        success:true,
+        message:"Usuario eliminado correctamente"
     })
 })
