@@ -16,20 +16,6 @@ const Header = () => {
             <div className='mt-10 fixed-top'>
                 <nav className='navbar row ' >
                    
-
-                    <div className='col-12 col-md-4 mt-2 mt-md-0'>
-                        <div className="input-group">
-                            <input
-                                type="text"
-                                id="search_field"
-                                class="form-control" placeholder='Que producto busca?'></input>
-                            <div class="input-group-append">
-                                <button id="search-btn" class="btn">
-                                    <i class="fa fa-search-plus fa-2x text-white" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                     <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
                         <a className="btn text-white" id="login_btn" href='http://localhost:3000/login'>Inicie Sesión</a>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -51,8 +37,8 @@ const Header = () => {
 
                             <div className="text-center">
                                 <form className='d-flex input-group w-auto'>
-                                    <input type='search' className='form-control' placeholder='Type query' aria-label='Search' />
-                                    <MDBBtn color='primary'>Search</MDBBtn>
+                                    <input type='search' className='form-control' placeholder='¿Qué producto buscas?' aria-label='Search' />
+                                    <MDBBtn color='primary'>Buscar</MDBBtn>
                                 </form>
                             </div>
 
