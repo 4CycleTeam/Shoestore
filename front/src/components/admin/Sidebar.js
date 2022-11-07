@@ -11,19 +11,19 @@ const Sidebar = () => {
                 <br />
 
                     <li>
-                        <Link to="/Dashboard"><i className="fa fa-tachometer"></i> Administración</Link>
+                        <Link to="/Dashboard"><i className="fa fa-cogs"></i> Administración</Link>
                     </li>
 
                     <li>
                         <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle"><i
-                            className="fa fa-product-hunt"></i> Productos</a>
+                            className="fa fa-list" ></i> Productos</a>
                         <ul className="collapse list-unstyled" id="productSubmenu">
                             <li>
                                 <Link to="/ProductList"><i className="fa fa-clipboard"></i> Todos</Link>
                             </li>
 
                             <li>
-                                <Link to="/crearProducto"><i className="fa fa-plus"></i> Crear</Link>
+                                <Link to="/crearProducto"><i className="fa fa-plus-circle"></i> Crear</Link>
                             </li>
                         </ul>
                     </li>

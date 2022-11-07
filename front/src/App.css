@@ -44,7 +44,7 @@ body {
 }
 
 #cart_count {
-  background-color: #febd69;
+  background-color: #f3ebd5;
   padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;
   color: black;
@@ -622,13 +622,20 @@ ul.CTAs a {
 
 
 #view_btn {
-  background-color: #f3ebd5;
-  color: rgb(14, 14, 14);
+  background-color: #f6eac9;
+  color: #0e0e0e;
+  border: #232f3e
   
 }
 
 .login {
   background-color: #f3f1ed;
   color: rgb(14, 14, 14);
+  border-color: #0e0d0d;
   
+}
+
+.formulario, input, select, textarea {
+  text-align: left;
+
 }

@@ -34,7 +34,7 @@ const Header = () => {
                         <a className="btn text-white" id="login_btn" href='http://localhost:3000/login'>Inicie Sesión</a>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
-                        <span className="ml-1" id="cart_count">4</span>
+                        <span className="ml-1"  id="cart_count">4</span>
                     </div>
                 </nav>
 

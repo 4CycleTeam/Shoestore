@@ -58,13 +58,13 @@ export const ProductsList = () => {
                 inventario: product.inventario,
                 vendedor: product.vendedor,
                 actions: <Fragment>
-                    <Link to={`/producto/${product._id}`} className="btn btn-primary py-1 px-2">
+                    <Link to={`/producto/${product._id}`} className="btn btn-outline-primary py-1 px-2">
                         <i className="fa fa-eye"></i>
-                    </Link><Link to="/" className="btn btn-warning py-1 px-2">
+                    </Link><Link to="/" className="btn btn-outline-warning py-1 px-2">
                     <i class="fa fa-pencil"></i>
                     </Link>
 
-                    <Link to="/" className="btn btn-danger py-1 px-2">
+                    <Link to="/" className="btn btn-outline-danger  py-1 px-2">
                         <i className="fa fa-trash"></i>
                     </Link>
                     
@@ -88,7 +88,7 @@ export const ProductsList = () => {
                     <Fragment>
                         <br />
                         <br />
-                        <h1 className="my-5">Productos Registrados</h1>
+                        <h1 className="my-5 fa fa-list-ul fa-2x"> Productos Registrados</h1>
 
                         {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> :(
                             <MDBDataTable
