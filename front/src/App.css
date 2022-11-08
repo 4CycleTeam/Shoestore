@@ -210,10 +210,11 @@ body {
 
 #checkout_btn,
 .review-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #f6eac9;
+  border-color: #ff9a16;
   margin-top: 2rem;
   border-radius: 5rem;
+  color:#0e0d0d
 }
 
 #view_order_details {
@@ -222,7 +223,7 @@ body {
 }
 
 #order_summary {
-  border: 1px solid #e3e3e3;
+  border: 1px solid #706f6f;
   border-radius: 1rem;
   padding: 2rem 1.5rem;
 }
@@ -638,4 +639,11 @@ ul.CTAs a {
 .formulario, input, select, textarea {
   text-align: left;
 
+}
+#h1carrito {
+  text-align: center;
+}
+
+#order {
+ border: #0e0d0d;
 }
