@@ -7,20 +7,7 @@ const fetch = (url) => import('node-fetch').then(({ default: fetch }) => fetch(u
 //Ver la lista de productos
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
-  
-
-    const productos = await producto.find();
-    if (!productos) {
-        return next(new ErrorHandler("Informacion no encontrada", 404))
-    }
-
-    res.status(200).json({
-        success: true,
-        cantidad: productos.length,
-        productos
-    })
-
-    const resPerPage = 3;
+    const resPerPage = 2;
     const productsCount = await producto.countDocuments();
 
     const apiFeatures = new APIFeatures(producto.find(), req.query)
@@ -176,7 +163,7 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
     })
     res.status(200).json({
         success: true,
-        message: "Comentario eliminado correctamente"
+        message: "review eliminada correctamente"
     })
 
 })
