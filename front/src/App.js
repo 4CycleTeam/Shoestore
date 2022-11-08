@@ -38,6 +38,7 @@ function App() {
             <Route path='/finalizarcompra' element={<FinalizarCompra />}></Route>
             <Route path='/login' element={<Login />}></Route>
             <Route path="/dashboard" element={<Dashboard />}/>
+            <Route path="/search/:keyword" element={<ListaProductos />}/>
             <Route path="/productList" element={<ProductsList />}/>
 
           

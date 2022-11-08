@@ -1,19 +1,18 @@
 import React, { Fragment } from 'react'
+import "../../App.css"
 import {
     MDBContainer,
     MDBNavbar,
     MDBNavbarBrand,
-    MDBBtn
-
 } from 'mdb-react-ui-kit';
-import "../../App.css"
 import { Link } from "react-router-dom"
+import { Search } from '../layout/Search'
 
 const Header = () => {
 
     return (
         <Fragment>
-            <div className='mt-10 fixed-top'>
+             <div className='mt-10 fixed-top'>
                 <nav className='navbar row ' >
                    
                     <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
@@ -23,10 +22,10 @@ const Header = () => {
                         <span className="ml-1"  id="cart_count">4</span>
                     </div>
                 </nav>
+             </div>
 
-            </div>
-            <>
-                <div className='mt-10 fixed-top'>
+             
+             <div className='mt-10 fixed-top'>
                     <MDBNavbar light bgColor='dark' fixed-top>
                         <MDBContainer fluid>
                             <MDBNavbarBrand href='http://localhost:3000/listaproductos'>
@@ -35,14 +34,12 @@ const Header = () => {
                             </MDBNavbarBrand>
 
 
-                            <div className="text-center">
-                                <form className='d-flex input-group w-auto'>
-                                    <input type='search' className='form-control' placeholder='¿Qué producto buscas?' aria-label='Search' />
-                                    <MDBBtn color='primary'>Buscar</MDBBtn>
-                                </form>
-                            </div>
+                <div className='col-12 col-md-3 mt-2 mt-md-0'>
+                 {/*Aqui va buscar*/}
+                 <Search />
+                </div>
 
-                            <div className="col-12 col-md-4 mt-4 mt-md-0 text-center">
+                <div className="col-12 col-md-4 mt-4 mt-md-0 text-center">
                                 <a className="btn text-white" id="login_btn" href='http://localhost:3000/login'>Inicie Sesión</a>
                                 <div className="ml-4 dropdown d-inline">
 
@@ -59,11 +56,11 @@ const Header = () => {
                                 <a class="fa fa-shopping-cart fa-2x text-white aria-hidden=false" href='http://localhost:3000/carrito' >.</a>
                                 <span className="ml-1" id="cart_count">4</span>
                             </div>
-                        </MDBContainer>
+
+    
+                </MDBContainer>
                     </MDBNavbar>
                 </div>
-            </>
-
         </Fragment>
     )
 
