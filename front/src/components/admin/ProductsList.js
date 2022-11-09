@@ -79,7 +79,6 @@ export const ProductsList = () => {
                         <i className="fa fa-trash"></i>
                     </Link>
                     
-
                 </Fragment>
             })
         })
