@@ -8,12 +8,12 @@ import Pagination from 'react-js-pagination'
 
 
 export const ListaProductos = () => {
-    const params= useParams();
-    const keyword= params.keyword;
+    const params = useParams();
+    const keyword = params.keyword;
     const [currentPage, setCurrentPage] = useState(1)
     const { loading, products, error, resPerPage, productsCount } = useSelector(state => state.productos)
     const alert = useAlert();
-    
+
     const dispatch = useDispatch();
     useEffect(() => {
         if (error) {
@@ -23,18 +23,19 @@ export const ListaProductos = () => {
         dispatch(getProducts(currentPage, keyword));
     }, [dispatch, alert, error, currentPage, keyword])
 
-    function setCurrentPageNo(pageNumber){
+    function setCurrentPageNo(pageNumber) {
         setCurrentPage(pageNumber)
     }
-    
+
     return (
         <Fragment>
             {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
                 <Fragment>
-                    <MetaData title="Lo mejor para tu compañero"></MetaData>
-                    <h1 id="encabezado_productos">Ultimos Productos</h1>
+                    <MetaData title="Calzado a tu estilo"></MetaData>
 
                     <section id="productos" className='container mt-5'>
+
+                        <h1 className="my-5 fa fa-list-ul fa-2x"> Lista de Productos</h1>
                         <div className='row'>
                             {products && products.map(producto => (
                                 <div key={producto._id} className='col-sm-12 col-md-6 col-lg-3 my-3'>
@@ -61,16 +62,16 @@ export const ListaProductos = () => {
 
                     <div className='d-flex justify-content-center mt-5' >
                         <Pagination
-                        activePage={currentPage}
-                        itemsCountPerPage={resPerPage}
-                        totalItemsCount={productsCount}
-                        onChange={setCurrentPageNo}
-                        nextPageText={'Siguiente'}
-                        prevPageText={'Anterior'}
-                        firstPageText={'Primera'}
-                        lastPageText={'Ultima'}
-                        itemClass='page-item'
-                        linkClass='page-link'
+                            activePage={currentPage}
+                            itemsCountPerPage={resPerPage}
+                            totalItemsCount={productsCount}
+                            onChange={setCurrentPageNo}
+                            nextPageText={'Siguiente'}
+                            prevPageText={'Anterior'}
+                            firstPageText={'Primera'}
+                            lastPageText={'Ultima'}
+                            itemClass='page-item'
+                            linkClass='page-link'
                         />
                     </div>
 

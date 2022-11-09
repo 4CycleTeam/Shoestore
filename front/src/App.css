@@ -624,7 +624,7 @@ ul.CTAs a {
 
 
 #view_btn {
-  background-color: #f6eac9;
+  background-color: #f0dfaf;
   color: #0e0e0e;
   border: #232f3e
   
@@ -652,4 +652,23 @@ ul.CTAs a {
 #pagina {
   background-color: #fffffe;
   border: #6c604d;
+}
+
+#bntmas {
+  color:#060606;
+  background-color: #ca5042;
+}
+
+#bntmenos {
+  color:#060606;
+  background-color: #3695c5;
+}
+
+#carrito_btn{
+  background-color: #f0dfaf;
+  color:#060606;
+}
+
+.meta{
+  text-transform: uppercase;
 }
