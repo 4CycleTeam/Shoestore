@@ -7,7 +7,7 @@ import { useAlert } from 'react-alert'
 import Pagination from 'react-js-pagination'
 
 
-export const Home = () => {
+export const ListaProductos = () => {
     const params= useParams();
     const keyword= params.keyword;
     const [currentPage, setCurrentPage] = useState(1)
@@ -82,4 +82,4 @@ export const Home = () => {
         </Fragment>
     )
 }
-export default Home
+export default ListaProductos
