@@ -1,24 +1,35 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { MDBDataTable } from 'mdbreact'
 import MetaData from '../layout/MetaData'
 import Sidebar from './Sidebar'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../../actions/productActions'
-import {Link } from "react-router-dom"
+import { useParams, Link } from 'react-router-dom'
+import Pagination from 'react-js-pagination'
+
 
 export const ProductsList = () => {
-    const { loading, products, error} = useSelector(state=> state.productos)
-    const alert= useAlert();
-
+    const params= useParams();
+    const keyword= params.keyword;
+    const [currentPage, setCurrentPage] = useState(1)
+    const { loading, products, error, resPerPage, productsCount } = useSelector(state => state.productos)
+    const alert = useAlert();
+    
     const dispatch = useDispatch();
     useEffect(() => {
-        if (error){
+        if (error) {
             return alert.error(error)
         }
 
-        dispatch(getProducts());
-    }, [dispatch])
+        dispatch(getProducts(currentPage, keyword));
+    }, [dispatch, alert, error, currentPage, keyword])
+
+    function setCurrentPageNo(pageNumber){
+        setCurrentPage(pageNumber)
+    }
+    
+
 
     const setProducts = () => {
         const data = {
@@ -99,6 +110,24 @@ export const ProductsList = () => {
                                 hover
                             />
                         )}
+
+                    
+                    
+                    <div className='d-flex justify-content-center mt-5'>
+                        <Pagination
+                        activePage={currentPage}
+                        itemsCountPerPage={resPerPage}
+                        totalItemsCount={productsCount}
+                        onChange={setCurrentPageNo}
+                        nextPageText={'Siguiente'}
+                        prevPageText={'Anterior'}
+                        firstPageText={'Primera'}
+                        lastPageText={'Ultima'}
+                        itemClass='page-item'
+                        linkClass='page-link'
+                        />
+                    </div>
+
 
                     </Fragment>
                 </div>

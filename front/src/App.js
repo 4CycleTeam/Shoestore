@@ -40,14 +40,11 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />}/>
             <Route path="/search/:keyword" element={<ListaProductos />}/>
             <Route path="/productList" element={<ProductsList />}/>
+            <Route path="/search/:keyword" element={<ProductsList />}/>
 
-          
-            
-     
-           
+
           </Routes>
      
-
           <MDBRow className='my-5 justify-content-center align-items-center h-100'>
             <Footer />
             </MDBRow>
