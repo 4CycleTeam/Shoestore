@@ -438,7 +438,7 @@ body {
 }
 
 .page-link {
-  color: #fa9c23;
+  color: #ef9d33;
 }
 
 .page-link:hover {
@@ -495,7 +495,7 @@ body {
   text-decoration: none;
 }
 #sidebar ul li a:hover {
-  color:#584f2e;
+  color:#4f4f4f;
   background: #fff;
 }
 
@@ -647,4 +647,9 @@ ul.CTAs a {
 
 #order {
  border: #0e0d0d;
+}
+
+#pagina {
+  background-color: #fffffe;
+  border: #6c604d;
 }

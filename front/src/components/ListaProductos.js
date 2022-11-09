@@ -59,7 +59,7 @@ export const ListaProductos = () => {
                         </div>
                     </section>
 
-                    <div className='d-flex justify-content-center mt-5'>
+                    <div className='d-flex justify-content-center mt-5' >
                         <Pagination
                         activePage={currentPage}
                         itemsCountPerPage={resPerPage}

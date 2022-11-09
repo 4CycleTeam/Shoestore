@@ -70,7 +70,7 @@ export const Footer = () => {
           </section>
         </MDBContainer>
 
-        <div className='text-center' style={{ backgroundColor: '#212529' }}>
+        <div className='text-center' style={{ backgroundColor: '#584f2e;' }}>
        © 2020 Copyright: 4Cycle Shoestore
         </div>
       
