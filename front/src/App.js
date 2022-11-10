@@ -10,10 +10,11 @@ import Carrito from './components/Carrito';
 import EditarProductos from './components/EditarProductos';
 import CrearProducto from './components/CrearProducto';
 import FinalizarCompra from './components/FinalizarCompra';
-import { Login } from './components/Login';
+import { Login } from './components/user/Login'
 import { DetallesProducto } from './components/products/DetallesProducto';
 import Dashboard from './components/admin/Dashboard';
 import ProductsList from './components/admin/ProductsList';
+
 
 
 
@@ -41,6 +42,7 @@ function App() {
             <Route path="/search/:keyword" element={<ListaProductos />}/>
             <Route path="/productList" element={<ProductsList />}/>
             <Route path="/search/:keyword" element={<ProductsList />}/>
+           
 
 
           </Routes>
