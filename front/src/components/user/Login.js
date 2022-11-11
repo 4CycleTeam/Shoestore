@@ -17,7 +17,7 @@ export const Login = () => {
                                     </div>
 
                                     <form>
-                                        <h5 className="text-muted">Inicio de Sesión</h5>
+                                        <h5 className="text-muted">INICIO DE SESIÓN</h5>
                                         <br /> 
                                         <div className='form-group'>
                                             <MDBInput wrapperClass='mb-4' label='Email' type="email" id="email_field" className='form-control' />
