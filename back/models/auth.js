@@ -26,7 +26,7 @@ const usuarioSchema = new mongoose.Schema({
         type: String,
         required: [true, "Por favor ingrese su numero de telefono"],
         maxlength: [10, " El número de telefono no puede exceder los 10 caracteres"],
-        minlength: [10, " El número de telefono no puede tener menos de 10 caracteres"]
+    
     },
     direccion: {
         type: String,
