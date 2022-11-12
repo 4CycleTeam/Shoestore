@@ -114,7 +114,7 @@ export const Register = () => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="name_field">Teléfono</label>
+                                    <label htmlFor="phone_field">Teléfono</label>
                                     <input
                                         type="number"
                                         id="phone_field"
@@ -126,7 +126,7 @@ export const Register = () => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="name_field">Dirección</label>
+                                    <label htmlFor="direction_field">Dirección</label>
                                     <input
                                         type="direction"
                                         id="direction_field"
