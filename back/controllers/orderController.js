@@ -26,7 +26,9 @@ exports.newOrder= catchAsyncErrors (async (req, res, next)=>{
         fechaPago: Date.now(),
         user: req.user._id
     })
-
+    
+    updateStock(req.body.Items[0].producto,req.body.Items[0].cantidad)
+    
     res.status(201).json({
         success:true,
         order
