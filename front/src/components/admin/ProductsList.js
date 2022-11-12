@@ -1,35 +1,24 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { MDBDataTable } from 'mdbreact'
 import MetaData from '../layout/MetaData'
 import Sidebar from './Sidebar'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from "react-router-dom"
 import { getProducts } from '../../actions/productActions'
-import { useParams, Link } from 'react-router-dom'
-import Pagination from 'react-js-pagination'
-
 
 export const ProductsList = () => {
-    const params= useParams();
-    const keyword= params.keyword;
-    const [currentPage, setCurrentPage] = useState(1)
-    const { loading, products, error, resPerPage, productsCount } = useSelector(state => state.productos)
-    const alert = useAlert();
-    
+    const { loading, products, error} = useSelector(state=> state.productos)
+    const alert= useAlert();
+
     const dispatch = useDispatch();
     useEffect(() => {
-        if (error) {
+        if (error){
             return alert.error(error)
         }
 
-        dispatch(getProducts(currentPage, keyword));
-    }, [dispatch, alert, error, currentPage, keyword])
-
-    function setCurrentPageNo(pageNumber){
-        setCurrentPage(pageNumber)
-    }
-    
-
+        dispatch(getProducts);
+    }, [dispatch, alert, error])
 
     const setProducts = () => {
         const data = {
@@ -88,7 +77,7 @@ export const ProductsList = () => {
 
     return (
         <Fragment>
-            <MetaData title={'All Products'} />
+            <MetaData title={'Lista de productos'} />
             <div className="row">
                 <div className="col-12 col-md-2">
                     <Sidebar />
@@ -96,37 +85,19 @@ export const ProductsList = () => {
 
                 <div className="col-12 col-md-10">
                     <Fragment>
-                        <br />
+                    <br />
                         <br />
                         <h1 className="my-5 fa fa-list-ul fa-2x"> Productos Registrados</h1>
 
                         {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> :(
                             <MDBDataTable
                                 data={setProducts()}
-                                className="px-3"
+                                className="px-3 text-center"
                                 bordered
                                 striped
                                 hover
                             />
                         )}
-
-                    
-                    
-                    <div className='d-flex justify-content-center mt-5'>
-                        <Pagination
-                        activePage={currentPage}
-                        itemsCountPerPage={resPerPage}
-                        totalItemsCount={productsCount}
-                        onChange={setCurrentPageNo}
-                        nextPageText={'Siguiente'}
-                        prevPageText={'Anterior'}
-                        firstPageText={'Primera'}
-                        lastPageText={'Ultima'}
-                        itemClass='page-item'
-                        linkClass='page-link'
-                        />
-                    </div>
-
 
                     </Fragment>
                 </div>

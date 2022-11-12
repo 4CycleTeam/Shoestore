@@ -14,6 +14,7 @@ import { Login } from './components/user/Login'
 import { DetallesProducto } from './components/products/DetallesProducto';
 import Dashboard from './components/admin/Dashboard';
 import ProductsList from './components/admin/ProductsList';
+import { Register } from './components/user/Register';
 
 
 
@@ -42,6 +43,7 @@ function App() {
             <Route path="/search/:keyword" element={<ListaProductos />}/>
             <Route path="/productList" element={<ProductsList />}/>
             <Route path="/search/:keyword" element={<ProductsList />}/>
+            <Route path="/register" element= {<Register />} />
            
 
 

@@ -4,20 +4,25 @@ const catchAsyncErrors= require("../middleware/catchAsyncErrors");
 const tokenEnviado = require("../utils/jwtToken");
 const sendEmail = require("../utils/sendEmail")
 const crypto = require("crypto")
+const cloudinary= require("cloudinary")
 
 //Registrar un nuevo usuario /api/usuario/registro
 exports.registroUsuario= catchAsyncErrors(async (req, res, next) =>{
-    const {nombre, email, password, telefono, direccion} = req.body;
+    const {nombre, email, password} = req.body;
+
+    const result= await cloudinary.v2.uploader.upload(req.body.avatar, {
+        folder:"avatars",
+        width:240,
+        crop:"scale"
+    })
 
     const user = await User.create({
         nombre,
         email,
         password,
-        telefono,
-        direccion,
         avatar:{
-            public_id:"ANd9GcQKZwmqodcPdQUDRt6E5cPERZDWaqy6ITohlQ&usqp",
-            url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKZwmqodcPdQUDRt6E5cPERZDWaqy6ITohlQ&usqp=CAU"
+            public_id:result.public_id,
+            url:result.secure_url
         }
     })
     tokenEnviado(user,201,res)
@@ -63,32 +68,6 @@ exports.logOut = catchAsyncErrors(async(req, res, next)=>{
     })
 })
 
-
-//Update perfil de usuario (logueado)
-exports.updateProfile= catchAsyncErrors(async(req,res,next)=>{
-    //Actualizar el email por user a decisiòn de cada uno
-    const newUserData ={
-        nombre: req.body.nombre,
-        email: req.body.email,
-        telefono: req.body.telefono,
-        direccion: req.body.direccion
-    }
-
-  
-    const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
-        new:true,
-        runValidators:true,
-        useFindAndModify: false
-    })
-
-    res.status(200).json({
-        success:true,
-        user
-    })
-})
-
-
-
 //Olvide mi contraseña, recuperar contraseña
 exports.forgotPassword = catchAsyncErrors ( async( req, res, next) =>{
     const user= await User.findOne({email: req.body.email});
@@ -101,16 +80,16 @@ exports.forgotPassword = catchAsyncErrors ( async( req, res, next) =>{
     await user.save({validateBeforeSave: false})
 
     //Crear una url para hacer el reset de la contraseña
-    const resetUrl= `${req.protocol}://${req.get("host")}/api/resetPassword/${resetToken}`;
+    const resetUrl= `${req.protocol}://${req.get("host")}/resetPassword/${resetToken}`;
 
     const mensaje=`Hola!\n\nTu link para ajustar una nueva contraseña es el 
     siguiente: \n\n${resetUrl}\n\n
-    Si no solicitaste este link, por favor comunicate con soporte.\n\n Att:\nShoeStore`
+    Si no solicitaste este link, por favor comunicate con soporte.\n\n Att:\nVetyShop Store`
 
     try{
         await sendEmail({
             email:user.email,
-            subject: "ShoeStore Recuperación de la contraseña",
+            subject: "VetyShop Recuperación de la contraseña",
             mensaje
         })
         res.status(200).json({
@@ -191,7 +170,23 @@ exports.updateProfile= catchAsyncErrors(async(req,res,next)=>{
         email: req.body.email
     }
 
-    //updata Avatar: pendiente
+    //updata Avatar: 
+    if (req.body.avatar !==""){
+        const user= await User.findById(req.user.id)
+        const image_id= user.avatar.public_id;
+        const res= await cloudinary.v2.uploader.destroy(image_id);
+
+        const result= await cloudinary.v2.uploader.upload(req.body.avatar, {
+            folder: "avatars",
+            width: 240,
+            crop: "scale"
+        })
+
+        newUserData.avatar={
+            public_id: result.public_id,
+            url: result.secure_url
+        }
+    }
 
     const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
         new:true,
@@ -251,7 +246,6 @@ exports.updateUser= catchAsyncErrors (async(req, res, next)=>{
         user
     })
 })
-
 
 //Eliminar usuario (admin)
 exports.deleteUser= catchAsyncErrors (async (req, res, next)=>{
