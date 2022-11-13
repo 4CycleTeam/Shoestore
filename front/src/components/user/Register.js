@@ -1,10 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
-import MetaData from '../layout/MetaData'
 import { register, clearErrors } from "../../actions/userActions"
 import { useNavigate } from "react-router-dom"
-import { MDBRow, MDBContainer } from 'mdb-react-ui-kit';
+import { MDBRow, MDBCol,  MDBCard, MDBBtn, MDBCardBody, MDBContainer } from 'mdb-react-ui-kit';
 
 export const Register = () => {
     const [user, setUser] = useState({
@@ -65,121 +64,127 @@ export const Register = () => {
     return (
         <Fragment>
             {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
-                <Fragment>
-                    <MetaData title={'Registrar Usuario'} />
-                    <MDBContainer fluid>
+                <MDBContainer fluid>
 
-<MDBRow className='my-5 justify-content-center align-items-center h-100'>
-                    <div className="row wrapper">
-                        <div className="col-10 col-lg-5">
-                            <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                                <br />
-                                <br />
-                                <br />
-                                <h1 className="fa fa-user fa-2x"> Registrar Usuario</h1>
-                                <div className="form-group">
-                                    <label htmlFor="name_field">Nombre</label>
-                                    <input
-                                        type="name"
-                                        id="name_field"
-                                        className="form-control"
-                                        name='nombre'
-                                        value={nombre}
-                                        onChange={onChange}
-                                    />
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="email_field">Email</label>
-                                    <input
-                                        type="email"
-                                        id="email_field"
-                                        className="form-control"
-                                        name='email'
-                                        value={email}
-                                        onChange={onChange}
-                                    />
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="password_field">Password</label>
-                                    <input
-                                        type="password"
-                                        id="password_field"
-                                        className="form-control"
-                                        name='password'
-                                        value={password}
-                                        onChange={onChange}
-                                    />
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="phone_field">Teléfono</label>
-                                    <input
-                                        type="number"
-                                        id="phone_field"
-                                        className="form-control"
-                                        name='telefono'
-                                        value={telefono}
-                                        onChange={onChange}
-                                    />
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="direction_field">Dirección</label>
-                                    <input
-                                        type="direction"
-                                        id="direction_field"
-                                        className="form-control"
-                                        name='direccion'
-                                        value={direccion}
-                                        onChange={onChange}
-                                    />
-                                </div>
+                    <MDBRow className='my-5 justify-content-center align-items-center h-100'>
+                        <MDBCard className='bg-white my-5 mx-auto' style={{ borderRadius: '1rem', maxWidth: '500px' }}>
+                            <div className="login">
+                                <MDBCardBody className='p-5 w-100 d-flex flex-column'>
+                                    <MDBCol className='mb-5'>
 
 
-                                <div className='form-group'>
-                                    <label htmlFor='avatar_upload'>Avatar</label>
-                                    <div className='d-flex align-items-center'>
-                                        <div>
-                                            <figure className='avatar mr-3 item-rtl'>
-                                                <img
-                                                    src={avatarPreview}
-                                                    className="rounded-circle"
-                                                    alt="Vistar Previa del Avatar"></img>
-                                            </figure>
-                                        </div>
-                                        <div className='custom-file'>
-                                            <input
-                                                type='file'
-                                                name='avatar'
-                                                className='custom-file-input'
-                                                id='customFile'
-                                                accept="images/*"
-                                                onChange={onChange}
-                                            />
-                                            <label className='custom-file-label' htmlFor='customFile'>
-                                                Escoger Avatar
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <form  onSubmit={submitHandler} encType='multipart/form-data'>
 
-                                <button
-                                    id="register_button"
-                                    type="submit"
-                                    className="btn btn-block py-3"
+                                            <h1 className="fa fa-user fa-2x"> Registro</h1>
+                                            <div className="form-group">
+                                                <br />  
+                                                <label htmlFor="name_field">Nombre</label>
+                                                <input
+                                                
+                                                    type="name"
+                                                    id="name_field"
+                                                    className="form-control"
+                                                    name='nombre'
+                                                    value={nombre}
+                                                    onChange={onChange}
+                                                />
+                                            </div>
 
-                                >
-                                    REGISTRAR
-                                </button>
-                            </form>
-                        </div>
-                    </div>
+                                            <div className="form-group">
+                                                <label htmlFor="email_field">Email</label>
+                                                <input
+                                                    type="email"
+                                                    id="email_field"
+                                                    className="form-control"
+                                                    name='email'
+                                                    value={email}
+                                                    onChange={onChange}
+                                                />
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label htmlFor="password_field">Password</label>
+                                                <input
+                                                    type="password"
+                                                    id="password_field"
+                                                    className="form-control"
+                                                    name='password'
+                                                    value={password}
+                                                    onChange={onChange}
+                                                />
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label htmlFor="phone_field">Teléfono</label>
+                                                <input
+                                                    type="number"
+                                                    id="phone_field"
+                                                    className="form-control"
+                                                    name='telefono'
+                                                    value={telefono}
+                                                    onChange={onChange}
+                                                />
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label htmlFor="direction_field">Dirección</label>
+                                                <input
+                                                    type="direction"
+                                                    id="direction_field"
+                                                    className="form-control"
+                                                    name='direccion'
+                                                    value={direccion}
+                                                    onChange={onChange}
+                                                />
+                                            </div>
+
+
+                                            <div className='form-group'>
+                                                <label htmlFor='avatar_upload'>Avatar</label>
+                                                <div className='d-flex align-items-center'>
+                                                    <div>
+                                                        <figure className='avatar mr-3 item-rtl'>
+                                                            <img
+                                                                src={avatarPreview}
+                                                                className="rounded-circle"
+                                                                alt="Vistar Previa del Avatar"></img>
+                                                        </figure>
+                                                    </div>
+                                                    <div className='custom-file'>
+                                                        <input
+                                                            type='file'
+                                                            name='avatar'
+                                                            className='custom-file-input'
+                                                            id='customFile'
+                                                            accept="images/*"
+                                                            onChange={onChange}
+                                                        />
+                                                        <label className='custom-file-label' htmlFor='customFile'>
+                                                            Escoger Avatar
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+
+                                            <MDBBtn
+                                                id="register_button"
+                                                type="submit"
+                                                color='dark'
+                                                className="mb-4 w-100 gradient-custom-2"
+
+                                            >
+                                                REGISTRAR
+                                            </MDBBtn>
+                                        </form>
+
+
+                                    </MDBCol>
+                                </MDBCardBody>
+                            </div>
+                        </MDBCard>
                     </MDBRow>
                 </MDBContainer>
-                </Fragment>
-                
             )}
         </Fragment>
     )
