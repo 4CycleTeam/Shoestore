@@ -49,6 +49,8 @@ export const DetallesProducto = () => {
           <MetaData title={product.nombre}></MetaData>
           <div className='row d-flex justify-content-around'>
             <div className='col-12 col-lg-5 img-fluid' id="imagen_producto">
+            <br />
+              <br />
 
               {product.imagen && product.imagen.map(img => (
                 <img className="d-block w-100" src={"../" + img.url} alt={product.nombre}></img>

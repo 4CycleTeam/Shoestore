@@ -60,7 +60,8 @@ export const ProductsList = () => {
                 actions: <Fragment>
                     <Link to={`/producto/${product._id}`} className="btn btn-outline-primary py-1 px-2">
                         <i className="fa fa-eye"></i>
-                    </Link><Link to="/" className="btn btn-outline-warning py-1 px-2">
+                    </Link>
+                    <Link to={`/editar/producto/${product._id}`} className="btn btn-outline-warning py-1 px-2">
                     <i class="fa fa-pencil"></i>
                     </Link>
 

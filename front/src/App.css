@@ -409,10 +409,6 @@ body {
   font-size: 1.1rem;
 }
 
-#edit_profile {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
-}
 
 /* Confirm Order */
 
@@ -624,7 +620,7 @@ ul.CTAs a {
 
 
 #view_btn {
-  background-color: #f0dfaf;
+  background-color:  #eece89;
   color: #0e0e0e;
   border: #232f3e
   
@@ -635,6 +631,11 @@ ul.CTAs a {
   color: rgb(14, 14, 14);
   border-color: #0e0d0d;
   
+}
+#login_btn {
+  background-color:#252525;
+  color: rgb(250, 246, 246);
+  border-color: #0e0d0d;
 }
 
 .formulario, input, select, textarea {
@@ -665,10 +666,46 @@ ul.CTAs a {
 }
 
 #carrito_btn{
-  background-color: #f0dfaf;
+  background-color:  #eece89;
   color:#060606;
 }
 
 .form-group {
   text-align: left;
 }
+
+#update_button {
+  background-color:  #eece89;
+  color:#060606;
+}
+#update_pass {
+  background-color:  #eece89;
+  color:#060606;
+}
+
+#tabla {
+  border: #060606;
+
+}
+
+#btn_perfil{
+  text-align: right;
+}
+
+#edit_profile {
+  background-color:   #f4ead4;
+  border-color: #ede6dd;
+  color:rgb(14, 14, 14)
+}
+
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #f6d365;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+  }

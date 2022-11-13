@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MDBContainer, MDBRow} from 'mdb-react-ui-kit';
 import Header from './components/layout/Header';
 import Ventas from './components/Ventas';
@@ -15,18 +15,30 @@ import { DetallesProducto } from './components/products/DetallesProducto';
 import Dashboard from './components/admin/Dashboard';
 import ProductsList from './components/admin/ProductsList';
 import { Register } from './components/user/Register';
-
-
-
+import { loadUser } from './actions/userActions';
+import store from "./store"
+import { Profile } from './components/user/Profile';
+import ProtectedRoute from './routes/ProtectedRoute';
+import { UpdateProfile} from "./components/user/UpdateProfile"
+import { UpdatePassword } from './components/user/UpdatePassword';
+import { ForgotPassword } from "./components/user/ForgotPassword"
+import { NewPassword } from './components/user/NewPassword';
 
 
 function App() {
+  useEffect(()=>{
+   store.dispatch(loadUser())
+  },[])
+
+
+
   return (
     <Router>
       <div className="App">
         <MDBContainer fluid>
 
           <Header />
+          <div className='container container-fluid'>
           
 
           <Routes>
@@ -44,18 +56,27 @@ function App() {
             <Route path="/productList" element={<ProductsList />}/>
             <Route path="/search/:keyword" element={<ProductsList />}/>
             <Route path="/register" element= {<Register />} />
+            <Route path="/usuario" element={<Profile />}/>
+            <Route path="/usuario/update" element={<UpdateProfile />}/>
+            <Route path="/password/update" element={<UpdatePassword />}/>
+            <Route path="/password/forgot" element={<ForgotPassword />}/>
+            <Route path="/resetPassword/:token" element={<NewPassword />}/>
+            
            
+            {/*Ruta protegida*/}
+           <Route path="/dashboard" 
+            element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>}/>
 
+       </Routes>
+        </div>
 
-          </Routes>
-     
           <MDBRow className='my-5 justify-content-center align-items-center h-100'>
             <Footer />
             </MDBRow>
         </MDBContainer>
       </div>
 
-    </Router>
+      </Router>
   );
 }
 

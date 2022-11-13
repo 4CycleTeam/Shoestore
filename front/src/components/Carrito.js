@@ -1,8 +1,11 @@
 import React, { Fragment } from "react";
+import {MDBContainer,MDBRow} from 'mdb-react-ui-kit';
 
-export const Carritos = () => {
+export const Carrito = () => {
   return (
     <Fragment>
+       <MDBContainer fluid>
+                <MDBRow className='my-5 justify-content-center align-items-center h-100'>
       <br />
       <div className="row d-flex justify-content-between">
         <div>
@@ -14,7 +17,7 @@ export const Carritos = () => {
           </h1>
         </div>
 
-        <div className="col-12 col-lg-8">
+        <div className="col-12 col-lg-9">
           <section id="productos" className="container mt-5">
             <table class="table table-add_review">
               <tbody>
@@ -162,7 +165,7 @@ export const Carritos = () => {
         <div className="col-12 col-lg-3 my-4">
         <br />
           <div id="order_summary">
-            <h4  class="fa fa-money fa-lg"> Total de la Compra</h4>
+            <h4  class="fa fa-money"> Total de la Compra</h4>
             <hr />
             <p>
               Subtotal: <span className="order-summary-values">$1.068.309</span>
@@ -189,7 +192,9 @@ export const Carritos = () => {
           </div>
         </div>
       </div>
+      </MDBRow>
+           </MDBContainer>    
     </Fragment>
   );
 };
-export default Carritos;
+export default Carrito;
