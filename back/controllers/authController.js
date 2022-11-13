@@ -8,7 +8,7 @@ const cloudinary= require("cloudinary")
 
 //Registrar un nuevo usuario /api/usuario/registro
 exports.registroUsuario= catchAsyncErrors(async (req, res, next) =>{
-    const {nombre, email, password} = req.body;
+    const {nombre, email, password, telefono, direccion} = req.body;
 
     const result= await cloudinary.v2.uploader.upload(req.body.avatar, {
         folder:"avatars",
@@ -20,6 +20,8 @@ exports.registroUsuario= catchAsyncErrors(async (req, res, next) =>{
         nombre,
         email,
         password,
+        telefono,
+        direccion,
         avatar:{
             public_id:result.public_id,
             url:result.secure_url
@@ -167,7 +169,9 @@ exports.updateProfile= catchAsyncErrors(async(req,res,next)=>{
     //Actualizar el email por user a decisiòn de cada uno
     const newUserData ={
         nombre: req.body.nombre,
-        email: req.body.email
+        email: req.body.email,
+        telefono: req.body.telefono,
+        direccion: req.body.direccion
     }
 
     //updata Avatar: 
@@ -232,6 +236,8 @@ exports.updateUser= catchAsyncErrors (async(req, res, next)=>{
     const nuevaData={
         nombre: req.body.nombre,
         email: req.body.email,
+        telefono: req.body.telefono,
+        direccion: req.body.direccion,
         role: req.body.rol
     }
 

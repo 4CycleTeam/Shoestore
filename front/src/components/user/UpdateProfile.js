@@ -11,6 +11,8 @@ export const UpdateProfile = () => {
     const navigate = useNavigate();
     const [nombre, setNombre] = useState("")
     const [email, setEmail] = useState("")
+    const [direccion, setDireccion] = useState("")
+    const [telefono, setTelefono] = useState("")
     const [avatar, setAvatar] = useState("");
     const [avatarPreview, setAvatarPreview] = useState("")
     const alert = useAlert();
@@ -23,6 +25,8 @@ export const UpdateProfile = () => {
         if (user) {
             setNombre(user.nombre);
             setEmail(user.email);
+            setDireccion(user.direccion);
+            setTelefono(user.telefono);
             setAvatarPreview(user.avatar.url)
         }
 
@@ -34,7 +38,7 @@ export const UpdateProfile = () => {
             alert.success("Perfil actualizado correctamente")
             dispatch(loadUser());
 
-            navigate("/yo")
+            navigate("/usuario")
 
             dispatch({
                 type: UPDATE_PROFILE_RESET
@@ -48,6 +52,8 @@ export const UpdateProfile = () => {
         const formData = new FormData();
         formData.set("nombre", nombre);
         formData.set("email", email);
+        formData.set("direccion", direccion);
+        formData.set("telefono", telefono);
         formData.set("avatar", avatar)
 
         dispatch(updateProfile(formData))
@@ -104,7 +110,30 @@ export const UpdateProfile = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
+                        <div className="form-group">
+                            <label htmlFor="email_field">Telefono</label>
+                            <input
+                                type="number"
+                                id="phone_field"
+                                className="form-control"
+                                name='telefono'
+                                value={telefono}
+                                onChange={(e) => setTelefono(e.target.value)}
+                            />
+                        </div>
 
+                        <div className="form-group">
+                            <label htmlFor="direccion_field">Dirección</label>
+                            <input
+                                type="direccion"
+                                id="direccion_field"
+                                className="form-control"
+                                name='direccion'
+                                value={direccion}
+                                onChange={(e) => setDireccion(e.target.value)}
+                            />
+                        </div>
+                    
                         <div className='form-group'>
                             <label htmlFor='avatar_upload'>Avatar</label>
                             <div className='d-flex align-items-center'>
