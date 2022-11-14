@@ -4,6 +4,8 @@ import MetaData from "../layout/MetaData"
 import { useParams } from 'react-router-dom'
 import { getProductDetails, clearErrors } from '../../actions/productActions'
 import { useAlert } from 'react-alert'
+import { addItemToCart } from '../../actions/cartActions'
+
 
 
 
@@ -41,6 +43,11 @@ export const DetallesProducto = () => {
     setQuantity(qty)
   }
 
+  const addToCart = () => {
+    dispatch(addItemToCart(id, quantity));
+    alert.success('Producto agregado al carro')
+  }
+
   return (
     <Fragment>
       {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
@@ -74,7 +81,8 @@ export const DetallesProducto = () => {
                 <span className="btn" id="bntmas" onClick={decreaseQty}>-</span>
                 <input type="number" className="form-control count d-inline" value={quantity} readOnly />
                 <span className="btn" id="bntmenos" onClick={increaseQty}>+</span>
-                <button type="button" id="carrito_btn" className="btn btn-outline btn-rounded d-inline ml-4" disabled={product.inventario === 0}>Agregar al Carrito</button>
+                <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.inventario === 0} onClick={addToCart}>Agregar al Carrito</button>
+              
               </div>
               <br />
               <br />

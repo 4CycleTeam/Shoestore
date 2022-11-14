@@ -14,6 +14,7 @@ import {
 
 
 const Header = () => {
+    const {cartItems} = useSelector(state=>state.cart)
     const alert = useAlert();
     const dispatch = useDispatch();
 
@@ -49,7 +50,8 @@ const Header = () => {
                         </div>
                         <div className="col-12 col-md-4 mt-4 mt-md-0 text-center">
                             <a class="fa fa-shopping-cart fa-2x text-white aria-hidden=false" href='http://localhost:3000/carrito' >.</a>
-                            <span className="ml-1" id="cart_count">4</span>
+                            <span className="ml-1" id="cart_count">{cartItems.length}</span>
+
 
 
                             {user ? (
