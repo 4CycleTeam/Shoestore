@@ -20,9 +20,9 @@ router.route('/login').post(loginUser)
 router.route('/logout').get(isAuthenticatedUser, logOut)
 router.route("/forgotPassword").post(forgotPassword)
 router.route('/resetPassword/:token').post(resetPassword)
-router.route('/yo').get(isAuthenticatedUser, getUserProfile)
-router.route('/yo/updatePassword').put(isAuthenticatedUser, updatePassword)
-router.route('/yo/updateProfile').put(isAuthenticatedUser, updateProfile)
+router.route('/usuario').get(isAuthenticatedUser, getUserProfile)
+router.route('/usuario/updatePassword').put(isAuthenticatedUser, updatePassword)
+router.route('/usuario/updateProfile').put(isAuthenticatedUser, updateProfile)
 
 //rutas admin
 router.route('/admin/allUsers').get(isAuthenticatedUser, authorizeRoles("admin"), getAllUsers)

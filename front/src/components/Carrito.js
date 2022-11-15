@@ -1,200 +1,110 @@
-import React, { Fragment } from "react";
-import {MDBContainer,MDBRow} from 'mdb-react-ui-kit';
+import React, { Fragment} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { addItemToCart, removeItemFromCart } from '../actions/cartActions';
+import MetaData from './layout/MetaData';
 
-export const Carrito = () => {
-  return (
-    <Fragment>
-       <MDBContainer fluid>
-                <MDBRow className='my-5 justify-content-center align-items-center h-100'>
-      <br />
-      <div className="row d-flex justify-content-between">
-        <div>
-          <br />
-          <br />
-          <br />
-          <h1 id="h1carrito" class="fa fa-shopping-cart fa-2x">
+
+const Carrito = () => {
+    const dispatch= useDispatch();
+    const {cartItems} = useSelector(state => state.cart)
+
+    const increaseQty = (id, quantity, inventario) => {
+        const newQty = quantity+1;
+        if (newQty > inventario) return;
+        dispatch(addItemToCart(id, newQty))
+     }
+  
+     const decreaseQty = (id, quantity) => {
+        const newQty = quantity-1;
+        if (newQty <= 0) return;
+        dispatch(addItemToCart(id, newQty))
+   }
+
+   const removeCartItemHandler= (id)=>{
+    dispatch(removeItemFromCart(id))
+   }
+
+    return (
+        <Fragment>
+            <MetaData title={'Mi carrito'} />
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1 id="h1carrito" class="fa fa-shopping-cart fa-2x">
             Carrito de Compras
           </h1>
-        </div>
+          <br/>
+          <br/>
+          
+            {cartItems.length === 0 ? <h2 class="mt-5">Su carrito esta vacio <h3 className='fa fa-meh-o'>.</h3> </h2> : (
+                <Fragment>
+                    
+                    <h2 className="mt-5">Su Carrito: <b>{cartItems.reduce((acc, item)=>(acc+Number(item.quantity)),0)} Producto(s)</b></h2>
 
-        <div className="col-12 col-lg-9">
-          <section id="productos" className="container mt-5">
-            <table class="table table-add_review">
-              <tbody>
-                <tr>
-                  <td>
-                    <div className="row">
-                      <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-                        <div className="card p-3 rounded">
-                          <img
-                            className="card-img-top mx-auto"
-                            src="./images/9TenisdecueroAlmendro.jpg"
-                            alt="Almendro"
-                          ></img>
-                          <div className="card-body d-flex flex-column">
-                            <h5 id="titulo_producto">
-                              <a href="http://localhost:3000">
-                                Tenis de cuero Almendro
-                              </a>
-                            </h5>
-                            <div className="rating mt-auto">
-                              <div className="rating-outer">
-                                <div className="rating-inner"></div>
-                              </div>
-                              <span id="stock">Stock: 50</span>
-                            </div>
-                            <p className='card-text'>$272.000</p>
-                            <p className="card-text"></p>
-                            <a
-                              href="http://localhost:3000"
-                              id="view_btn"
-                              className="btn btn-block"
-                            >
-                              Eliminar
-                            </a>
-                          </div>
+                    <div className="row d-flex justify-content-between">
+                        <div className="col-12 col-lg-8">
+
+                        {cartItems && cartItems.map(item => (
+                                <Fragment>
+                                    <hr />
+
+                                    <div className="cart-item" key={item.nombre}>
+                                        <div className="row">
+                                            <div className="col-4 col-lg-3">
+                                                <img src={item.imagen} alt={item.nombre} height="90" width="115" />
+                                            </div>
+
+                                            <div className="col-5 col-lg-3">
+                                                <Link to={`/producto/${item.product}`}>{item.nombre}</Link>
+                                            </div>
+
+
+                                            <div className="col-4 col-lg-2 mt-4 mt-lg-0">
+                                                <p id="card_item_price">${item.precio}</p>
+                                            </div>
+
+                                            <div className="col-4 col-lg-3 mt-4 mt-lg-0">
+                                                <div className="stockCounter d-inline">
+                                                    <span className="btn" id="bntmenos"  onClick={() => decreaseQty(item.product, item.quantity)}>-</span>
+
+                                                    <input type="number" className="form-control count d-inline" value={item.quantity} readOnly />
+
+                                                    <span className="btn" id="bntmas"  onClick={()=>increaseQty(item.product, item.quantity, item.inventario)}>+</span>
+                                                </div>
+                                            </div>
+
+                                            <div className="col-4 col-lg-1 mt-4 mt-lg-0">
+                                         
+                                                <i id="delete_cart_item"  className="btn btn-primary, bi bi-trash" onClick={() => removeCartItemHandler(item.product)}></i>
+                                               
+</div>
+
+                                        </div>
+                                    </div>
+                                    <hr />
+                                </Fragment>
+                            
+                        ))}
                         </div>
-                      </div>
 
-                      <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-                        <div className="card p-3 rounded">
-                          <img
-                            className="card-img-top mx-auto"
-                            src="./images/4TenisdeportivosdecueroTropicalN.jpg"
-                            alt="TropicalN"
-                          ></img>
-                          <div className="card-body d-flex flex-column">
-                            <h5 id="titulo_producto">
-                              <a href="http://localhost:3000">
-                                Tenis de cuero Tropical negro
-                              </a>
-                            </h5>
-                            <div className="rating mt-auto">
-                              <div className="rating-outer">
-                                <div className="rating-inner"></div>
-                              </div>
-                              <span id="stock">Stock: 30</span>
+                        <div className="col-12 col-lg-3 my-4">
+                            <div id="order_summary">
+                                <h4  className="fa fa-money"> Total de la Compra</h4>
+                                <hr />
+                                <p>Productos:  <span className="order-summary-values">{cartItems.reduce((acc, item)=>(acc+Number(item.quantity)),0)} (Unidades)</span></p>
+                                <p>Est. total: <span className="order-summary-values">${cartItems.reduce((acc, item)=> acc+(item.quantity*item.precio),0).toFixed(2)}</span></p>
+
+                                <hr />
+                                <button id="checkout_btn" className="btn btn-primary btn-block">Comprar!</button>
                             </div>
-                            <p className='card-text'>$268.000</p>
-                            <p className="card-text"></p>
-                            <a
-                              href="http://localhost:3000"
-                              id="view_btn"
-                              className="btn btn-block"
-                            >
-                              Eliminar
-                            </a>
-                          </div>
                         </div>
-                      </div>
-
-                      <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-                        <div className="card p-3 rounded">
-                          <img
-                            className="card-img-top mx-auto"
-                            src="./images/7TenisdecueroJacquard.jpg"
-                            alt="Jacquard"
-                          ></img>
-                          <div className="card-body d-flex flex-column">
-                            <h5 id="titulo_producto">
-                              <a href="http://localhost:3000">
-                                Tenis de cuero Jacquard
-                              </a>
-                            </h5>
-                            <div className="rating mt-auto">
-                              <div className="rating-outer">
-                                <div className="rating-inner"></div>
-                              </div>
-                              <span id="stock">Stock: 60</span>
-                            </div>
-                            <p className='card-text'>$280.000</p>
-                            <p className="card-text"></p>
-                            <a
-                              href="http://localhost:3000"
-                              id="view_btn"
-                              className="btn btn-block"
-                            >
-                              Eliminar
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-                        <div className="card p-3 rounded">
-                          <img
-                            className="card-img-top mx-auto"
-                            src="./images/3TenisDeCueroTropicalC.jpg"
-                            alt="TropicalC"
-                          ></img>
-                          <div className="card-body d-flex flex-column">
-                            <h5 id="titulo_producto">
-                              <a href="http://localhost:3000">
-                                Tenis de cuero Tropical café
-                              </a>
-                            </h5>
-                            <div className="rating mt-auto">
-                              <div className="rating-outer">
-                                <div className="rating-inner"></div>
-                              </div>
-                              <span id="stock">Stock: 20</span>
-                            </div>
-                            <p className='card-text'>$269.000</p>
-                          
-                            <p className="card-text"></p>
-                            <a
-                              href="http://localhost:3000"
-                              id="view_btn"
-                              className="btn btn-block"
-                            >
-                              Eliminar
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-
-                     
                     </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-        </div>
+                </Fragment>
+            )}
+        </Fragment>
+    )
+}
 
-        <div className="col-12 col-lg-3 my-4">
-        <br />
-          <div id="order_summary">
-            <h4  class="fa fa-money"> Total de la Compra</h4>
-            <hr />
-            <p>
-              Subtotal: <span className="order-summary-values">$1.068.309</span>
-            </p>
-            <p>
-              Est. total:{" "}
-              <span className="order-summary-values"> $1.089.000</span>
-            </p>
-
-            <hr />
-            <a
-              href="http://localhost:3000/finalizarcompra"
-              id="checkout_btn"
-              className="btn btn-primary btn-block border border-dark">
-              Finalizar Compra
-            </a>
-            <button
-              id="checkout_btn"
-              className="btn btn-primary btn-block border border-dark"
-              type="reset"
-              value="Reset" >
-              Vaciar Carrito
-            </button>
-          </div>
-        </div>
-      </div>
-      </MDBRow>
-           </MDBContainer>    
-    </Fragment>
-  );
-};
-export default Carrito;
+export default Carrito
