@@ -71,7 +71,7 @@ const Header = () => {
 
                                 <Link className="dropdown-item" to="/">Pedidos</Link>
                                 <Link className="dropdown-item" to="/usuario">Mi Perfil</Link>
-                                <Link className="dropdown-item" to="/" onClick={logoutHandler}>Cerrar Sesion</Link>
+                                <Link className="dropdown-item" to="/"  onClick={logoutHandler}>Cerrar Sesion</Link>
                             </div>
                         </div>
                     ) : !loading && <Link to="/login" className='btn ml-4' id="login_btn">INICIAR SESION</Link>}
