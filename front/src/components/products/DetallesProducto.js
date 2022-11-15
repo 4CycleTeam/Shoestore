@@ -12,46 +12,42 @@ import { addItemToCart } from '../../actions/cartActions'
 export const DetallesProducto = () => {
   const {loading, product, error} = useSelector(state =>state.productodetalle)
   const {id} =useParams();
-  const dispatch= useDispatch();
-  const alert= useAlert();
-  const [quantity, setQuantity] = useState(1)
+   const dispatch= useDispatch();
+   const alert= useAlert();
+   const [quantity, setQuantity] = useState(1)
 
-  useEffect(() => {
-   dispatch(getProductDetails(id))
-   if (error){
-     alert.error(error);
-     dispatch(clearErrors())
+   useEffect(() => {
+    dispatch(getProductDetails(id))
+    if (error){
+      alert.error(error);
+      dispatch(clearErrors())
+    }
+
+   }, [dispatch, alert, error, id])
+
+   const increaseQty = () => {
+      const contador = document.querySelector('.count')
+
+      if (contador.valueAsNumber>=product.inventario) return;
+
+      const qty = contador.valueAsNumber+1;
+      setQuantity(qty)
    }
 
-  }, [dispatch, alert, error, id])
+   const decreaseQty = () => {
+    const contador = document.querySelector('.count')
 
-  const increaseQty = () => {
-     const contador = document.querySelector('.count')
+    if (contador.valueAsNumber <= 1) return;
 
-     if (contador.valueAsNumber>=product.inventario) return;
+    const qty = contador.valueAsNumber-1;
+    setQuantity(qty)
+ }
 
-     const qty = contador.valueAsNumber+1;
-     setQuantity(qty)
-  }
-
-  const decreaseQty = () => {
-   const contador = document.querySelector('.count')
-
-   if (contador.valueAsNumber <= 1) return;
-
-   const qty = contador.valueAsNumber-1;
-   setQuantity(qty)
+ const addToCart = () => {
+  dispatch(addItemToCart(id, quantity));
+  alert.success('Producto agregado al carro')
 }
 
-const addToCart = () => {
- dispatch(addItemToCart(id, quantity));
- alert.success('Producto agregado al carro')
-}
-
-  const addToCart = () => {
-    dispatch(addItemToCart(id, quantity));
-    alert.success('Producto agregado al carro')
-  }
 
   return (
     <Fragment>
