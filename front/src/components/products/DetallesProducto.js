@@ -48,6 +48,11 @@ const addToCart = () => {
  alert.success('Producto agregado al carro')
 }
 
+  const addToCart = () => {
+    dispatch(addItemToCart(id, quantity));
+    alert.success('Producto agregado al carro')
+  }
+
   return (
     <Fragment>
       {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
