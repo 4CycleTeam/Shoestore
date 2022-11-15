@@ -3,6 +3,7 @@ import MetaData from '../layout/MetaData'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { forgotPassword, clearErrors } from '../../actions/userActions'
+import { MDBRow, MDBCol, MDBCard, MDBBtn, MDBCardBody, MDBContainer } from 'mdb-react-ui-kit';
 
 export const ForgotPassword = () => {
 
@@ -36,36 +37,52 @@ export const ForgotPassword = () => {
     return (
         <Fragment>
             <MetaData title={'Olvide mi contraseña'} />
+            <MDBContainer fluid>
+                <MDBRow className='my-5 justify-content-center align-items-center h-100'>
+                    <MDBCard className='bg-white my-5 mx-auto' style={{ borderRadius: '1rem', maxWidth: '500px' }}>
+                        <div className="password">
+                            <MDBCardBody className='p-5 w-100 d-flex flex-column'>
+                                <MDBCol className='mb-5'>
 
-            <div className="row wrapper">
-                <div className="col-10 col-lg-5">
-                    <form className="shadow-lg" onSubmit={submitHandler}>
-                        <br/>
-                        <br/>
-                        <h1 className="mb-3">Olvide mi contraseña</h1>
-                        <div className="form-group">
-                            <label htmlFor="email_field">Email registrado</label>
-                            <input
-                                type="email"
-                                id="email_field"
-                                className="form-control"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
+
+                                    <form onSubmit={submitHandler}>
+                                        <br />
+                                        
+                                        <h1 className="fa fa-hand-o-right fa-2x"> Olvide mi Password</h1>
+                                        <div className="form-group">
+                                            <br />
+                                            <br />
+                                            <label htmlFor="email_field">Email Registrado:</label>
+                                            
+                                            <input
+                                                type="email"
+                                                id="email_field"
+                                                className="form-control"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                            />
+                                        </div>
+
+                                        <br />
+                                        <MDBBtn
+
+                                            id="forgot_password_button"
+                                            type="submit"
+                                            color='dark'
+                                            className="mb-4 w-100 gradient-custom-2"
+                                            disabled={loading ? true : false} >
+                                            Recuperar contraseña
+
+                                        </MDBBtn>
+
+                                    </form>
+
+                                </MDBCol>
+                            </MDBCardBody>
                         </div>
-
-                        <button
-                            id="forgot_password_button"
-                            type="submit"
-                            className="btn btn-block py-3"
-                            disabled={loading ? true : false} >
-                            Recuperar contraseña
-                    </button>
-
-                    </form>
-                </div>
-            </div>
-
+                    </MDBCard>
+                </MDBRow>
+            </MDBContainer>
         </Fragment>
     )
 }

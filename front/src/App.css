@@ -272,8 +272,8 @@ body {
 }
 
 .wrapper form .btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #090909;
+  border-color: #1f1d1b;
   color: white;
   margin-top: 2.5rem;
 }
@@ -698,6 +698,11 @@ ul.CTAs a {
   color:rgb(14, 14, 14)
 }
 
+.password {
+  background-color: #f3f1ed;
+  color: rgb(14, 14, 14);
+  border-color: #0e0d0d;
+}
 
 .gradient-custom {
   /* fallback for old browsers */
