@@ -2,9 +2,10 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import MetaData from "../layout/MetaData"
 import { useParams } from 'react-router-dom'
-import { getProductDetails, clearErrors} from '../../actions/productActions'
-import { useAlert} from 'react-alert'
+import { getProductDetails, clearErrors } from '../../actions/productActions'
+import { useAlert } from 'react-alert'
 import { addItemToCart } from '../../actions/cartActions'
+import { Carousel } from 'react-bootstrap'
 
 
 
@@ -55,16 +56,19 @@ export const DetallesProducto = () => {
           <br /><br />
           <MetaData title={product.nombre}></MetaData>
           <div className='row d-flex justify-content-around'>
-            <div className='col-12 col-lg-5 img-fluid' id="imagen_producto">
-            <br />
-              <br />
+          <div className='col-12 col-lg-5 img-fluid' id="imagen_producto">
+          <br /><br /><br />
+              <Carousel pause='hover'>
+                
+                {product.imagen && product.imagen.map(img =>(
+                  <Carousel.Item key={img.public_id}>
+                    <img className="d-block w-100" src={img.url} alt={product.nombre}></img>
+                  </Carousel.Item>
+                ))}
+              </Carousel>
+          </div>
 
-              {product.imagen && product.imagen.map(img => (
-                <img className="d-block w-100" src={"../" + img.url} alt={product.nombre}></img>
-
-              ))}
-
-            </div>
+          
 
             <div className='col-12 col-lg-5 mt-5'>
               <h3>{product.nombre}</h3>
@@ -72,7 +76,7 @@ export const DetallesProducto = () => {
               <hr />
 
               <div className='rating-outer'>
-              <div className="rating-inner" style={{width: `${(product.calificacion/5)*100}%`}}></div>
+                <div className="rating-inner" style={{ width: `${(product.calificacion /5)*100}%` }}></div>
               </div>
               <span id="No_de_reviews">  ({product.numCalificaciones} Reviews)</span>
               <hr />
@@ -82,7 +86,7 @@ export const DetallesProducto = () => {
                 <input type="number" className="form-control count d-inline" value={quantity} readOnly />
                 <span className="btn" id="bntmas" onClick={increaseQty}>+</span>
                 <button type="button" id="carrito_btn" className="btn btn-outline btn-rounded d-inline ml-4" disabled={product.inventario === 0} onClick={addToCart}>Agregar al Carrito</button>
-               
+
               </div>
               <br />
               <br />

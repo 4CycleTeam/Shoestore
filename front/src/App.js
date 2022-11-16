@@ -8,12 +8,12 @@ import ListaProductos from './components/ListaProductos';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Carrito from './components/Carrito';
 import EditarProductos from './components/EditarProductos';
-import CrearProducto from './components/CrearProducto';
 import FinalizarCompra from './components/FinalizarCompra';
 import { Login } from './components/user/Login'
 import { DetallesProducto } from './components/products/DetallesProducto';
 import Dashboard from './components/admin/Dashboard';
 import ProductsList from './components/admin/ProductsList';
+import NewProduct from './components/admin/newProduct';
 import { Register } from './components/user/Register';
 import { loadUser } from './actions/userActions';
 import store from "./store"
@@ -48,7 +48,7 @@ function App() {
             <Route path='/ventas' element={<Ventas />}></Route>
             <Route path='/carrito' element={<Carrito />}></Route>
             <Route path='/editarproducto' element={<EditarProductos />}></Route>
-            <Route path='/crearproducto' element={<CrearProducto />}></Route>
+            <Route path='/crearproducto' element={<NewProduct />}></Route>
             <Route path='/finalizarcompra' element={<FinalizarCompra />}></Route>
             <Route path='/login' element={<Login />}></Route>
             <Route path="/dashboard" element={<Dashboard />}/>
