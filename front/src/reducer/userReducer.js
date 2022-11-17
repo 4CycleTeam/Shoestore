@@ -24,7 +24,10 @@ import {
     FORGOT_PASSWORD_FAIL,
     NEW_PASSWORD_REQUEST,
     NEW_PASSWORD_SUCCESS,
-    NEW_PASSWORD_FAIL
+    NEW_PASSWORD_FAIL,
+    ADMIN_USERS_REQUEST,
+    ADMIN_USERS_SUCCESS,
+    ADMIN_USERS_FAIL
 } from "../constants/userConstants"
 
 //Cambios y reducer sobre procesos de autenticacion
@@ -171,6 +174,47 @@ export const forgotPasswordReducer = (state={}, action)=>{
                 ...state,
                 error:null
             }
+        default:
+            return state;
+    }
+}
+
+//Ver usuarios ADMIN
+export const usersReducer = (state = { users: [] }, action) => {
+    switch (action.type) {
+        case ADMIN_USERS_REQUEST:
+            return {
+                loading: true,
+                users: []
+            }
+/* 
+        case ADMIN_USERS_SUCCESS:
+            return {
+                loading: false,
+                users: action.payload.users,
+                usersCount: action.payload.usersCount,
+                resPerPage: action.payload.resPerPage,
+                filteredUsersCount: action.payload.filteredUsersCount
+            }
+*/       
+        case ADMIN_USERS_SUCCESS:
+            return {
+                loading: false,
+                users: action.payload
+            }
+
+        case ADMIN_USERS_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            }
+
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            }
+
         default:
             return state;
     }

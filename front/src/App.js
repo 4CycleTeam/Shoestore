@@ -26,6 +26,7 @@ import { Shipping } from './components/cart/Shipping';
 import { ConfirmOrder } from './components/cart/ConfirmOrder';
 import { Payment } from './components/cart/Payment';
 import { Success } from './components/cart/Success'
+import { UsersList } from './components/admin/UsersList';
 
 function App() {
   useEffect(()=>{
@@ -53,6 +54,7 @@ function App() {
             <Route path='/login' element={<Login />}></Route>
             <Route path="/search/:keyword" element={<ListaProductos />}/>
             <Route path="/productList" element={<ProductsList />}/>
+            <Route path="/userList" element={<UsersList />}/>
             <Route path="/search/:keyword" element={<ProductsList />}/>
             <Route path="/register" element= {<Register />} />
             <Route path="/usuario" element={<Profile />}/>

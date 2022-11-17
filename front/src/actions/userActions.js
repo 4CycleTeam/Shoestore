@@ -24,7 +24,10 @@ import {
     FORGOT_PASSWORD_FAIL,
     NEW_PASSWORD_REQUEST,
     NEW_PASSWORD_SUCCESS,
-    NEW_PASSWORD_FAIL
+    NEW_PASSWORD_FAIL,
+    ADMIN_USERS_REQUEST,
+    ADMIN_USERS_SUCCESS,
+    ADMIN_USERS_FAIL
 } from "../constants/userConstants"
 
 //Login
@@ -206,6 +209,25 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
     catch (error) { 
         dispatch({
             type: NEW_PASSWORD_FAIL,
+            payload: error.response.data.message
+        })
+    }
+}
+
+//ADMIN - get users
+export const getAdminUsers = () => async (dispatch) => {
+    try {
+        dispatch({ type: ADMIN_USERS_REQUEST })
+
+        const { data } = await axios.get('/api/admin/allUsers')
+
+        dispatch({
+            type: ADMIN_USERS_SUCCESS,
+            payload: data.users
+        })
+    } catch (error) {
+        dispatch({
+            type: ADMIN_USERS_FAIL,
             payload: error.response.data.message
         })
     }
