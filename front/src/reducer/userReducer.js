@@ -27,7 +27,10 @@ import {
     NEW_PASSWORD_FAIL,
     ADMIN_USERS_REQUEST,
     ADMIN_USERS_SUCCESS,
-    ADMIN_USERS_FAIL
+    ADMIN_USERS_FAIL,
+    ADMIN_USER_DETAILS_REQUEST,
+    ADMIN_USER_DETAILS_FAIL,
+    ADMIN_USER_DETAILS_SUCCESS
 } from "../constants/userConstants"
 
 //Cambios y reducer sobre procesos de autenticacion
@@ -217,5 +220,38 @@ export const usersReducer = (state = { users: [] }, action) => {
 
         default:
             return state;
+    }
+}
+
+//REDUCER PARA TENER TODOS LOS DETALLES
+export const userDetailsReducer = (state = { users: {} }, action) => {
+    switch (action.type) {
+
+        case ADMIN_USER_DETAILS_REQUEST:
+            return {
+                ...state,
+                loading: true
+            }
+
+        case ADMIN_USER_DETAILS_SUCCESS:
+            return {
+                loading: false,
+                product: action.payload
+            }
+
+        case ADMIN_USER_DETAILS_FAIL:
+            return {
+                ...state,
+                error: action.payload
+            }
+
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            }
+
+        default:
+            return state
     }
 }

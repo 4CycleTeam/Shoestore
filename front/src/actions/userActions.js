@@ -27,7 +27,13 @@ import {
     NEW_PASSWORD_FAIL,
     ADMIN_USERS_REQUEST,
     ADMIN_USERS_SUCCESS,
-    ADMIN_USERS_FAIL
+    ADMIN_USERS_FAIL,
+    ADMIN_DELETE_USER_REQUEST,
+    ADMIN_DELETE_USER_SUCCESS,
+    ADMIN_DELETE_USER_FAIL,
+    ADMIN_USER_DETAILS_REQUEST,
+    ADMIN_USER_DETAILS_SUCCESS,
+    ADMIN_USER_DETAILS_FAIL
 } from "../constants/userConstants"
 
 //Login
@@ -228,6 +234,44 @@ export const getAdminUsers = () => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: ADMIN_USERS_FAIL,
+            payload: error.response.data.message
+        })
+    }
+}
+
+
+//VER DETALLE DEL usuario
+export const getUserDetails = (id) => async (dispatch) => {
+    try {
+        dispatch({ type: ADMIN_USER_DETAILS_REQUEST })
+
+        const { data } = await axios.get(`/api/admin/user/${id}`)
+
+        dispatch({
+            type: ADMIN_USER_DETAILS_SUCCESS,
+            payload: data.product
+        })
+    } catch (error) {
+        dispatch({
+            type: ADMIN_USER_DETAILS_FAIL,
+            payload: error.response.data.message
+        })
+    }
+}
+
+//Eliminar un usuario (admin)
+export const deleteUser = (id) => async(dispatch)=>{
+    try{
+        dispatch ({type: ADMIN_DELETE_USER_REQUEST})
+        const {data} = await axios.delete(`/api/admin/deleteUser/${id}`)
+
+        dispatch({
+            type: ADMIN_DELETE_USER_SUCCESS,
+            payload: data.success
+        })
+    } catch(error){
+        dispatch({
+            type: ADMIN_DELETE_USER_FAIL,
             payload: error.response.data.message
         })
     }

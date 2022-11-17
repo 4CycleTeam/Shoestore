@@ -1,27 +1,28 @@
 import React, { Fragment, useEffect } from 'react'
-//import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { MDBDataTable } from 'mdbreact'
 import MetaData from '../layout/MetaData'
 import Sidebar from './Sidebar'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearErrors,  getAdminUsers } from '../../actions/userActions'
+import { clearErrors, deleteUser, getAdminUsers } from '../../actions/userActions'
+
+
 
 export const UsersList = () => {
     const alert = useAlert();
     const dispatch = useDispatch();
 
     const { loading, error, users } = useSelector(state => state.users);
-    /*
-    const deleteProductHandler= (id)=> {
-        const response=window.confirm("Esta seguro de querer borrar este usuario?")
+    
+    const deleteUserHandler= (id)=> {
+        const response=window.confirm("Esta seguro de querer borrar este Usuario?")
         if (response){
-            dispatch(deleteProduct(id))
-            alert.success("Producto eliminado correctamente")
+            dispatch(deleteUser(id))
+            alert.success("Usuario eliminado correctamente")
             window.location.reload(false)
         }
     }
-    */
     useEffect(() => {
         dispatch(getAdminUsers());
 
@@ -31,6 +32,7 @@ export const UsersList = () => {
         }
 
     }, [dispatch, alert, error])
+
 
     const setUsers = () => {
         const data = {
@@ -47,7 +49,7 @@ export const UsersList = () => {
                 },
                 {
                     label: 'Teléfono',
-                    field: 'teléfono',
+                    field: 'telefono',
                     sort: 'asc'
                 },
                 {
@@ -59,6 +61,10 @@ export const UsersList = () => {
                     label: 'Rol',
                     field: 'role',
                 },
+                {
+                    label: 'Acciones',
+                    field: 'actions',
+                },
             ],
             rows: []
         }
@@ -69,7 +75,20 @@ export const UsersList = () => {
                 email: user.email,
                 telefono: user.telefono,
                 direccion: user.direccion,
-                role: user.role
+                role: user.role,
+                actions: <Fragment>
+                <Link to={`/admin/user/${user._id}`} className="btn btn-outline-primary py-1 px-2">
+                    <i className="fa fa-eye"></i>
+                </Link>
+                <Link to={`/admin/updateUser/${user._id}`} className="btn btn-outline-warning py-1 px-2">
+                <i class="fa fa-pencil"></i>
+                </Link>
+                <button  className="btn btn-outline-danger  py-1 px-2" onClick={() => deleteUserHandler(user._id)}>
+                    <i className="fa fa-trash"></i>
+                </button>
+     
+
+            </Fragment>
             })
         })
 

@@ -26,7 +26,9 @@ import { Shipping } from './components/cart/Shipping';
 import { ConfirmOrder } from './components/cart/ConfirmOrder';
 import { Payment } from './components/cart/Payment';
 import { Success } from './components/cart/Success'
-import { UsersList } from './components/admin/UsersList';
+import  UsersList  from './components/admin/UsersList';
+import { UserDetails } from './components/admin/UserDetails';
+
 
 function App() {
   useEffect(()=>{
@@ -62,6 +64,8 @@ function App() {
             <Route path="/password/update" element={<UpdatePassword />}/>
             <Route path="/password/forgot" element={<ForgotPassword />}/>
             <Route path="/resetPassword/:token" element={<NewPassword />}/>
+            <Route path='/admin/user/:id' element={<UserDetails />}/>
+
             
            
           

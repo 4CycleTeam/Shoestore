@@ -231,6 +231,7 @@ exports.getUserDetails= catchAsyncErrors(async(req, res, next)=>{
     })
 })
 
+
 //Actualizar perfil de usuario (como administrador)
 exports.updateUser= catchAsyncErrors (async(req, res, next)=>{
     const nuevaData={
