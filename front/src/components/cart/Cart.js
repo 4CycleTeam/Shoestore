@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate} from 'react-router-dom'
-import { addItemToCart, removeItemFromCart } from '../actions/cartActions';
-import MetaData from './layout/MetaData';
+import { addItemToCart, removeItemFromCart } from '../../actions/cartActions';
+import MetaData from '../layout/MetaData';
 
 const Cart = () => {
     const navigate=useNavigate()
@@ -118,4 +118,4 @@ const Cart = () => {
     )
 }
 
-export default Carrito
+export default Cart

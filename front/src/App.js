@@ -6,7 +6,7 @@ import Ventas from './components/Ventas';
 import { Footer } from './components/layout/Footer';
 import ListaProductos from './components/ListaProductos';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Carrito from './components/Carrito';
+import Cart from './components/cart/Cart';
 import EditarProductos from './components/EditarProductos';
 import FinalizarCompra from './components/FinalizarCompra';
 import { Login } from './components/user/Login'
@@ -23,7 +23,11 @@ import { UpdateProfile} from "./components/user/UpdateProfile"
 import { UpdatePassword } from './components/user/UpdatePassword';
 import { ForgotPassword } from "./components/user/ForgotPassword"
 import { NewPassword } from './components/user/NewPassword';
-
+import { UpdateProduct } from './components/admin/UpdateProduct';
+import { Shipping } from './components/cart/Shipping';
+import { ConfirmOrder } from './components/cart/ConfirmOrder';
+import { Payment } from './components/cart/Payment';
+import { Success } from './components/cart/Success'
 
 function App() {
   useEffect(()=>{
@@ -46,7 +50,7 @@ function App() {
             <Route path='/listaproductos' element={<ListaProductos />}></Route>
             <Route path='/producto/:id' element={<DetallesProducto />}/>
             <Route path='/ventas' element={<Ventas />}></Route>
-            <Route path='/carrito' element={<Carrito />}></Route>
+            <Route path='/carrito' element={<Cart />}></Route>
             <Route path='/editarproducto' element={<EditarProductos />}></Route>
             <Route path='/crearproducto' element={<NewProduct />}></Route>
             <Route path='/finalizarcompra' element={<FinalizarCompra />}></Route>
@@ -66,6 +70,22 @@ function App() {
             {/*Ruta protegida*/}
            <Route path="/dashboard" 
             element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>}/>
+            
+            <Route path="/updateProduct/:id"
+              element={<ProtectedRoute isAdmin={true}><UpdateProduct /></ProtectedRoute>} />
+
+            <Route path="/shipping"
+              element={<ProtectedRoute><Shipping /></ProtectedRoute>} />
+
+            <Route path="/order/confirm"
+              element={<ProtectedRoute><ConfirmOrder /></ProtectedRoute>} />
+
+            <Route path="/payment"
+              element={<ProtectedRoute><Payment /></ProtectedRoute>} />
+
+            <Route path="/success"
+              element={<ProtectedRoute><Success /></ProtectedRoute>} />
+
 
        </Routes>
         </div>
