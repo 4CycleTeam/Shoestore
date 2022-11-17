@@ -90,6 +90,7 @@ export const Shipping = () => {
 
 
                             <div className="form-group">
+                                <br/>
                                 <label htmlFor="city_field">Ciudad</label>
                                 <select
                                     id="city_field"

@@ -76,7 +76,7 @@ export const Payment = () => {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler} >
-                        <h1  className="fa fa-user-secret"> Datos de La tarjeta</h1>
+                        <h1  className="fa fa-user-secret fa-2x"> Datos de La tarjeta</h1>
                         <div className="form-group">
                             <br/>
                             <br/>
