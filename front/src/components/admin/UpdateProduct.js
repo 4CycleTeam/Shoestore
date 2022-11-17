@@ -9,8 +9,8 @@ import { UPDATE_PRODUCT_RESET } from '../../constants/productConstants'
 import { useNavigate, useParams } from 'react-router-dom'
 
 export const UpdateProduct = () => {
-    const navigate= useNavigate()
-    const params= useParams();
+    const navigate = useNavigate()
+    const params = useParams();
     const [nombre, setNombre] = useState('');
     const [talla, setTalla] = useState('');
     const [precio, setPrecio] = useState(0);
@@ -26,9 +26,9 @@ export const UpdateProduct = () => {
         "-- Selecione la categoria --",
         "Calzado Mujer",
         "Calzado Hombre"
-      ]
-    
-      const tallas = [
+    ]
+
+    const tallas = [
         "-- Selecione la Talla --",
         "34",
         "35",
@@ -38,12 +38,12 @@ export const UpdateProduct = () => {
         "39",
         "40",
         "42"
-      ]
+    ]
 
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, isUpdated, error: updateError} = useSelector (state => state.productos)
+    const { loading, isUpdated, error: updateError} = useSelector (state => state.product)
     const { error, product} = useSelector ( state => state.productodetalle)
     const productId= params.id;
 
@@ -56,8 +56,9 @@ export const UpdateProduct = () => {
             setPrecio(product.precio);
             setDescripcion(product.descripcion);
             setCategoria(product.categoria);
-            setVendedor(product.vendedor);
             setInventario(product.inventario);
+            setVendedor(product.vendedor);
+
             setOldImagen(product.imagen)
         }
         if(error){
@@ -70,7 +71,7 @@ export const UpdateProduct = () => {
         }
         if(isUpdated){
             alert.success("Producto actualizado correctamente");
-            navigate("/dashboard")
+            navigate("/productList")
             dispatch({ type: UPDATE_PRODUCT_RESET})
         }
 
@@ -117,140 +118,145 @@ export const UpdateProduct = () => {
         })
     }
 
-  return (
-    <Fragment>
-    <MetaData title={'Actualizar producto'} />
-    <div className="row">
-        <div className="col-12 col-md-2">
-            <Sidebar />
-        </div>
-
-        <div className="col-12 col-md-10">
-            <Fragment>
-                <div className="wrapper my-5">
-                    <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                        <h1 className="mb-4">Actualizar Producto</h1>
-
-                        <div className="form-group">
-                            <label htmlFor="name_field">Nombre</label>
-                            <input
-                                type="text"
-                                id="name_field"
-                                className="form-control"
-                                value={nombre}
-                                onChange={(e) => setNombre(e.target.value)}
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="talla_field">Talla</label>
-                            <select className="form-control" 
-                            id="talla_field" 
-                            value={talla} 
-                            onChange={(e) => setTalla(e.target.value)}>
-                                {tallas.map(talla => (
-                                    <option key={talla} value={talla} >{talla}</option>
-                                ))}
-                            </select>
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="price_field">Precio</label>
-                            <input
-                                type="text"
-                                id="price_field"
-                                className="form-control"
-                                value={precio}
-                                onChange={(e) => setPrecio(e.target.value)}
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="description_field">Descripcion</label>
-                            <textarea className="form-control" 
-                            id="description_field" 
-                            rows="8" 
-                            value={descripcion} 
-                            onChange={(e) => setDescripcion(e.target.value)}></textarea>
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="category_field">Categoria</label>
-                            <select className="form-control" 
-                            id="category_field" 
-                            value={categoria} 
-                            onChange={(e) => setCategoria(e.target.value)}>
-                                {categorias.map(categoria => (
-                                    <option key={categoria} value={categoria} >{categoria}</option>
-                                ))}
-
-                            </select>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="stock_field">Inventario</label>
-                            <input
-                                type="number"
-                                id="stock_field"
-                                className="form-control"
-                                value={inventario}
-                                onChange={(e) => setInventario(e.target.value)}
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="seller_field">Vendedor</label>
-                            <input
-                                type="text"
-                                id="seller_field"
-                                className="form-control"
-                                value={vendedor}
-                                onChange={(e) => setVendedor(e.target.value)}
-                            />
-                        </div>
-
-                        <div className='form-group'>
-                            <label>Imágenes</label>
-
-                            <div className='custom-file'>
-                                <input
-                                    type='file'
-                                    name='product_images'
-                                    className='custom-file-input'
-                                    id='customFile'
-                                    onChange={onChange}
-                                    multiple
-                                />
-                                <label className='custom-file-label' htmlFor='customFile'>
-                                    Seleccione Imágenes
-                         </label>
-                            </div>
-
-                            {oldImagen && oldImagen.map(img => (
-                                <img key={img} src={img.url} alt={img.url} className="mt-3 mr-2" width="55" height="52" />
-                            ))}
-
-                            {imagenPreview.map(img => (
-                                <img src={img} key={img} alt="Vista Previa" className="mt-3 mr-2" width="55" height="52" />
-                            ))}
-
-                        </div>
-
-
-                        <button
-                            id="login_button"
-                            type="submit"
-                            className="btn btn-block py-3"
-                            disabled={loading ? true : false}
-                        >
-                            ACTUALIZAR
-                    </button>
-
-                    </form>
+    return (
+        <Fragment>
+            <MetaData title={'Actualizar producto'} />
+            <div className="row">
+                <div className="col-12 col-md-2">
+                    <Sidebar />
                 </div>
-            </Fragment>
-        </div>
-    </div>
 
-</Fragment>
-  )
+                <div className="col-12 col-md-10">
+                    <Fragment>
+                        <div className="wrapper my-5">
+                            <form className="shadow-lg" onSubmit={submitHandler}
+                                encType="multipart/form-data" aling="left">
+                                    <br />
+                                <h1  className="fa fa-repeat fa-2x"> Actualizar Producto</h1>
+                                <br />
+                                <br />
+                                <div className="form-group">
+                                    <label htmlFor="name_field">Nombre</label>
+                                    <input
+                                        type="text"
+                                        id="name_field"
+                                        className="form-control"
+                                        value={nombre}
+                                        onChange={(e) => setNombre(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="talla_field">Talla</label>
+                                    <select className="form-control"
+                                        id="talla_field"
+                                        value={talla}
+                                        onChange={(e) => setTalla(e.target.value)}>
+                                        {tallas.map(talla => (
+                                            <option key={talla} value={talla} >{talla}</option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="price_field">Precio</label>
+                                    <input
+                                        type="text"
+                                        id="price_field"
+                                        className="form-control"
+                                        value={precio}
+                                        onChange={(e) => setPrecio(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="description_field">Descripcion</label>
+                                    <textarea className="form-control"
+                                        id="description_field"
+                                        rows="8"
+                                        value={descripcion}
+                                        onChange={(e) => setDescripcion(e.target.value)}></textarea>
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="category_field">Categoria</label>
+                                    <select className="form-control"
+                                        id="category_field"
+                                        value={categoria}
+                                        onChange={(e) => setCategoria(e.target.value)}>
+                                        {categorias.map(categoria => (
+                                            <option key={categoria} value={categoria} >{categoria}</option>
+                                        ))}
+
+                                    </select>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="stock_field">Inventario</label>
+                                    <input
+                                        type="number"
+                                        id="stock_field"
+                                        className="form-control"
+                                        value={inventario}
+                                        onChange={(e) => setInventario(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="seller_field">Vendedor</label>
+                                    <input
+                                        type="text"
+                                        id="seller_field"
+                                        className="form-control"
+                                        value={vendedor}
+                                        onChange={(e) => setVendedor(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className='form-group'>
+                                    <label>Imágenes</label>
+
+                                    <div className='custom-file'>
+                                        <input
+                                            type='file'
+                                            name='product_images'
+                                            className='custom-file-input'
+                                            id='customFile'
+                                            onChange={onChange}
+                                            multiple
+                                        />
+                                        <label className='custom-file-label' htmlFor='customFile'>
+                                            Seleccione Imágenes
+                                        </label>
+                                    </div>
+
+                                    {oldImagen && oldImagen.map(img => (
+                                        <img key={img} src={img.url} alt={img.url} className="mt-3 mr-2" width="55" height="52" />
+                                    ))}
+
+                                    {imagenPreview.map(img => (
+                                        <img src={img} key={img} alt="Vista Previa" className="mt-3 mr-2" width="55" height="52" />
+                                    ))}
+
+                                </div>
+
+
+                                <button 
+                                    type="submit"
+                                    className="btn update-btn btn-block mt-4 mb-3"
+                                    id="update_button"
+                                    color='dark'
+                                    disabled={loading ? true : false}>
+                                    ACTUALIZAR
+                                </button>
+
+
+
+                            </form>
+                        </div>
+                    </Fragment>
+                </div>
+            </div>
+
+        </Fragment>
+    )
 }

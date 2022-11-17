@@ -7,8 +7,6 @@ import { Footer } from './components/layout/Footer';
 import ListaProductos from './components/ListaProductos';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Cart from './components/cart/Cart';
-import EditarProductos from './components/EditarProductos';
-import FinalizarCompra from './components/FinalizarCompra';
 import { Login } from './components/user/Login'
 import { DetallesProducto } from './components/products/DetallesProducto';
 import Dashboard from './components/admin/Dashboard';
@@ -51,11 +49,8 @@ function App() {
             <Route path='/producto/:id' element={<DetallesProducto />}/>
             <Route path='/ventas' element={<Ventas />}></Route>
             <Route path='/carrito' element={<Cart />}></Route>
-            <Route path='/editarproducto' element={<EditarProductos />}></Route>
             <Route path='/crearproducto' element={<NewProduct />}></Route>
-            <Route path='/finalizarcompra' element={<FinalizarCompra />}></Route>
             <Route path='/login' element={<Login />}></Route>
-            <Route path="/dashboard" element={<Dashboard />}/>
             <Route path="/search/:keyword" element={<ListaProductos />}/>
             <Route path="/productList" element={<ProductsList />}/>
             <Route path="/search/:keyword" element={<ProductsList />}/>
@@ -67,10 +62,11 @@ function App() {
             <Route path="/resetPassword/:token" element={<NewPassword />}/>
             
            
+          
             {/*Ruta protegida*/}
-           <Route path="/dashboard" 
-            element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>}/>
-            
+            <Route path="/dashboard"
+              element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} />
+
             <Route path="/updateProduct/:id"
               element={<ProtectedRoute isAdmin={true}><UpdateProduct /></ProtectedRoute>} />
 
@@ -85,7 +81,6 @@ function App() {
 
             <Route path="/success"
               element={<ProtectedRoute><Success /></ProtectedRoute>} />
-
 
        </Routes>
         </div>

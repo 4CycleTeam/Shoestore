@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { useNavigate , Link} from 'react-router-dom'
 import MetaData from '../layout/MetaData'
 import CheckoutSteps from './CheckOutSteps';
+import { MDBRow, MDBContainer } from 'mdb-react-ui-kit';
+
 
 export const ConfirmOrder = () => {
     const navigate=useNavigate();
@@ -30,16 +32,26 @@ export const ConfirmOrder = () => {
     <Fragment>
 
             <MetaData title={'Confirmar Orden'} />
-
+            <br/>
+            <br/>
             <CheckoutSteps shipping confirmOrder />
+          
+            <MDBContainer>
+                <MDBRow className='my-5 justify-content-center align-items-center h-100 '>
 
+                    <section id="productos" className='container mt-5'>
             <div className="row d-flex justify-content-between">
-                <div className="col-12 col-lg-8 mt-5 order-confirm">
+           
+          
+                <div className="col-12 col-lg-8 mt-3 order-confirm">
+                    
 
-                    <h4 className="mb-3">Información de Envio</h4>
-                    <p><b>Nombre:</b> {user && user.nombre}</p>
-                    <p><b>Teléfono:</b> {shippingInfo.telefono}</p>
-                    <p className="mb-4"><b>Dirección:</b> {`${shippingInfo.direccion}, ${shippingInfo.ciudad} ${shippingInfo.departamento}`}</p>
+                    <h4 className="fa fa-plane fa-2x"> Informacion de Envio</h4>
+                    <br/>
+                    <br/>
+                    <p className="form-group"><b>Nombre:</b> {user && user.nombre}</p>
+                    <p className="form-group"><b>Teléfono:</b> {shippingInfo.telefono}</p>
+                    <p className="form-group"><b>Dirección:</b> {`${shippingInfo.direccion}, ${shippingInfo.ciudad} ${shippingInfo.departamento}`}</p>
 
                     <hr />
                     <h4 className="mt-4">Productos en tu Carrito:</h4>
@@ -68,10 +80,11 @@ export const ConfirmOrder = () => {
                         </Fragment>
                     ))}
                 </div>
-
+        
+     
                 <div className="col-12 col-lg-3 my-4">
                     <div id="order_summary">
-                        <h4>Resumen de la compra</h4>
+                        <h4 className='fa fa-shopping-bag'> Resumen de la compra</h4>
                         <hr />
                         <p>Subtotal:  <span className="order-summary-values">${precioItems}</span></p>
                         <p>Costo de Envío: <span className="order-summary-values">${precioEnvio}</span></p>
@@ -88,6 +101,12 @@ export const ConfirmOrder = () => {
 
 
             </div>
+                   
+            </section>
+
+
+</MDBRow>
+</MDBContainer>
 
         </Fragment>
   )

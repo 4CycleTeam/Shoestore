@@ -91,7 +91,6 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 })
 
 
-
 //Eliminar un producto
 exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
     const product = await producto.findById(req.params.id) //Variable de tipo modificable

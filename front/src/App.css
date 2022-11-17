@@ -45,7 +45,7 @@ body {
 }
 
 #cart_count {
-  background-color:  #eece89;
+  background-color:  #d1a23c;
   padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;
   color: black;
@@ -211,7 +211,7 @@ body {
 
 #checkout_btn,
 .review-btn {
-  background-color: #f6eac9;
+  background-color:#eece89;
   border-color: #ff9a16;
   margin-top: 2rem;
   border-radius: 5rem;
@@ -352,7 +352,7 @@ body {
 }
 
 .active-step {
-  background: #fa9c23;
+  background: #d1a23c;
   color: #fff;
 }
 
@@ -360,7 +360,7 @@ body {
   float: left;
   width: 0;
   border-top: 20px solid transparent;
-  border-left: 15px solid #fa9c23;
+  border-left: 15px solid  #d1a23c;
   border-bottom: 20px solid transparent;
   margin-left: -1px;
 }
@@ -368,9 +368,9 @@ body {
 .triangle2-active {
   width: 0;
   float: left;
-  border-top: 20px solid #fa9c23;
+  border-top: 20px solid #d1a23c;
   border-left: 15px solid #fff;
-  border-bottom: 20px solid #fa9c23;
+  border-bottom: 20px solid #d1a23c;
   margin-right: -1px;
 }
 

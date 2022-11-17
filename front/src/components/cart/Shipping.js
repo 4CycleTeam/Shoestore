@@ -8,27 +8,27 @@ import CheckoutSteps from './CheckOutSteps';
 
 export const Shipping = () => {
     let Pais = require('./colombia.json');
-    const navigate= useNavigate()
+    const navigate = useNavigate()
     const { shippingInfo } = useSelector(state => state.cart)
 
     const [direccion, setDireccion] = useState(shippingInfo.direccion)
     const [ciudad, setCiudad] = useState(shippingInfo.ciudad)
     const [telefono, setTelefono] = useState(shippingInfo.telefono)
     const [departamento, setDepartamento] = useState(shippingInfo.departamento)
-    const [ciudades, setCiudades]= useState([])
+    const [ciudades, setCiudades] = useState([])
 
-    useEffect(()=>{
-      Pais.forEach((depar)=>{
-        if (depar.departamento===departamento){
-            setCiudades(depar.ciudades)
-        }
-      })
+    useEffect(() => {
+        Pais.forEach((depar) => {
+            if (depar.departamento === departamento) {
+                setCiudades(depar.ciudades)
+            }
+        })
     })
-    const dispatch= useDispatch();
+    const dispatch = useDispatch();
 
-    const submitHandler= (e)=>{
+    const submitHandler = (e) => {
         e.preventDefault()
-        dispatch(saveShippingInfo({direccion, ciudad, telefono, departamento}))
+        dispatch(saveShippingInfo({ direccion, ciudad, telefono, departamento }))
         navigate("/order/confirm")
     }
 
@@ -38,13 +38,16 @@ export const Shipping = () => {
         <Fragment>
 
             <MetaData title={'Información de envio'} />
+            <br />
+            <br />
             <CheckoutSteps shipping />
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" >
-                        <h1 className="mb-4">Información de envio</h1>
+                        <h1 class="fa fa-info-circle fa-2x"> Informacion de envio</h1>
                         <div className="form-group">
-                            <label htmlFor="address_field">Dirección</label>
+                            <br />
+                            <label htmlFor="address_field">Dirección:</label>
                             <input
                                 type="text"
                                 id="address_field"
@@ -56,7 +59,7 @@ export const Shipping = () => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="phone_field">Telefono</label>
+                            <label htmlFor="phone_field">Telefono:</label>
                             <input
                                 type="phone"
                                 id="phone_field"
@@ -68,7 +71,7 @@ export const Shipping = () => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="country_field">Departamento</label>
+                            <label htmlFor="country_field">Departamento:</label>
                             <select
                                 id="country_field"
                                 className="form-control"
@@ -100,16 +103,18 @@ export const Shipping = () => {
                                             {ciudad}
                                         </option>
                                     ))}
-                                   
+
 
                                 </select>
                             </div>
                         </div>
 
                         <button
-                            id="shipping_btn"
+
+                            id="update_button"
+                            color='dark'
                             type="submit"
-                            className="btn btn-block py-3" onClick={submitHandler}
+                            className="btn update-btn btn-block mt-4 mb-3" onClick={submitHandler}
                         >
                             CONTINUAR
                         </button>
