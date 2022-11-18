@@ -93,7 +93,7 @@ export const register = (userData) => async (dispatch) => {
 export const loadUser=()=> async(dispatch) =>{
     try{
         dispatch({type: LOAD_USER_REQUEST})
-        const {data} = await axios.get("/api/yo")
+        const {data} = await axios.get("/api/usuario")
         dispatch({
             type: LOAD_USER_SUCCESS,
             payload: data.user
@@ -117,7 +117,7 @@ export const updateProfile = (userData) => async (dispatch) => {
                 'Content-Type': 'multipart/form-data'
             }
         }
-        const {data} = await axios.put('/api/yo/updateProfile', userData, config)
+        const {data} = await axios.put('/api/usuario/updateProfile', userData, config)
 
         dispatch({
             type: UPDATE_PROFILE_SUCCESS,
@@ -157,7 +157,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const {data} = await axios.put('/api/yo/updatePassword', passwords, config)
+        const {data} = await axios.put('/api/usuario/updatePassword', passwords, config)
 
         dispatch({
             type: UPDATE_PASSWORD_SUCCESS,
