@@ -74,7 +74,9 @@ export const OrderDetails = () => {
                                     </div>
                                 ))}
                             </div>
-                            <button className="btn ml-4" id="login_btn" onClick={() => navigate(-1)}>Atrás</button>
+                            <div class="card-body">
+                            <button id="btnAtras" className="btn ml-4" onClick={() => navigate(-1)}>Atrás</button>
+                            </div>
                             <hr />
                         </div>
                     </div>

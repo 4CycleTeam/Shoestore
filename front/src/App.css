@@ -730,6 +730,14 @@ ul.CTAs a {
 
 }
 
+#btnAtras {
+  background-color:#252525;
+  color: rgb(250, 246, 246);
+  border-color: #0e0d0d;
+  text-align: left;
+
+}
+
 .gradient-custom {
   /* fallback for old browsers */
   background: #f6d365;
