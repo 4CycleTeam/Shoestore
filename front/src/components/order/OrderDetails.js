@@ -36,7 +36,7 @@ export const OrderDetails = () => {
                             <h1 className="my-5">Pedido # {order._id}</h1>
 
                             <h4 className="fa fa-plane fa-2x"> Datos de envio</h4>
-                            <p className="form-group"><b>Nombre:</b> {user && user.name}</p>
+                            <p className="form-group"><b>Nombre:</b> {user && user.nombre}</p>
                             <p className="form-group"><b>Telefono:</b> {envioInfo && envioInfo.telefono}</p>
                             <p className="form-group"><b>Dirección:</b>{detalleEnvio}</p>
                             <p className="form-group"><b>Pago Total:</b> ${precioTotal}</p>
