@@ -8,23 +8,23 @@ import { useAlert } from 'react-alert';
 import CheckoutSteps from './CheckOutSteps';
 
 export const Payment = () => {
-    const navigate= useNavigate();
-    const alert= useAlert();
-    const dispatch= useDispatch();
-    const id= uuid.v4()
-    const {cartItems, shippingInfo} = useSelector(state => state.cart)
-    const {error} = useSelector(state => state.newOrder)
+    const navigate = useNavigate();
+    const alert = useAlert();
+    const dispatch = useDispatch();
+    const id = uuid.v4()
+    const { cartItems, shippingInfo } = useSelector(state => state.cart)
+    const { error } = useSelector(state => state.newOrder)
 
-    useEffect(()=>{
-        if (error){
+    useEffect(() => {
+        if (error) {
             alert.error(error)
             dispatch(clearErrors)
         }
-    },[dispatch, alert, error])
+    }, [dispatch, alert, error])
 
-    let items=[];
+    let items = [];
 
-    cartItems.forEach(elem =>{
+    cartItems.forEach(elem => {
         items.push({
             nombre: elem.nombre,
             cantidad: elem.quantity,
@@ -34,52 +34,52 @@ export const Payment = () => {
         })
     })
 
-    const order={
+    const order = {
         items,
         envioInfo: shippingInfo
     }
 
-    const orderInfo= JSON.parse(sessionStorage.getItem("orderInfo"));
+    const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
 
-    if (orderInfo){
-        order.precioItems= orderInfo.precioItems
-        order.precioEnvio=orderInfo.precioEnvio
-        order.precioImpuesto= orderInfo.precioImpuesto
-        order.precioTotal= orderInfo.precioTotal
-        order.pagoInfo={
-            id:id,
-            estado:"Aceptado"
+    if (orderInfo) {
+        order.precioItems = orderInfo.precioItems
+        order.precioEnvio = orderInfo.precioEnvio
+        order.precioImpuesto = orderInfo.precioImpuesto
+        order.precioTotal = orderInfo.precioTotal
+        order.pagoInfo = {
+            id: id,
+            estado: "Aceptado"
         }
     }
 
-    const submitHandler = async (e) =>{
+    const submitHandler = async (e) => {
         e.preventDefault();
-        try{
+        try {
             dispatch(createOrder(order))
             localStorage.removeItem("cartItems")
             window.alert("Orden registrada correctamente")
             navigate("/success")
             window.location.reload(false)
-        }catch(error){
+        } catch (error) {
             window.alert("no se logró registrar la compra")
         }
     }
 
-  return (
-    <Fragment>
+    return (
+        <Fragment>
             <MetaData title={'Pago'} />
-            <br/>
-            <br/>
+            <br />
+            <br />
 
             <CheckoutSteps shipping confirmOrder payment />
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler} >
-                        <h1  className="fa fa-user-secret fa-2x"> Datos de La tarjeta</h1>
+                        <h1 className="fa fa-user-secret fa-2x"> Datos de La tarjeta</h1>
                         <div className="form-group">
-                            <br/>
-                            <br/>
+                            <br />
+                            <br />
                             <label htmlFor="card_num_field">Numero de la tarjeta</label>
                             <input
                                 type="number"
@@ -108,10 +108,11 @@ export const Payment = () => {
 
 
                         <button
-                            id="checkout_btn"
-                            className="btn btn-primary btn-block"
+
+                            className="btn update-btn btn-block mt-4 mb-3"
+                            id="update_button"
                             type="submit"
-                          
+
                         >
                             Pagar ${`  ${orderInfo && orderInfo.precioTotal}`}
                         </button>
@@ -122,5 +123,5 @@ export const Payment = () => {
 
         </Fragment>
 
-  )
+    )
 }

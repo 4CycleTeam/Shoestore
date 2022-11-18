@@ -93,7 +93,8 @@ export const ProcessOrder = () => {
                                     </div>
 
                                     <h4 className="my-4">Items comprados:</h4>
-
+                                   
+                                      
                                     <hr />
                                     <div className="cart-item my-1">
                                         {items && items.map(item => (
@@ -101,6 +102,7 @@ export const ProcessOrder = () => {
                                                 <div className="col-4 col-lg-2">
                                                     <img src={item.imagen} alt={item.nombre} height="45" width="65" />
                                                 </div>
+
 
                                                 <div className="col-5 col-lg-5">
                                                     <Link to={`/producto/${item.producto}`}>{item.nombre}</Link>
