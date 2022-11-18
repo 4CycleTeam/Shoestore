@@ -30,6 +30,7 @@ import { ListOrder } from './components/order/ListOrder';
 import { OrderDetails } from './components/order/OrderDetails';
 import  UsersList  from './components/admin/UsersList';
 import { UserDetails } from './components/admin/UserDetails';
+import { UpdateUser} from './components/admin/UpdateUser';
 
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
             <Route path="/password/forgot" element={<ForgotPassword />}/>
             <Route path="/resetPassword/:token" element={<NewPassword />}/>
             <Route path="/user/:id" element={<UserDetails />}/>
+            <Route path="/updateUser" element={<UpdateUser />}/>
 
             
            

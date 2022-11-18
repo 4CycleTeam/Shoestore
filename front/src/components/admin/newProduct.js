@@ -117,13 +117,7 @@ const NewProduct = () => {
 
                 <h1 class="fa fa-outdent fa-2x"> Crear Producto</h1>
 
-                {/*   <div className="formulario">
-                  <br />
-                  <input placeholder="ID" disabled></input>
-                  &nbsp; &nbsp;
-                  <input placeholder="1" number></input>
-                </div>
-              */}
+            
                 <div className="formulario">
                   <br />
                   <label htmlFor="name_field">Nombre del producto:</label>

@@ -30,7 +30,14 @@ import {
     ADMIN_USERS_FAIL,
     ADMIN_USER_DETAILS_REQUEST,
     ADMIN_USER_DETAILS_FAIL,
-    ADMIN_USER_DETAILS_SUCCESS
+    ADMIN_USER_DETAILS_SUCCESS,
+    ADMIN_USER_UPDATE_REQUEST,
+    ADMIN_USER_UPDATE_SUCCESS,
+    ADMIN_USER_UPDATE_FAIL,
+    ADMIN_USER_UPDATE_RESET,
+    ADMIN_DELETE_USER_REQUEST,
+    ADMIN_DELETE_USER_SUCCESS,
+    ADMIN_DELETE_USER_FAIL,
 } from "../constants/userConstants"
 
 //Cambios y reducer sobre procesos de autenticacion
@@ -190,16 +197,7 @@ export const usersReducer = (state = { users: [] }, action) => {
                 loading: true,
                 users: []
             }
-/* 
-        case ADMIN_USERS_SUCCESS:
-            return {
-                loading: false,
-                users: action.payload.users,
-                usersCount: action.payload.usersCount,
-                resPerPage: action.payload.resPerPage,
-                filteredUsersCount: action.payload.filteredUsersCount
-            }
-*/       
+            
         case ADMIN_USERS_SUCCESS:
             return {
                 loading: false,
@@ -256,3 +254,51 @@ export const userDetailsReducer =  (state = { user: {} }, action) => {
             return state
     }
 }
+
+
+
+         
+    // ACTUALIZAR USUARIO DESDE EL ADMIN 
+    export const updateUserReducer = (state={}, action)=>{
+        switch(action.type){
+            case ADMIN_DELETE_USER_REQUEST:
+            case ADMIN_USER_UPDATE_REQUEST:
+                return{
+                    ...state, 
+                    loading:true
+                }
+            case  ADMIN_DELETE_USER_SUCCESS:
+                return{
+                    ...state,
+                    loading: false,
+                    isDeleted: action.payload
+                }
+    
+            case ADMIN_USER_UPDATE_SUCCESS:
+                return{
+                    ...state,
+                    loading: false,
+                    isUpdated: action.payload
+                }
+                
+            case ADMIN_DELETE_USER_FAIL:
+            case ADMIN_USER_UPDATE_FAIL:
+                return{
+                    ...state,
+                    error: action.payload
+                }
+                
+            case ADMIN_USER_UPDATE_RESET:
+                return{
+                    ...state,
+                    isUpdated: false
+                }
+            case CLEAR_ERRORS:
+                return {
+                    error:null
+                }
+            default:
+                return state
+        }
+    }
+    

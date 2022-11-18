@@ -151,6 +151,7 @@ export const updateProduct = (id, productData) => async (dispatch) =>{
         })
     }
 }
+
 //registar una review
 export const newReview = (reviewData) => async (dispatch) => {
     try {

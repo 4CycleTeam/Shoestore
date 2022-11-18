@@ -80,7 +80,7 @@ export const UsersList = () => {
                 <Link to={`/user/${user._id}`} className="btn btn-outline-primary py-1 px-2">
                     <i className="fa fa-eye"></i>
                 </Link>
-                <Link to={`/admin/updateUser/${user._id}`} className="btn btn-outline-warning py-1 px-2">
+                <Link to={`/updateUser/${user._id}`} className="btn btn-outline-warning py-1 px-2">
                 <i class="fa fa-pencil"></i>
                 </Link>
                 <button  className="btn btn-outline-danger  py-1 px-2" onClick={() => deleteUserHandler(user._id)}>

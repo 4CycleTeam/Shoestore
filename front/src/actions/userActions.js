@@ -33,7 +33,10 @@ import {
     ADMIN_DELETE_USER_FAIL,
     ADMIN_USER_DETAILS_REQUEST,
     ADMIN_USER_DETAILS_SUCCESS,
-    ADMIN_USER_DETAILS_FAIL
+    ADMIN_USER_DETAILS_FAIL, 
+    ADMIN_USER_UPDATE_REQUEST,
+    ADMIN_USER_UPDATE_SUCCESS,
+    ADMIN_USER_UPDATE_FAIL
 } from "../constants/userConstants"
 
 //Login
@@ -272,6 +275,33 @@ export const deleteUser = (id) => async(dispatch)=>{
     } catch(error){
         dispatch({
             type: ADMIN_DELETE_USER_FAIL,
+            payload: error.response.data.message
+        })
+    }
+}
+
+
+
+//ACTUALIZAR USUARIO por admin
+export const updateUser  = (id, userData) => async (dispatch) =>{
+    try{
+        dispatch ({type: ADMIN_USER_UPDATE_REQUEST})
+
+        const config={
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+        const {data} = await axios.put(`/api/admin/updateUser/${id}`, userData, config)
+
+        dispatch({
+            type: ADMIN_USER_UPDATE_SUCCESS,
+            payload: data.success
+        })
+        
+    } catch(error){
+        dispatch({
+            type: ADMIN_USER_UPDATE_FAIL,
             payload: error.response.data.message
         })
     }
