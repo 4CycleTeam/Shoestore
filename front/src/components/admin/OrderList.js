@@ -11,7 +11,7 @@ import { allOrders, deleteOrder, clearErrors } from '../../actions/orderActions'
 import { DELETE_ORDER_RESET } from '../../constants/orderConstants'
 
 const OrdersList = () => {
-    const navigate= useNavigate();
+    const navigate = useNavigate();
     const alert = useAlert();
     const dispatch = useDispatch();
 
@@ -76,7 +76,7 @@ const OrdersList = () => {
         }
 
         orders.forEach(order => {
-            var fecha= new Date(order.fechaCreacion).toLocaleDateString()
+            var fecha = new Date(order.fechaCreacion).toLocaleDateString()
             data.rows.push({
                 fecha: fecha,
                 id: order._id,
@@ -86,10 +86,10 @@ const OrdersList = () => {
                     ? <p style={{ color: 'green' }}>{order.estado}</p>
                     : <p style={{ color: 'red' }}>{order.estado}</p>,
                 acciones: <Fragment>
-                    <Link to={`/admin/order/${order._id}`} className="btn btn-primary py-1 px-2">
+                    <Link to={`/admin/order/${order._id}`} className="btn btn-outline-primary py-1 px-2">
                         <i className="fa fa-eye"></i>
                     </Link>
-                    <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteOrderHandler(order._id)}>
+                    <button className="btn btn-outline-danger  py-1 px-2" onClick={() => deleteOrderHandler(order._id)}>
                         <i className="fa fa-trash"></i>
                     </button>
                 </Fragment>
@@ -110,7 +110,10 @@ const OrdersList = () => {
 
                 <div className="col-12 col-md-10">
                     <Fragment>
-                        <h1 className="my-5">Todos los pedidos</h1>
+                        <br />
+                        <br /><br />
+                        <br />
+                        <h1  className="fa fa-shopping-basket fa-2x"> Todos los pedidos</h1>
 
                         {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
                             <MDBDataTable
