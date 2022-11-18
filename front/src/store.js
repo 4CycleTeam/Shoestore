@@ -23,6 +23,7 @@ const reducer = combineReducers({
     myOrders: myOrdersReducer,
     orderDetails: orderDetailsReducer,
     newReview: newReviewReducer
+    
 
 })
 
