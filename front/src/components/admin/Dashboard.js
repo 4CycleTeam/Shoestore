@@ -92,7 +92,7 @@ const Dashboard = () => {
                                         <div className="card-body">
                                             <div className="text-center card-font-size">Usuarios<br /> <b>{users && users.length}</b></div>
                                         </div>
-                                        <Link className="card-footer text-white clearfix small z-1" to="/admin/users">
+                                        <Link className="card-footer text-white clearfix small z-1" to="/userList">
                                             <span className="float-left">Ver Detalles</span>
                                             <span className="float-right">
                                                 <i className="fa fa-angle-right"></i>
