@@ -32,6 +32,8 @@ import UsersList from './components/admin/UserList';
 import { UserDetails } from './components/admin/UserDetails';
 import UpdateUser from './components/admin/UpdateUser';
 import OrdersList from './components/admin/OrderList';
+import ProcessOrder from './components/admin/ProccessOrder';
+import ProductReviews from './components/admin/ProductReviews';
 
 function App() {
   useEffect(() => {
@@ -59,7 +61,6 @@ function App() {
               <Route path='/login' element={<Login />}></Route>
               <Route path="/search/:keyword" element={<ListaProductos />} />
               <Route path="/productList" element={<ProductsList />} />
-              <Route path="/userList" element={<UsersList />} />
               <Route path="/search/:keyword" element={<ProductsList />} />
               <Route path="/register" element={<Register />} />
               <Route path="/usuario" element={<Profile />} />
@@ -70,9 +71,13 @@ function App() {
               <Route path="/user/:id" element={<UserDetails />} />
               
 
+            
 
 
+         
+    
 
+    
               {/*Ruta protegida*/}
               <Route path="/admin/user/:id"
                 element={<ProtectedRoute isAdmin={true}><UpdateUser /></ProtectedRoute>} />
@@ -105,8 +110,19 @@ function App() {
               <Route path="/myOrders"
                 element={<ProtectedRoute><ListOrder /></ProtectedRoute>} />
 
+
               <Route path="/order/:id"
                 element={<ProtectedRoute><OrderDetails /></ProtectedRoute>} />
+                        <Route path="/admin/order/:id"
+              element={<ProtectedRoute isAdmin={true}><ProcessOrder /></ProtectedRoute>} />
+
+            <Route path="/userList"
+              element={<ProtectedRoute isAdmin={true}><UsersList /></ProtectedRoute>} />
+
+          
+                
+            <Route path="/admin/reviews"
+              element={<ProtectedRoute isAdmin={true}><ProductReviews /></ProtectedRoute>} />
 
 
 
