@@ -59,8 +59,6 @@ function App() {
               <Route path="/search/:keyword" element={<ListaProductos />} />
               <Route path="/search/:keyword" element={<ProductsList />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/usuario" element={<Profile />} />
-              <Route path="/usuario/update" element={<UpdateProfile />} />
               <Route path="/password/forgot" element={<ForgotPassword />} />
               <Route path="/resetPassword/:token" element={<NewPassword />} />
               <Route path="/user/:id" element={<UserDetails />} />
@@ -119,7 +117,11 @@ function App() {
               <Route path="/crearproducto"
                 element={<ProtectedRoute><NewProduct /></ProtectedRoute>} />
 
+              <Route path="/usuario"
+                element={<ProtectedRoute><Profile /></ProtectedRoute>} />
 
+              <Route path="/usuario/update"
+                element={<ProtectedRoute><UpdateProfile /></ProtectedRoute>} />
 
               <Route path="/password/update"
                 element={<ProtectedRoute><UpdatePassword /></ProtectedRoute>} />

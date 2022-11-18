@@ -11,13 +11,13 @@ import { UPDATE_ORDER_RESET } from '../../constants/orderConstants'
 
 export const ProcessOrder = () => {
     const navigate = useNavigate();
-    const params = useParams();
+    const params=useParams();
 
     const alert = useAlert();
     const dispatch = useDispatch();
 
     const { loading, order = {} } = useSelector(state => state.orderDetails)
-    const { envioInfo, items, pagoInfo, user, precioTotal, estado: estadoOrder } = order
+    const { envioInfo, items, pagoInfo, user, precioTotal, estado : estadoOrder } = order
     const { error, isUpdated } = useSelector(state => state.order)
     const [estado, setEstado] = useState(estadoOrder);
 
@@ -140,7 +140,7 @@ export const ProcessOrder = () => {
 
                                     <button
                                         id="update_button"
-                                        className="btn update-btn btn-block mt-4 mb-3"
+                                        className="btn btn-primary btn-block" 
                                         onClick={() => updateOrderHandler(order._id)}>
                                         Actualizar Estado
                                     </button>

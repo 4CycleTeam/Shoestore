@@ -13,7 +13,7 @@ export const OrderDetails = () => {
     const {loading, error, order={}}= useSelector(state=> state.orderDetails)
     const { envioInfo, items, pagoInfo, user, precioTotal, estado} = order
 
-    useEffect(()=>{
+   useEffect(()=>{
         dispatch(getOrderDetails(params.id));
         if (error){
             alert.error(error)

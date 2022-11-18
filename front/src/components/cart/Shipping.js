@@ -8,30 +8,30 @@ import CheckoutSteps from './CheckOutSteps';
 
 export const Shipping = () => {
     let Pais = require('./colombia.json');
-    const navigate = useNavigate()
+    const navigate= useNavigate()
     const { shippingInfo } = useSelector(state => state.cart)
 
     const [direccion, setDireccion] = useState(shippingInfo.direccion)
     const [ciudad, setCiudad] = useState(shippingInfo.ciudad)
     const [telefono, setTelefono] = useState(shippingInfo.telefono)
     const [departamento, setDepartamento] = useState(shippingInfo.departamento)
-    const [ciudades, setCiudades] = useState([])
+    const [ciudades, setCiudades]= useState([])
 
-    useEffect(() => {
-        Pais.forEach((depar) => {
-            if (depar.departamento === departamento) {
-                setCiudades(depar.ciudades)
-            }
+    useEffect(()=>{
+        Pais.forEach((depar)=>{
+          if (depar.departamento===departamento){
+              setCiudades(depar.ciudades)
+          }
         })
-    })
-    const dispatch = useDispatch();
-
-    const submitHandler = (e) => {
-        e.preventDefault()
-        dispatch(saveShippingInfo({ direccion, ciudad, telefono, departamento }))
-        navigate("/order/confirm")
-    }
-
+      })
+      const dispatch= useDispatch();
+  
+      const submitHandler= (e)=>{
+          e.preventDefault()
+          dispatch(saveShippingInfo({direccion, ciudad, telefono, departamento}))
+          navigate("/order/confirm")
+      }
+  
 
 
     return (
