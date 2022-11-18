@@ -35,24 +35,25 @@ export const OrderDetails = () => {
 
                             <h1 className="my-5">Pedido # {order._id}</h1>
 
-                            <h4 className="mb-4">Datos de envio</h4>
-                            <p><b>Nombre:</b> {user && user.name}</p>
-                            <p><b>Telefono:</b> {envioInfo && envioInfo.telefono}</p>
-                            <p className="mb-4"><b>Dirección:</b>{detalleEnvio}</p>
-                            <p><b>Pago Total:</b> ${precioTotal}</p>
+                            <h4 className="fa fa-plane fa-2x"> Datos de envio</h4>
+                            <p className="form-group"><b>Nombre:</b> {user && user.name}</p>
+                            <p className="form-group"><b>Telefono:</b> {envioInfo && envioInfo.telefono}</p>
+                            <p className="form-group"><b>Dirección:</b>{detalleEnvio}</p>
+                            <p className="form-group"><b>Pago Total:</b> ${precioTotal}</p>
 
                             <hr />
+                            <div className="form-group">
 
-                            <h4 className="my-4">Pago</h4>
+                            <p className="form-group"><b>Pago</b></p>
                             <p className={esPago ? "greenColor" : "redColor"}><b>{esPago ? "Pago Completado" : "Pendiente de pago"}</b></p>
 
-                            <h4 className="my-4">Estado del pedido:</h4>
+                            <p className="form-group"><b>Estado del pedido:</b></p>
                             <p className={order.estado && String(order.estado).includes('Entregado') ? "greenColor" : "redColor"} ><b>{estado}</b></p>
 
-                            <h4 className="my-4">Productos Comprados:</h4>
-
+                            <p className="form-group"><b>Productos Comprados:</b></p>
+                            </div>
                             <hr />
-                            <div className="cart-item my-1">
+                            <div className="form-group">
                                 {items && items.map(item => (
                                     <div key={item.product} className="row my-5">
                                         <div className="col-4 col-lg-2">
