@@ -86,7 +86,7 @@ const ProductReviews = () => {
                 usuario: opinion.nombreCliente,
 
                 acciones:
-                    <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteReviewHandler(opinion._id)}>
+                    <button className="btn btn-outline-danger  py-1 px-2" onClick={() => deleteReviewHandler(opinion._id)}>
                         <i className="fa fa-trash"></i>
                     </button>
             })
@@ -109,6 +109,7 @@ const ProductReviews = () => {
                             <div className="col-5">
                                 <form onSubmit={submitHandler}>
                                     <div className="form-group">
+                                    <br/> <br/>
                                         <label htmlFor="productId_field">Ingrese el ID del producto</label>
                                         <input
                                             type="text"
@@ -120,9 +121,10 @@ const ProductReviews = () => {
                                     </div>
 
                                     <button
-                                        id="search_button"
-                                        type="submit"
-                                        className="btn btn-primary btn-block py-2"
+                                          type="submit"
+                                          className="btn update-btn btn-block mt-4 mb-3"
+                                          id="update_button"
+                                          color='dark'
                                     >
                                         BUSCAR
                                     </button>
