@@ -41,7 +41,7 @@ export const Profile = () => {
                                         <br />
                                         <div>
                                             {user.role !== 'admin' && (
-                                                <Link to="/orders/user" id="edit_profile" className="btn btn-outline-dark py-1 px-2 border border-dark">
+                                                <Link to="/myOrders" id="edit_profile" className="btn btn-outline-dark py-1 px-2 border border-dark">
                                                     Mis Pedidos
                                                 </Link>
                                             )}

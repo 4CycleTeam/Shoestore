@@ -243,7 +243,7 @@ export const getAdminUsers = () => async (dispatch) => {
 //VER DETALLE DEL usuario
 export const getUserDetails = (id) => async (dispatch) => {
     try {
-        dispatch({ type: ADMIN_USER_DETAILS_REQUEST })
+        dispatch({ type: ADMIN_USER_DETAILS_REQUEST });
 
         const { data } = await axios.get(`/api/admin/user/${id}`)
 

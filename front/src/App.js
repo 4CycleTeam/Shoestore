@@ -66,7 +66,7 @@ function App() {
             <Route path="/password/update" element={<UpdatePassword />}/>
             <Route path="/password/forgot" element={<ForgotPassword />}/>
             <Route path="/resetPassword/:token" element={<NewPassword />}/>
-            <Route path='/admin/user/:id' element={<UserDetails />}/>
+            <Route path="/user/:id" element={<UserDetails />}/>
 
             
            

@@ -223,8 +223,8 @@ export const usersReducer = (state = { users: [] }, action) => {
     }
 }
 
-//REDUCER PARA TENER TODOS LOS DETALLES
-export const userDetailsReducer = (state = { user: {} }, action) => {
+//REDUCER PARA TENER  DETALLES DEL USUARIO
+export const userDetailsReducer =  (state = { user: {} }, action) => {
     switch (action.type) {
 
         case ADMIN_USER_DETAILS_REQUEST:
@@ -235,6 +235,7 @@ export const userDetailsReducer = (state = { user: {} }, action) => {
 
         case ADMIN_USER_DETAILS_SUCCESS:
             return {
+                ...state,
                 loading: false,
                 user: action.payload
             }

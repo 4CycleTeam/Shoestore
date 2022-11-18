@@ -7,11 +7,16 @@ import { useParams } from 'react-router-dom';
 import { useAlert } from 'react-alert'
 
 export const UserDetails = () => {
-    const { user, loading, error } = useSelector(state => state.user)
+
+    
+    
+    const { loading, user, error } = useSelector(state => state.userDetails)
+   
+  
     const params = useParams();
     const dispatch = useDispatch();
     const alert = useAlert();
-
+  
   
     useEffect(() => {
       dispatch(getUserDetails(params.id))
@@ -38,14 +43,16 @@ export const UserDetails = () => {
                             <table class="table table-bordered ">
                             <div class="container py-1 h-100">
                                 <div className="row justify-content-around mt-5 user-info">
-                                    <div className="col-12 col-md-3">
+                                <div className="col-12 col-md-3">
                                         <div>
                                             <figure className='avatar avatar-profile'>
-                                                <img className="rounded-circle img-fluid" src={user.avatar.url} alt={user.nombre} />
-                                            </figure>
-                                        </div>
-                                    </div>
-
+                                            <img
+                                                src={user.avatar && user.avatar.url}
+                                                alt={user && user.nombre}
+                                                className="rounded-circle"></img>
+                                                 </figure>
+                                           </div>
+                                           </div>
                                     <div class="col-md-8">
                                         <div class="card-body p-4">
                                             <h6 className="fa fa-user-secret fa-lg"> Informacion</h6>
