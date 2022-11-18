@@ -23,13 +23,11 @@ export const UpdateProduct = () => {
     const [oldImagen, setOldImagen] = useState([])
 
     const categorias = [
-        "-- Selecione la categoria --",
         "Calzado Mujer",
         "Calzado Hombre"
     ]
 
     const tallas = [
-        "-- Selecione la Talla --",
         "34",
         "35",
         "36",

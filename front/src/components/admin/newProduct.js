@@ -28,7 +28,6 @@ const NewProduct = () => {
   ]
 
   const tallas = [
-    "-- Selecione la Talla --",
     "34",
     "35",
     "36",
