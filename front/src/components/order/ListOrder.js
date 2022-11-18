@@ -69,7 +69,7 @@ export const ListOrder = () => {
                     ? <p style={{ color: "green" }}>{order.estado}</p>
                     : <p style={{ color: "red" }}>{order.estado}</p>,
                 acciones:
-                    <Link to={`/order/${order._id}`} className="btn btn-primary">
+                    <Link to={`/order/${order._id}`} className="btn btn-outline-primary py-1 px-2">
                         <i className='fa fa-eye'></i></Link>
             })
         })

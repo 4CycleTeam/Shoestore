@@ -704,6 +704,32 @@ ul.CTAs a {
   border-color: #0e0d0d;
 }
 
+.ventas{
+  background-color: #102167;
+
+}
+
+#producto{
+    background-color: #347b6e;
+   
+}
+
+
+#usuario{
+  background-color: #4866ad;
+
+}
+
+#pedido{
+  background-color: #7b3447;
+
+}
+
+#agotado{
+  background-color: #9b9b3e;
+
+}
+
 .gradient-custom {
   /* fallback for old browsers */
   background: #f6d365;

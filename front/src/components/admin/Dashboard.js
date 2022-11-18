@@ -48,7 +48,7 @@ const Dashboard = () => {
                             <div className="row pr-4">
                                 <div className="col-xl-12 col-sm-12 mb-3">
                                     <div className="card text-white bg-primary o-hidden h-100">
-                                        <div className="card-body">
+                                        <div className="ventas">
                                             <div className="text-center card-font-size">Ventas Totales<br /> <b>${cantidadTotal && cantidadTotal.toFixed(2)}</b>
                                             </div>
                                         </div>
@@ -56,13 +56,44 @@ const Dashboard = () => {
                                 </div>
                             </div>
 
-                            <div className="row pr-4">
-                                <div className="col-xl-3 col-sm-6 mb-3">
-                                    <div className="card text-white bg-success o-hidden h-100">
-                                        <div className="card-body">
-                                            <div className="text-center card-font-size">Productos<br /> <b>{products && products.length}</b></div>
+                            <div  className="row pr-4">
+                                <div  className="col-xl-3 col-sm-6 mb-3">
+                                    <div id="producto"  className="card text-white bg-success o-hidden h-100">
+                                        <div  id="producto" className="card-body">
+                                            <div id="producto"  className="text-center card-font-size">Productos<br /> <b>{products && products.length}</b></div>
                                         </div>
-                                        <Link className="card-footer text-white clearfix small z-1" to="/ProductList">
+                                        <Link id="producto"  className="card-footer text-white clearfix small z-1" to="/ProductList">
+                                            <span className="float-left">Ver Detalles</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+                                
+
+
+                                <div  className="col-xl-3 col-sm-6 mb-3">
+                                    <div   id="pedido" className="card text-white bg-danger o-hidden h-100">
+                                        <div   id="pedido" className="card-body">
+                                            <div  id="pedido" className="text-center card-font-size">Pedidos<br /> <b>{orders && orders.length}</b></div>
+                                        </div>
+                                        <Link   id="pedido" className="card-footer text-white clearfix small z-1" to="/orderList">
+                                            <span className="float-left">Ver Detalles</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+
+
+                                <div  className="col-xl-3 col-sm-6 mb-3">
+                                    <div  id="usuario" className="card text-white bg-info o-hidden h-100">
+                                        <div id="usuario" className="card-body">
+                                            <div  id="usuario" className="text-center card-font-size">Usuarios<br /> <b>{users && users.length}</b></div>
+                                        </div>
+                                        <Link id="usuario" className="card-footer text-white clearfix small z-1" to="/userList">
                                             <span className="float-left">Ver Detalles</span>
                                             <span className="float-right">
                                                 <i className="fa fa-angle-right"></i>
@@ -73,38 +104,8 @@ const Dashboard = () => {
 
 
                                 <div className="col-xl-3 col-sm-6 mb-3">
-                                    <div className="card text-white bg-danger o-hidden h-100">
-                                        <div className="card-body">
-                                            <div className="text-center card-font-size">Pedidos<br /> <b>{orders && orders.length}</b></div>
-                                        </div>
-                                        <Link className="card-footer text-white clearfix small z-1" to="/orderList">
-                                            <span className="float-left">Ver Detalles</span>
-                                            <span className="float-right">
-                                                <i className="fa fa-angle-right"></i>
-                                            </span>
-                                        </Link>
-                                    </div>
-                                </div>
-
-
-                                <div className="col-xl-3 col-sm-6 mb-3">
-                                    <div className="card text-white bg-info o-hidden h-100">
-                                        <div className="card-body">
-                                            <div className="text-center card-font-size">Usuarios<br /> <b>{users && users.length}</b></div>
-                                        </div>
-                                        <Link className="card-footer text-white clearfix small z-1" to="/userList">
-                                            <span className="float-left">Ver Detalles</span>
-                                            <span className="float-right">
-                                                <i className="fa fa-angle-right"></i>
-                                            </span>
-                                        </Link>
-                                    </div>
-                                </div>
-
-
-                                <div className="col-xl-3 col-sm-6 mb-3">
-                                    <div className="card text-white bg-warning o-hidden h-100">
-                                        <div className="card-body">
+                                    <div id="agotado" className="card text-white bg-warning o-hidden h-100">
+                                        <div id="agotado" className="card-body">
                                             <div className="text-center card-font-size">Agotados<br /> <b>{outOfStock}</b></div>
                                         </div>
                                     </div>
