@@ -163,7 +163,6 @@ exports.updatePassword= catchAsyncErrors(async (req, res, next) =>{
     tokenEnviado(user, 200, res)
 })
 
-
 //Update perfil de usuario (logueado)
 exports.updateProfile= catchAsyncErrors(async(req,res,next)=>{
     //Actualizar el email por user a decisiòn de cada uno
@@ -203,7 +202,6 @@ exports.updateProfile= catchAsyncErrors(async(req,res,next)=>{
         user
     })
 })
-
 
 //Servicios controladores sobre usuarios por parte de los ADMIN
 

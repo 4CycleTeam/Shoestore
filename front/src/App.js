@@ -55,31 +55,22 @@ function App() {
               <Route path='/listaproductos' element={<ListaProductos />}></Route>
               <Route path='/producto/:id' element={<DetallesProducto />} />
               <Route path='/carrito' element={<Cart />}></Route>
-              <Route path='/crearproducto' element={<NewProduct />}></Route>
               <Route path='/login' element={<Login />}></Route>
               <Route path="/search/:keyword" element={<ListaProductos />} />
-              <Route path="/productList" element={<ProductsList />} />
               <Route path="/search/:keyword" element={<ProductsList />} />
               <Route path="/register" element={<Register />} />
               <Route path="/usuario" element={<Profile />} />
               <Route path="/usuario/update" element={<UpdateProfile />} />
-              <Route path="/password/update" element={<UpdatePassword />} />
               <Route path="/password/forgot" element={<ForgotPassword />} />
               <Route path="/resetPassword/:token" element={<NewPassword />} />
               <Route path="/user/:id" element={<UserDetails />} />
-              
-
-            
 
 
-         
-    
 
-    
               {/*Ruta protegida*/}
-              <Route path="/admin/user/:id"
-                element={<ProtectedRoute isAdmin={true}><UpdateUser /></ProtectedRoute>} />
 
+              <Route path="/dashboard"
+                element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} />
 
               <Route path="/updateProduct/:id"
                 element={<ProtectedRoute isAdmin={true}><UpdateProduct /></ProtectedRoute>} />
@@ -87,11 +78,20 @@ function App() {
               <Route path="/orderList"
                 element={<ProtectedRoute isAdmin={true}><OrdersList /></ProtectedRoute>} />
 
-              <Route path="/dashboard"
-                element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} />
+              <Route path="/admin/order/:id"
+                element={<ProtectedRoute isAdmin={true}><ProcessOrder /></ProtectedRoute>} />
 
-              <Route path="/updateProduct/:id"
-                element={<ProtectedRoute isAdmin={true}><UpdateProduct /></ProtectedRoute>} />
+              <Route path="/userList"
+                element={<ProtectedRoute isAdmin={true}><UsersList /></ProtectedRoute>} />
+
+              <Route path="/admin/user/:id"
+                element={<ProtectedRoute isAdmin={true}><UpdateUser /></ProtectedRoute>} />
+
+              <Route path="/admin/reviews"
+                element={<ProtectedRoute isAdmin={true}><ProductReviews /></ProtectedRoute>} />
+
+
+
 
               <Route path="/shipping"
                 element={<ProtectedRoute><Shipping /></ProtectedRoute>} />
@@ -111,16 +111,18 @@ function App() {
 
               <Route path="/order/:id"
                 element={<ProtectedRoute><OrderDetails /></ProtectedRoute>} />
-                        <Route path="/admin/order/:id"
-              element={<ProtectedRoute isAdmin={true}><ProcessOrder /></ProtectedRoute>} />
 
-            <Route path="/userList"
-              element={<ProtectedRoute isAdmin={true}><UsersList /></ProtectedRoute>} />
 
-          
-                
-            <Route path="/admin/reviews"
-              element={<ProtectedRoute isAdmin={true}><ProductReviews /></ProtectedRoute>} />
+              <Route path="/productList"
+                element={<ProtectedRoute><ProductsList /></ProtectedRoute>} />
+
+              <Route path="/crearproducto"
+                element={<ProtectedRoute><NewProduct /></ProtectedRoute>} />
+
+
+
+              <Route path="/password/update"
+                element={<ProtectedRoute><UpdatePassword /></ProtectedRoute>} />
 
 
 

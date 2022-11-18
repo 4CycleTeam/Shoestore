@@ -43,7 +43,7 @@ export const Shipping = () => {
             <CheckoutSteps shipping />
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                    <form className="shadow-lg" >
+                    <form  className="shadow-lg" onClick={submitHandler}>
                         <h1 class="fa fa-info-circle fa-2x"> Informacion de envio</h1>
                         <div className="form-group">
                             <br />
@@ -115,7 +115,7 @@ export const Shipping = () => {
                             id="update_button"
                             color='dark'
                             type="submit"
-                            className="btn update-btn btn-block mt-4 mb-3" onClick={submitHandler}
+                            className="btn update-btn btn-block mt-4 mb-3"
                         >
                             CONTINUAR
                         </button>

@@ -137,14 +137,15 @@ export const ProcessOrder = () => {
                                     </div>
 
                                     <button
-                                        type="submit"
-                                        className="btn update-btn btn-block mt-4 mb-3"
                                         id="update_button"
-                                        color='dark'
+                                        className="btn update-btn btn-block mt-4 mb-3"
                                         onClick={() => updateOrderHandler(order._id)}>
                                         Actualizar Estado
                                     </button>
+
+
                                 </div>
+
 
                             </div>
                         )}
