@@ -80,8 +80,10 @@ export const ListOrder = () => {
         <Fragment>
 
             <MetaData title={'Mis Pedidos'} />
-
-            <h1 className="my-5">Mis Pedidos</h1>
+            <br/>
+           <br/> <br/>
+           <br/>
+            <h1 className="fa fa-shopping-basket fa-2x"> Mis Pedidos</h1>
 
             {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
                 <MDBDataTable
