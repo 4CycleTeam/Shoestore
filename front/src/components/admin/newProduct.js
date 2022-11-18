@@ -36,7 +36,7 @@ const NewProduct = () => {
     "38",
     "39",
     "40",
-    "42"
+    "41"
   ]
 
   const alert = useAlert();
@@ -52,7 +52,7 @@ const NewProduct = () => {
     }
 
     if (success) {
-      navigate('/dashboard');
+      navigate('/ProductList');
       alert.success('Product created successfully');
       dispatch({ type: NEW_PRODUCT_RESET })
     }

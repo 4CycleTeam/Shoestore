@@ -10,6 +10,8 @@ const Cart = () => {
     const { cartItems } = useSelector(state => state.cart)
     const {user} =useSelector(state => state.auth)
 
+
+    
     const increaseQty = (id, quantity, inventario) => {
         const newQty = quantity + 1;
         if (newQty > inventario) return;
@@ -65,12 +67,16 @@ const Cart = () => {
                                         <div className="row">
                                             <div className="col-4 col-lg-3">
                                                 <img src={item.imagen} alt={item.nombre} height="90" width="115" />
+                                                {item.talla}
+                                        
                                             </div>
+
+                                        
 
                                             <div className="col-5 col-lg-3">
                                                 <Link to={`/producto/${item.product}`}>{item.nombre}</Link>
                                             </div>
-
+                                          
 
                                             <div className="col-4 col-lg-2 mt-4 mt-lg-0">
                                                 <p id="card_item_price">${item.precio}</p>

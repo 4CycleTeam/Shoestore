@@ -52,7 +52,7 @@ export const UpdateProduct = () => {
             dispatch(getProductDetails(productId));
         }else{
             setNombre(product.nombre);
-            setPrecio(product.talla);
+            setTalla(product.talla);
             setPrecio(product.precio);
             setDescripcion(product.descripcion);
             setCategoria(product.categoria);
