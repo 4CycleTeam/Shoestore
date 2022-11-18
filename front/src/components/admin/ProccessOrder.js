@@ -11,13 +11,13 @@ import { UPDATE_ORDER_RESET } from '../../constants/orderConstants'
 
 export const ProcessOrder = () => {
     const navigate = useNavigate();
-    const params=useParams();
+    const params = useParams();
 
     const alert = useAlert();
     const dispatch = useDispatch();
 
     const { loading, order = {} } = useSelector(state => state.orderDetails)
-    const { envioInfo, items, pagoInfo, user, precioTotal, estado : estadoOrder } = order
+    const { envioInfo, items, pagoInfo, user, precioTotal, estado: estadoOrder } = order
     const { error, isUpdated } = useSelector(state => state.order)
     const [estado, setEstado] = useState(estadoOrder);
 
@@ -64,27 +64,33 @@ export const ProcessOrder = () => {
                         {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
                             <div className="row d-flex justify-content-around">
                                 <div className="col-12 col-lg-7 order-details">
+                                    <br />
+                                    <br />
 
                                     <h2 className="my-5">Orden # {order._id}</h2>
 
-                                    <h4 className="mb-4">Información del envio</h4>
-                                    <p><b>Nombre:</b> {user && user.nombre}</p>
-                                    <p><b>Telefono:</b> {envioInfo && envioInfo.telefono}</p>
-                                    <p className="mb-4"><b>Direccón: </b>{detallesEnvio}</p>
-                                    <p><b>Valor Total:</b> ${precioTotal}</p>
+                                    <h4 className="fa fa-plane fa-2x">Informacion del envio</h4>
+                                    <br />
+                                    <br />
+                                    <p className="form-group"><b>Nombre:</b> {user && user.nombre}</p>
+                                    <p className="form-group"><b>Telefono:</b> {envioInfo && envioInfo.telefono}</p>
+                                    <p className="form-group"><b>Direccón: </b>{detallesEnvio}</p>
+                                    <p className="form-group"><b>Valor Total:</b> ${precioTotal}</p>
 
                                     <hr />
 
-                                    <h4 className="my-4">Pago</h4>
-                                    <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "PAGO" : "PENDIENTE DE PAGO"}</b></p>
+                                    <div className="form-group">
 
-                                    <h4 className="my-4">No. Transacción</h4>
-                                    <p><b>{pagoInfo && pagoInfo.id}</b></p>
+                                        <p className="form-group"><b>Pago</b></p>
+                                        <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "PAGO" : "PENDIENTE DE PAGO"}</b></p>
 
-                                    <h4 className="my-4">Estado de la Orden:</h4>
-                                    <p className={order.estado && String(order.estado).includes('Entregado') ? "greenColor" : "redColor"} ><b>{estado}</b></p>
+                                        <p className="form-group"><b>No. Transacción</b></p>
+                                        <p><b>{pagoInfo && pagoInfo.id}</b></p>
 
+                                        <p className="form-group"><b>Estado de la Orden:</b></p>
+                                        <p className={order.estado && String(order.estado).includes('Entregado') ? "greenColor" : "redColor"} ><b>{estado}</b></p>
 
+                                    </div>
 
                                     <h4 className="my-4">Items comprados:</h4>
 
@@ -130,11 +136,16 @@ export const ProcessOrder = () => {
                                         </select>
                                     </div>
 
-                                    <button className="btn btn-primary btn-block" onClick={() => updateOrderHandler(order._id)}>
+                                    <button
+                                        type="submit"
+                                        className="btn update-btn btn-block mt-4 mb-3"
+                                        id="update_button"
+                                        color='dark'
+                                        onClick={() => updateOrderHandler(order._id)}>
                                         Actualizar Estado
                                     </button>
                                 </div>
-                               
+
                             </div>
                         )}
                     </Fragment>

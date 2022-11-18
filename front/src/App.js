@@ -2,7 +2,6 @@ import './App.css';
 import React, { useEffect } from 'react';
 import { MDBContainer, MDBRow } from 'mdb-react-ui-kit';
 import Header from './components/layout/Header';
-import Ventas from './components/Ventas';
 import { Footer } from './components/layout/Footer';
 import ListaProductos from './components/ListaProductos';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -55,7 +54,6 @@ function App() {
               <Route path='/' element={<ListaProductos />}></Route>
               <Route path='/listaproductos' element={<ListaProductos />}></Route>
               <Route path='/producto/:id' element={<DetallesProducto />} />
-              <Route path='/ventas' element={<Ventas />}></Route>
               <Route path='/carrito' element={<Cart />}></Route>
               <Route path='/crearproducto' element={<NewProduct />}></Route>
               <Route path='/login' element={<Login />}></Route>

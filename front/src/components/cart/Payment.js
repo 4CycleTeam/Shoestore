@@ -113,7 +113,7 @@ export const Payment = () => {
                             type="submit"
                           
                         >
-                            Pagar ${` - ${orderInfo && orderInfo.precioTotal}`}
+                              Pagar ${` - ${orderInfo && orderInfo.precioTotal}`}
                         </button>
 
                     </form>
