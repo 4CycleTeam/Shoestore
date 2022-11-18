@@ -37,7 +37,7 @@ export const UpdateProduct = () => {
         "38",
         "39",
         "40",
-        "42"
+        "41"
     ]
 
     const alert = useAlert();
