@@ -43,7 +43,7 @@ export const Shipping = () => {
             <CheckoutSteps shipping />
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                    <form  className="shadow-lg" onClick={submitHandler}>
+                <form className="shadow-lg" onSubmit={submitHandler}>
                         <h1 class="fa fa-info-circle fa-2x"> Informacion de envio</h1>
                         <div className="form-group">
                             <br />

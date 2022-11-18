@@ -20,7 +20,7 @@ export const OrderDetails = () => {
             dispatch(clearErrors)
         }
     },[dispatch, alert, error, params.id])
-    const detalleEnvio= envioInfo && `${envioInfo.direccion}, ${envioInfo.ciudad}, ${envioInfo.departament}`
+    const detalleEnvio= envioInfo && `${envioInfo.direccion}, ${envioInfo.ciudad}, ${envioInfo.departamento}`
 
     const esPago= pagoInfo && pagoInfo.estado==="Aceptado" ? true : false
 
