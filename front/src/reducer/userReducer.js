@@ -25,19 +25,20 @@ import {
     NEW_PASSWORD_REQUEST,
     NEW_PASSWORD_SUCCESS,
     NEW_PASSWORD_FAIL,
-    ADMIN_USERS_REQUEST,
-    ADMIN_USERS_SUCCESS,
-    ADMIN_USERS_FAIL,
-    ADMIN_USER_DETAILS_REQUEST,
-    ADMIN_USER_DETAILS_FAIL,
-    ADMIN_USER_DETAILS_SUCCESS,
-    ADMIN_USER_UPDATE_REQUEST,
-    ADMIN_USER_UPDATE_SUCCESS,
-    ADMIN_USER_UPDATE_FAIL,
-    ADMIN_USER_UPDATE_RESET,
-    ADMIN_DELETE_USER_REQUEST,
-    ADMIN_DELETE_USER_SUCCESS,
-    ADMIN_DELETE_USER_FAIL,
+    ALL_USERS_REQUEST,
+    ALL_USERS_SUCCESS,
+    ALL_USERS_FAIL,
+    DELETE_USER_REQUEST,
+    DELETE_USER_RESET,
+    DELETE_USER_SUCCESS,
+    DELETE_USER_FAIL,
+    UPDATE_USER_REQUEST,
+    UPDATE_USER_SUCCESS,
+    UPDATE_USER_RESET,
+    UPDATE_USER_FAIL,
+    USER_DETAILS_REQUEST,
+    USER_DETAILS_SUCCESS,
+    USER_DETAILS_FAIL
 } from "../constants/userConstants"
 
 //Cambios y reducer sobre procesos de autenticacion
@@ -104,46 +105,66 @@ export const authReducer = (state = { user: {} }, action) => {
 }
 
 //Actualizar usuario, actualizar contraseña
-export const userReducer = ( state = {}, action) =>{
-    switch (action.type){
+export const userReducer = (state = {}, action) => {
+    switch (action.type) {
+
         case UPDATE_PROFILE_REQUEST:
         case UPDATE_PASSWORD_REQUEST:
+        case UPDATE_USER_REQUEST:
+        case DELETE_USER_REQUEST:
             return {
                 ...state,
-                loading:true
+                loading: true
             }
-    
+
         case UPDATE_PROFILE_SUCCESS:
         case UPDATE_PASSWORD_SUCCESS:
-            return{
+        case UPDATE_USER_SUCCESS:
+            return {
                 ...state,
-                loading:false,
+                loading: false,
                 isUpdated: action.payload
             }
-        
+
+        case DELETE_USER_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                isDeleted: action.payload
+            }
+
         case UPDATE_PROFILE_RESET:
         case UPDATE_PASSWORD_RESET:
-            return{
+        case UPDATE_USER_RESET:
+            return {
                 ...state,
                 isUpdated: false
             }
-        
+
+        case DELETE_USER_RESET:
+            return {
+                ...state,
+                isDeleted: false
+            }
+
         case UPDATE_PROFILE_FAIL:
         case UPDATE_PASSWORD_FAIL:
-            return{
+        case UPDATE_USER_FAIL:
+        case DELETE_USER_FAIL:
+            return {
                 ...state,
-                loading:false,
+                loading: false,
                 error: action.payload
             }
+
         case CLEAR_ERRORS:
-            return{
+            return {
                 ...state,
-                error:null
+                error: null
             }
-        
+
         default:
-            return state
-        
+            return state;
     }
 }
 
@@ -189,23 +210,25 @@ export const forgotPasswordReducer = (state={}, action)=>{
     }
 }
 
-//Ver usuarios ADMIN
-export const usersReducer = (state = { users: [] }, action) => {
+export const allUsersReducer = (state = { users: [] }, action) => {
     switch (action.type) {
-        case ADMIN_USERS_REQUEST:
+
+        case ALL_USERS_REQUEST:
             return {
+                ...state,
                 loading: true,
-                users: []
             }
-            
-        case ADMIN_USERS_SUCCESS:
+
+        case ALL_USERS_SUCCESS:
             return {
+                ...state,
                 loading: false,
                 users: action.payload
             }
 
-        case ADMIN_USERS_FAIL:
+        case ALL_USERS_FAIL:
             return {
+                ...state,
                 loading: false,
                 error: action.payload
             }
@@ -221,26 +244,26 @@ export const usersReducer = (state = { users: [] }, action) => {
     }
 }
 
-//REDUCER PARA TENER  DETALLES DEL USUARIO
-export const userDetailsReducer =  (state = { user: {} }, action) => {
+export const userDetailsReducer = (state = { user: {} }, action) => {
     switch (action.type) {
 
-        case ADMIN_USER_DETAILS_REQUEST:
+        case USER_DETAILS_REQUEST:
             return {
                 ...state,
-                loading: true
+                loading: true,
             }
 
-        case ADMIN_USER_DETAILS_SUCCESS:
+        case USER_DETAILS_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 user: action.payload
             }
 
-        case ADMIN_USER_DETAILS_FAIL:
+        case USER_DETAILS_FAIL:
             return {
                 ...state,
+                loading: false,
                 error: action.payload
             }
 
@@ -251,54 +274,6 @@ export const userDetailsReducer =  (state = { user: {} }, action) => {
             }
 
         default:
-            return state
+            return state;
     }
 }
-
-
-
-         
-    // ACTUALIZAR USUARIO DESDE EL ADMIN 
-    export const updateUserReducer = (state={}, action)=>{
-        switch(action.type){
-            case ADMIN_DELETE_USER_REQUEST:
-            case ADMIN_USER_UPDATE_REQUEST:
-                return{
-                    ...state, 
-                    loading:true
-                }
-            case  ADMIN_DELETE_USER_SUCCESS:
-                return{
-                    ...state,
-                    loading: false,
-                    isDeleted: action.payload
-                }
-    
-            case ADMIN_USER_UPDATE_SUCCESS:
-                return{
-                    ...state,
-                    loading: false,
-                    isUpdated: action.payload
-                }
-                
-            case ADMIN_DELETE_USER_FAIL:
-            case ADMIN_USER_UPDATE_FAIL:
-                return{
-                    ...state,
-                    error: action.payload
-                }
-                
-            case ADMIN_USER_UPDATE_RESET:
-                return{
-                    ...state,
-                    isUpdated: false
-                }
-            case CLEAR_ERRORS:
-                return {
-                    error:null
-                }
-            default:
-                return state
-        }
-    }
-    

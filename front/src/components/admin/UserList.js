@@ -1,38 +1,40 @@
 import React, { Fragment, useEffect } from 'react'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from 'react-router-dom'
 import { MDBDataTable } from 'mdbreact'
 import MetaData from '../layout/MetaData'
 import Sidebar from './Sidebar'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearErrors, deleteUser, getAdminUsers } from '../../actions/userActions'
+import { allUsers, deleteUser, clearErrors } from '../../actions/userActions'
+import { DELETE_USER_RESET } from '../../constants/userConstants'
 
-
-
-export const UsersList = () => {
+const UserList = () => {
+    const navigate=useNavigate();
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, error, users } = useSelector(state => state.users);
-    
-    const deleteUserHandler= (id)=> {
-        const response=window.confirm("Esta seguro de querer borrar este Usuario?")
-        if (response){
-            dispatch(deleteUser(id))
-            alert.success("Usuario eliminado correctamente")
-            window.location.reload(false)
-        }
-    }
+    const { loading, error, users } = useSelector(state => state.allUsers);
+    const { isDeleted } = useSelector(state => state.user)
+
     useEffect(() => {
-        dispatch(getAdminUsers());
+        dispatch(allUsers());
 
         if (error) {
             alert.error(error);
             dispatch(clearErrors())
         }
 
-    }, [dispatch, alert, error])
+        if (isDeleted) {
+            alert.success('Usuario Eliminado correctamente');
+            navigate('/admin/users');
+            dispatch({ type: DELETE_USER_RESET })
+        }
 
+    }, [dispatch, alert, error, isDeleted])
+
+    const deleteUserHandler = (id) => {
+        dispatch(deleteUser(id))
+    }
 
     const setUsers = () => {
         const data = {
@@ -80,7 +82,7 @@ export const UsersList = () => {
                 <Link to={`/user/${user._id}`} className="btn btn-outline-primary py-1 px-2">
                     <i className="fa fa-eye"></i>
                 </Link>
-                <Link to={`/updateUser/${user._id}`} className="btn btn-outline-warning py-1 px-2">
+                <Link to={`/admin/user/${user._id}`} className="btn btn-outline-warning py-1 px-2">
                 <i class="fa fa-pencil"></i>
                 </Link>
                 <button  className="btn btn-outline-danger  py-1 px-2" onClick={() => deleteUserHandler(user._id)}>
@@ -126,4 +128,4 @@ export const UsersList = () => {
         </Fragment>
     )
 }
-export default UsersList
+export default UserList
