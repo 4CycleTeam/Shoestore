@@ -86,7 +86,7 @@ const ProductReviews = () => {
                 usuario: opinion.nombreCliente,
 
                 acciones:
-                    <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteReviewHandler(opinion._id)}>
+                    <button className="btn btn-outline-danger  py-1 px-2" onClick={() => deleteReviewHandler(opinion._id)}>
                         <i className="fa fa-trash"></i>
                     </button>
             })
