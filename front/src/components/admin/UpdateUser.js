@@ -41,7 +41,10 @@ export const UpdateUser = () => {
             setDireccion(user.direccion);
             setRole(user.role)
         }
-
+        if(error){
+            alert.error(error)
+            dispatch(clearErrors)
+        }
         if (updateError){
             alert.error(error)
             dispatch(clearErrors)
@@ -139,7 +142,7 @@ export const UpdateUser = () => {
 
                         <div className="formulario">
                             <br />
-                            <label htmlFor="role_field">Rol:</label>
+                            <label htmlFor="role_field">Rol</label>
                             <select className="form-control"
                                 id="role_field"
                                 value={role} onChange={(e) => setRole(e.target.value)}>
