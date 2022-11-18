@@ -249,7 +249,7 @@ export const getUserDetails = (id) => async (dispatch) => {
 
         dispatch({
             type: ADMIN_USER_DETAILS_SUCCESS,
-            payload: data.product
+            payload: data.user
         })
     } catch (error) {
         dispatch({

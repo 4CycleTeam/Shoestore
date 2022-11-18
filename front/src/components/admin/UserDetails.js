@@ -7,21 +7,21 @@ import { useParams } from 'react-router-dom';
 import { useAlert } from 'react-alert'
 
 export const UserDetails = () => {
-    const { loading, user, error } = useSelector(state => state.userDetails)
-    const { id } = useParams();
+    const { user, loading, error } = useSelector(state => state.user)
+    const params = useParams();
     const dispatch = useDispatch();
     const alert = useAlert();
 
   
     useEffect(() => {
-      dispatch(getUserDetails(id))
+      dispatch(getUserDetails(params.id))
       if (error) {
         alert.error(error);
         dispatch(clearErrors())
       }
   
-    }, [dispatch, alert, error, id])
-  
+    }, [dispatch, alert, error, params.id])
+     
 
   
     return (
@@ -32,7 +32,7 @@ export const UserDetails = () => {
                     {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
                         <Fragment>
                             <MetaData title={"Mi perfil"} />
-
+                            
                             <h1 className="my-5 fa fa-user fa-2x"> Perfil de:  {user.nombre} </h1>
 
                             <table class="table table-bordered ">
