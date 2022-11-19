@@ -1,6 +1,9 @@
 {
   "name": "shoestore",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.15.1"
+  },
   "description": "Tienda virtual calzado",
   "main": "server.js",
   "scripts": {
