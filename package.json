@@ -10,7 +10,9 @@
   "scripts": {
     "start": "node back/server.js",
     "dev": "set NODE_ENV=DESARROLLO&& nodemon back/server",
-    "prod": "set NODE_ENV=PRODUCCION&& nodemon back/server"
+    "prod": "set NODE_ENV=PRODUCCION&& nodemon back/server",
+    "heroku-postbuild": " npm install --force --prefix front && npm run build --prefix front"
+
   },
   "repository": {
     "type": "git",
