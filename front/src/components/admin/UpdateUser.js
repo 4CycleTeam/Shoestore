@@ -34,7 +34,7 @@ const UpdateUser = () => {
             setNombre(user.nombre);
             setEmail(user.email);
             setDireccion(user.email);
-            setRole(direccion.direccion)
+            setRole(user.role)
         }
 
         if (error) {
