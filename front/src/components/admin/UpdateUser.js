@@ -33,8 +33,8 @@ const UpdateUser = () => {
         } else {
             setNombre(user.nombre);
             setEmail(user.email);
-            setDireccion(user.email);
-            setRole(direccion.direccion)
+            setDireccion(user.direccion);
+            setRole(user.role)
         }
 
         if (error) {
@@ -90,7 +90,7 @@ const UpdateUser = () => {
                                         type="name"
                                         id="name_field"
                                         className="form-control"
-                                        name='name'
+                                        name='nombre'
                                         value={nombre}
                                         onChange={(e) => setNombre(e.target.value)}
                                     />

@@ -34,7 +34,6 @@ export const Payment = () => {
         })
     })
 
-
     const order={
         items,
         envioInfo: shippingInfo
@@ -66,23 +65,21 @@ export const Payment = () => {
         }
     }
 
-
-
-    return (
-        <Fragment>
+  return (
+    <Fragment>
             <MetaData title={'Pago'} />
-            <br />
-            <br />
+            <br/>
+            <br/>
 
             <CheckoutSteps shipping confirmOrder payment />
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler} >
-                        <h1 className="fa fa-user-secret fa-2x"> Datos de La tarjeta</h1>
+                        <h1  className="fa fa-user-secret fa-2x"> Datos de La tarjeta</h1>
                         <div className="form-group">
-                            <br />
-                            <br />
+                            <br/>
+                            <br/>
                             <label htmlFor="card_num_field">Numero de la tarjeta</label>
                             <input
                                 type="number"
@@ -110,12 +107,13 @@ export const Payment = () => {
                         </div>
 
 
-                        <button                           
-                            id="update_button"
+                        <button
+                            id="checkout_btn"
+                            className="btn btn-primary btn-block"
                             type="submit"
-                            className="btn update-btn btn-block mt-4 mb-3"
+                          
                         >
-                            Pagar ${`  ${orderInfo && orderInfo.precioTotal}`}
+                            Pagar ${` - ${orderInfo && orderInfo.precioTotal}`}
                         </button>
 
                     </form>
@@ -124,5 +122,5 @@ export const Payment = () => {
 
         </Fragment>
 
-    )
+  )
 }

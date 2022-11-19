@@ -13,7 +13,7 @@ export const OrderDetails = () => {
     const {loading, error, order={}}= useSelector(state=> state.orderDetails)
     const { envioInfo, items, pagoInfo, user, precioTotal, estado} = order
 
-   useEffect(()=>{
+    useEffect(()=>{
         dispatch(getOrderDetails(params.id));
         if (error){
             alert.error(error)
@@ -74,9 +74,7 @@ export const OrderDetails = () => {
                                     </div>
                                 ))}
                             </div>
-                            <div class="card-body">
-                            <button id="btnAtras" className="btn ml-4" onClick={() => navigate(-1)}>Atrás</button>
-                            </div>
+                            <button className="btn ml-4" id="login_btn" onClick={() => navigate(-1)}>Atrás</button>
                             <hr />
                         </div>
                     </div>

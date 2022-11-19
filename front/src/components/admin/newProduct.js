@@ -22,13 +22,11 @@ const NewProduct = () => {
   const [imagenPreview, setImagenPreview] = useState([])
 
   const categorias = [
-    "-- Selecione la categoria --",
     "Calzado Mujer",
     "Calzado Hombre"
   ]
 
   const tallas = [
-    "-- Selecione la Talla --",
     "34",
     "35",
     "36",
@@ -137,7 +135,7 @@ const NewProduct = () => {
                       <option key={talla} value={talla} >{talla}</option>
                     ))}
                   </select>
-                  <div class="invalid-feedback">Este campo es requerido</div>
+
                 </div>
 
                 <div className="formulario">
@@ -170,7 +168,7 @@ const NewProduct = () => {
                       <option key={categoria} value={categoria} >{categoria}</option>
                     ))}
                   </select>
-                  <div class="invalid-feedback">Este campo es requerido</div>
+                 
                 </div>
 
                 <div className="formulario">
@@ -197,17 +195,6 @@ const NewProduct = () => {
                   />
                 </div>
 
-                {/*    <div className="formulario">
-                  <br />
-                  <label>Fecha de Creación: </label>
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="fechacreacion"
-                    required="required"
-                  ></input>
-                </div>
-              */}
 
                 <div className="formulario">
 

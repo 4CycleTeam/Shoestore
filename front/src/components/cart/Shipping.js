@@ -8,30 +8,30 @@ import CheckoutSteps from './CheckOutSteps';
 
 export const Shipping = () => {
     let Pais = require('./colombia.json');
-    const navigate= useNavigate()
+    const navigate = useNavigate()
     const { shippingInfo } = useSelector(state => state.cart)
 
     const [direccion, setDireccion] = useState(shippingInfo.direccion)
     const [ciudad, setCiudad] = useState(shippingInfo.ciudad)
     const [telefono, setTelefono] = useState(shippingInfo.telefono)
     const [departamento, setDepartamento] = useState(shippingInfo.departamento)
-    const [ciudades, setCiudades]= useState([])
+    const [ciudades, setCiudades] = useState([])
 
-    useEffect(()=>{
-        Pais.forEach((depar)=>{
-          if (depar.departamento===departamento){
-              setCiudades(depar.ciudades)
-          }
+    useEffect(() => {
+        Pais.forEach((depar) => {
+            if (depar.departamento === departamento) {
+                setCiudades(depar.ciudades)
+            }
         })
-      })
-      const dispatch= useDispatch();
-  
-      const submitHandler= (e)=>{
-          e.preventDefault()
-          dispatch(saveShippingInfo({direccion, ciudad, telefono, departamento}))
-          navigate("/order/confirm")
-      }
-  
+    })
+    const dispatch = useDispatch();
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+        dispatch(saveShippingInfo({ direccion, ciudad, telefono, departamento }))
+        navigate("/order/confirm")
+    }
+
 
 
     return (
@@ -43,7 +43,7 @@ export const Shipping = () => {
             <CheckoutSteps shipping />
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                    <form  className="shadow-lg" onClick={submitHandler}>
+                    <form className="shadow-lg" >
                         <h1 class="fa fa-info-circle fa-2x"> Informacion de envio</h1>
                         <div className="form-group">
                             <br />
@@ -115,7 +115,7 @@ export const Shipping = () => {
                             id="update_button"
                             color='dark'
                             type="submit"
-                            className="btn update-btn btn-block mt-4 mb-3"
+                            className="btn update-btn btn-block mt-4 mb-3" onClick={submitHandler}
                         >
                             CONTINUAR
                         </button>

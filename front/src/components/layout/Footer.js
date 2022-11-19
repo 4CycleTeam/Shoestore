@@ -71,7 +71,7 @@ export const Footer = () => {
         </MDBContainer>
 
         <div className='text-center' style={{ backgroundColor: '#584f2e;' }}>
-       © 2022 Copyright: 4Cycle Shoestore
+       © 2020 Copyright: 4Cycle Shoestore
         </div>
       
       </MDBFooter>

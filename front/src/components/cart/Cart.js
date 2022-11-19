@@ -67,11 +67,11 @@ const Cart = () => {
                                         <div className="row">
                                             <div className="col-4 col-lg-3">
                                                 <img src={item.imagen} alt={item.nombre} height="90" width="115" />
-                                                {item.talla}
-                                        
+                                               
+                                                
                                             </div>
+                                           
 
-                                        
 
                                             <div className="col-5 col-lg-3">
                                                 <Link to={`/producto/${item.product}`}>{item.nombre}</Link>

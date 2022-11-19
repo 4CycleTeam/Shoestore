@@ -33,12 +33,13 @@ import UpdateUser from './components/admin/UpdateUser';
 import OrdersList from './components/admin/OrderList';
 import ProcessOrder from './components/admin/ProccessOrder';
 import ProductReviews from './components/admin/ProductReviews';
+import { useSelector } from 'react-redux';
 
 function App() {
   useEffect(() => {
     store.dispatch(loadUser())
   }, [])
-
+  const {user, isAuthenticated, loading} = useSelector(state => state.auth)
 
 
   return (
@@ -57,7 +58,6 @@ function App() {
               <Route path='/carrito' element={<Cart />}></Route>
               <Route path='/login' element={<Login />}></Route>
               <Route path="/search/:keyword" element={<ListaProductos />} />
-              <Route path="/search/:keyword" element={<ProductsList />} />
               <Route path="/register" element={<Register />} />
               <Route path="/password/forgot" element={<ForgotPassword />} />
               <Route path="/resetPassword/:token" element={<NewPassword />} />
@@ -132,7 +132,9 @@ function App() {
           </div>
 
           <MDBRow className='my-5 justify-content-center align-items-center h-100'>
-            <Footer />
+          {!loading && (!isAuthenticated || user.role!=="admin") &&(
+        <Footer />
+       )}
           </MDBRow>
         </MDBContainer>
       </div>

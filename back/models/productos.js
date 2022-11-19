@@ -9,7 +9,6 @@ const productosSchema=mongoose.Schema({
     },
     talla:{
         type:String,
-        required:[true,"Por favor registra talla del calzado."],
         maxLength:[6,"La talla del producto no debe exceder los 6 caracteres."]
     },
     precio:{

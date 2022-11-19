@@ -73,17 +73,11 @@ export const Profile = () => {
                                                 </div>
                                                 <hr />
                                                 <div class="col-6 mb-3">
-                                                    <h4>Role: </h4>
-                                                    <p>{String(user.role).substring(0, 10)}</p>
-
-                                                </div>
-                                                <div class="col-6 mb-3">
                                                     <h4>Registrado el: </h4>
                                                     <p>{String(user.fechaRegistro).substring(0, 10)}</p>
 
                                                 </div>
 
-                                               
                                             </div>
 
 

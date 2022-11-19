@@ -23,13 +23,11 @@ export const UpdateProduct = () => {
     const [oldImagen, setOldImagen] = useState([])
 
     const categorias = [
-        "-- Selecione la categoria --",
         "Calzado Mujer",
         "Calzado Hombre"
     ]
 
     const tallas = [
-        "-- Selecione la Talla --",
         "34",
         "35",
         "36",
@@ -52,7 +50,7 @@ export const UpdateProduct = () => {
             dispatch(getProductDetails(productId));
         }else{
             setNombre(product.nombre);
-            setTalla(product.talla);
+            setPrecio(product.talla);
             setPrecio(product.precio);
             setDescripcion(product.descripcion);
             setCategoria(product.categoria);
