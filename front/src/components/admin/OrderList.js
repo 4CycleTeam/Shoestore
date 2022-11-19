@@ -32,7 +32,7 @@ const OrdersList = () => {
             dispatch({ type: DELETE_ORDER_RESET })
         }
 
-    }, [dispatch, alert, error, isDeleted])
+    }, [dispatch, alert, error, isDeleted, navigate])
 
 
     const deleteOrderHandler = (id) => {

@@ -73,7 +73,7 @@ export const UpdateProduct = () => {
             dispatch({ type: UPDATE_PRODUCT_RESET})
         }
 
-    }, [dispatch, alert, error, isUpdated, updateError, product, productId])
+    }, [dispatch, alert, error, isUpdated, updateError, product, productId, navigate])
 
     const submitHandler = (e) => {
         e.preventDefault();
