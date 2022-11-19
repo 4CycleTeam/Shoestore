@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "engines": {
     "node": ">=16.0",
-    "npm": "9.1.9"
+    "npm": ">=6.5.x"
   },
   "description": "Tienda virtual calzado",
   "main": "server.js",
