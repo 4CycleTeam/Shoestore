@@ -27,17 +27,6 @@ export const DetallesProducto = () => {
   const { error: reviewError, success } = useSelector(state => state.newReview)
 
   const [talla, setTalla] = useState('');
-  const tallas = [
-    "-- Selecione la Talla --",
-    "34",
-    "35",
-    "36",
-    "37",
-    "38",
-    "39",
-    "40",
-    "41"
-  ]
 
   useEffect(() => {
     dispatch(getProductDetails(params.id))
@@ -56,9 +45,9 @@ export const DetallesProducto = () => {
       alert.success('Opinion registrada correctamente')
       dispatch({ type: NEW_REVIEW_RESET })
     }
-    else { }
+    else { 
     setTalla(product.talla);
-
+    }
   }, [dispatch, alert, error, reviewError, params.id, success])
 
   const increaseQty = () => {
