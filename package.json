@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node back/server.js",
     "dev": "set NODE_ENV=DESARROLLO&& nodemon back/server",
-    "prod": "set NODE_ENV=PRODUCTION&& nodemon back/server",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false && NODE_OPTIONS=--openssl-legacy-provider && npm install --force --prefix front && npm run build --prefix front"
+    "prod": "set NODE_ENV=PRODUCCION&& nodemon back/server",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCCION=false && NODE_OPTIONS=--openssl-legacy-provider && npm install --force --prefix front && npm run build --prefix front"
   },
   "repository": {
     "type": "git",
