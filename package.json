@@ -11,7 +11,7 @@
     "start": "node back/server.js",
     "dev": "set NODE_ENV=DESARROLLO&& nodemon back/server",
     "prod": "set NODE_ENV=PRODUCCION&& nodemon back/server",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false && NODE_OPTIONS=--openssl-legacy-provider && npm install --force --prefix front && npm run build --prefix front"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && NODE_OPTIONS=--openssl-legacy-provider && npm install --force --prefix front && npm run build --prefix front"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
     "express": "^4.18.2",
     "express-fileupload": "^1.4.0",
     "jsonwebtoken": "^8.5.1",
-    "mdbreact": "^5.2.0",
+    "mdbreact": "^4.6.1",
     "mongoose": "^6.6.5",
     "nodemailer": "^6.8.0",
     "validator": "^13.7.0"
