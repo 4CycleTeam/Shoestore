@@ -22,7 +22,7 @@ const NewProduct = () => {
   const [imagenPreview, setImagenPreview] = useState([])
 
   const categorias = [
-    "-- Selecione la categoria --",
+    "-- Selecione la categoria --", 
     "Calzado Mujer",
     "Calzado Hombre"
   ]
@@ -35,7 +35,8 @@ const NewProduct = () => {
     "38",
     "39",
     "40",
-    "41"
+    "41",
+    "42"
   ]
 
   const alert = useAlert();
