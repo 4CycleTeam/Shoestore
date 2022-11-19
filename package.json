@@ -2,7 +2,7 @@
   "name": "shoestore",
   "version": "1.0.0",
   "engines": {
-    "node": ">=16.0",
+    "node": ">16.17.1",
     "npm": ">=6.5.x"
   },
   "description": "Tienda virtual calzado",
