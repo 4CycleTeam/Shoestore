@@ -33,11 +33,13 @@ import UpdateUser from './components/admin/UpdateUser';
 import OrdersList from './components/admin/OrderList';
 import ProcessOrder from './components/admin/ProccessOrder';
 import ProductReviews from './components/admin/ProductReviews';
+import { useSelector } from 'react-redux';
 
 function App() {
   useEffect(() => {
     store.dispatch(loadUser())
   }, [])
+  const {user, isAuthenticated, loading} = useSelector(state => state.auth)
 
 
 
@@ -132,7 +134,9 @@ function App() {
           </div>
 
           <MDBRow className='my-5 justify-content-center align-items-center h-100'>
+          {!loading && (!isAuthenticated || user.role!=="admin") &&(
             <Footer />
+            )}
           </MDBRow>
         </MDBContainer>
       </div>

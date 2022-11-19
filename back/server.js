@@ -3,8 +3,12 @@ const connectDatabase = require("./config/database");
 const cloudinary= require("cloudinary")
 
 //Setear el archivo de configuración
-const dotenv=require("dotenv");
-dotenv.config({path: 'back/config/config.env'})
+//const dotenv=require("dotenv");
+//dotenv.config({path: 'back/config/config.env'})
+
+//Seteamos archivo de configuracion
+if(process.env.NODE_ENV==="PRODUCTION") require('dotenv').config({path:'back/config/config.env'})
+
 
 //Configurar base de datos
 connectDatabase();
