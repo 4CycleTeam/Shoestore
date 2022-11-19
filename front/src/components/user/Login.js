@@ -1,7 +1,7 @@
 
 import React, { Fragment, useEffect, useState } from 'react'
 import { MDBRow, MDBCol, MDBInput, MDBCard, MDBBtn, MDBCardBody, MDBContainer } from 'mdb-react-ui-kit';
-import { useNavigate } from "react-router-dom"
+import { useNavigate , Link} from "react-router-dom"
 import { login, clearErrors } from "../../actions/userActions"
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -57,9 +57,8 @@ export const Login = () => {
                                             <br />  <br />
                                             <div className="d-flex flex-row align-items-center justify-content-center pb-4 mb-4">
                                                 <br />  <br />
-                                                <p className="text-muted">¿Aún no tienes cuenta?</p>
-                                                <MDBBtn id="register_button"
-                                                    type="submit" outline className='mx-2' color='danger'  href='http://localhost:3000/Register'>Crear cuenta</MDBBtn>
+                                                <p className="text-muted">¿Aún no tienes cuenta?
+                                                <Link to="/register" className='float-right mt-3'>Registrese aquí</Link></p>
                                             </div>
                                         </form>
 
